@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>CNBU Networks — AI 與資料中心基礎架構</title>
+<meta name="description" content="從邊緣節點到雲端資料中心，整合高效能伺服器、智慧網卡、交換器與完整平台方案。CNBU Networks 為企業 AI 轉型提供全面基礎架構支援。"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0b1e38; --navy2:#152d52;
+  --blue:#005EB8; --cyan:#005EB8;
+  --ink:#1a2740;  --muted:#5a6d88;
+  --line:#dce3ed; --soft:#f3f6fb; --white:#fff;
+  --shadow:0 20px 60px rgba(11,30,56,.14); --r:10px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans TC","Inter",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:min(1200px,calc(100% - 48px));margin:0 auto}
+.eyebrow{display:inline-block;margin-bottom:12px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:0 26px;min-height:50px;border-radius:8px;font-weight:700;font-size:14px;transition:all .2s;cursor:pointer;white-space:nowrap;font-family:inherit;border:none}
+.btn-primary{background:var(--cyan);color:#fff}
+.btn-primary:hover{background:#004a96;transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,94,184,.35)}
+.btn-secondary{border:1.5px solid rgba(255,255,255,.35);color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(8px)}
+.btn-secondary:hover{background:rgba(255,255,255,.18);transform:translateY(-2px)}
+.btn-outline{border:1.5px solid var(--line);color:var(--navy);background:#fff}
+.btn-outline:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
+
+/* ── Header ─────────────────────────────────── */
+#header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:#fff;
+  border-top:1.5px solid #005EB8;
+  border-bottom:1.5px solid #005EB8;
+  transition:background .3s,box-shadow .3s;
+}
+#header.scrolled{background:#fff;box-shadow:0 2px 16px rgba(0,94,184,.12)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:20px}
+.brand img{height:44px;width:auto}
+.main-nav{display:flex;align-items:center;gap:0}
+.nav-item{position:relative}
+.nav-link{display:inline-flex;align-items:center;gap:4px;padding:0 13px;min-height:44px;font-size:13.5px;font-weight:600;color:var(--ink);border-radius:6px;transition:all .18s;white-space:nowrap;letter-spacing:.01em}
+.nav-link svg{width:11px;height:11px;transition:transform .2s;opacity:.6}
+.nav-item:hover .nav-link{color:var(--blue);background:var(--soft)}
+.nav-item:hover .nav-link svg{transform:rotate(180deg);opacity:1}
+.dropdown{position:absolute;top:calc(100% + 10px);left:0;min-width:210px;padding:6px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 16px 48px rgba(11,30,56,.16);opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .2s;z-index:200}
+.nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown a{display:block;padding:9px 14px;font-size:13.5px;color:var(--ink);border-radius:7px;transition:all .15s;font-weight:500}
+.dropdown a:hover{background:var(--soft);color:var(--blue)}
+/* Right side: CTA + lang */
+.hdr-right{display:flex;align-items:center;gap:10px}
+.header-cta{padding:0 18px;min-height:36px;background:var(--cyan);color:#fff;border-radius:7px;font-size:13px;font-weight:700;display:inline-flex;align-items:center;transition:all .2s;letter-spacing:.02em}
+.header-cta:hover{background:#004a96;box-shadow:0 4px 16px rgba(0,94,184,.3)}
+/* Language switcher */
+.lang-switch{display:flex;align-items:center;gap:0;border:1px solid var(--line);border-radius:7px;overflow:hidden;height:36px}
+.lang-switch a{display:flex;align-items:center;justify-content:center;padding:0 11px;font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.06em;transition:all .18s;height:100%;}
+.lang-switch a:hover{color:var(--blue);background:var(--soft)}
+.lang-switch a.active{color:var(--blue);background:var(--soft)}
+.lang-divider{width:1px;height:16px;background:var(--line);flex-shrink:0}
+/* Hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;width:38px;height:38px;align-items:center;justify-content:center;border-radius:8px;cursor:pointer;background:none;border:none}
+.hamburger span{display:block;width:18px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:rgba(11,30,56,.98);padding:24px;overflow-y:auto;z-index:99}
+.mobile-nav.open{display:block}
+.mobile-nav .m-cat{padding:12px 0 6px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
+.mobile-nav a{display:block;padding:12px 0;font-size:15px;color:rgba(255,255,255,.8);border-bottom:1px solid rgba(255,255,255,.07)}
+
+/* ── Hero ──────────────────────────────────────────── */
+#hero{
+  position:relative;
+  min-height:75vh;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+/* Full-width video background */
+.hero-video-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+.hero-video-bg video{
+  width:100%;height:100%;
+  object-fit:cover;
+  display:block;
+  filter:brightness(1.25) contrast(1.15) saturate(1.1);
+}
+/* Layered overlay: dark gradient for text legibility */
+.hero-video-bg::after{
+  content:"";
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to bottom,
+      rgba(11,30,56,.72) 0%,
+      rgba(11,30,56,.48) 50%,
+      rgba(11,30,56,.78) 100%
+    );
+  z-index:1;
+}
+/* Animated grid overlay */
+.hero-video-bg::before{
+  content:"";
+  position:absolute;inset:0;z-index:2;
+  background-image:
+    linear-gradient(rgba(0,94,184,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,94,184,.045) 1px,transparent 1px);
+  background-size:60px 60px;
+  animation:gridMove 22s linear infinite;
+  pointer-events:none;
+}
+@keyframes gridMove{0%{background-position:0 0}100%{background-position:60px 60px}}
+/* Cyan glow accent */
+.hero-glow{
+  position:absolute;z-index:2;
+  top:15%;left:5%;
+  width:600px;height:600px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(0,94,184,.13),transparent 65%);
+  pointer-events:none;
+  animation:glowPulse 6s ease-in-out infinite;
+}
+@keyframes glowPulse{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}
+/* Text content centered over video */
+.hero-content{
+  position:relative;
+  z-index:3;
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:72px 24px 32px;
+}
+.hero-inner{
+  max-width:860px;
+}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;margin-bottom:28px;padding:6px 16px;border:1px solid rgba(0,94,184,.4);border-radius:100px;font-size:12px;font-weight:600;color:var(--cyan);letter-spacing:.06em;background:rgba(0,94,184,.1);backdrop-filter:blur(8px)}
+.hero-badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse 2s ease infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero-title{font-size:clamp(42px,6vw,88px);font-weight:800;line-height:1.04;letter-spacing:-.04em;color:#fff;margin-bottom:24px}
+.hero-title em{font-style:normal;background:linear-gradient(110deg,#0077cc 0%,#00aaee 40%,#7fe0ff 45%,#d0f4ff 48%,#ffffff 50%,#d0f4ff 52%,#7fe0ff 55%,#00aaee 60%,#0077cc 100%);background-size:400% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:textMirror 3.2s ease-in-out infinite}
+@keyframes textMirror{0%{background-position:180% center}70%{background-position:-80% center}100%{background-position:-80% center}}
+.hero-sub{font-size:16px;line-height:1.8;color:rgba(255,255,255,.72);margin-bottom:42px;max-width:680px;margin-left:auto;margin-right:auto}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.stats-strip{background:rgba(255,255,255,.055);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.08);flex-shrink:0}
+.stats-inner{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-item{padding:28px 24px;border-right:1px solid rgba(255,255,255,.08);text-align:center}
+.stat-item:last-child{border-right:none}
+.stat-num{font-size:38px;font-weight:800;line-height:1;margin-bottom:5px;color:#fff}
+.stat-unit{color:var(--cyan);font-size:22px}
+.stat-label{font-size:13px;color:rgba(255,255,255,.55);font-weight:500}
+
+/* ── Sections ────────────────────────────────── */
+.section{padding:96px 0}
+.section-header{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:52px}
+.section-title{font-size:clamp(28px,4vw,46px);font-weight:800;line-height:1.12;letter-spacing:-.025em;color:var(--navy)}
+.section-desc{margin-top:12px;font-size:17px;line-height:1.8;color:var(--muted);max-width:560px}
+
+/* Solutions */
+.sol-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.sol-card{position:relative;padding:30px 22px 26px;border:1.5px solid var(--line);border-radius:var(--r);background:#fff;overflow:hidden;transition:all .3s cubic-bezier(.4,0,.2,1);display:block}
+.sol-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#005EB8,#00c2e0);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.sol-card:hover{transform:translateY(-5px);border-color:#005EB8;box-shadow:0 0 0 1px rgba(0,94,184,.15),0 20px 48px rgba(0,94,184,.12)}
+.sol-card:hover::before{transform:scaleX(1)}
+.sol-icon{display:none}
+.sol-card h3{font-size:16px;font-weight:800;line-height:1.4;color:var(--navy);margin-bottom:8px}
+.sol-card p{font-size:13px;line-height:1.7;color:var(--muted)}
+.sol-arrow{display:inline-flex;align-items:center;gap:4px;margin-top:14px;font-size:12px;font-weight:700;color:var(--blue);opacity:0;transform:translateX(-6px);transition:all .2s}
+.sol-card:hover .sol-arrow{opacity:1;transform:none}
+
+/* Products */
+.products-section{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.prod-card{display:flex;gap:24px;align-items:flex-start;padding:28px;background:#fff;border:1.5px solid var(--line);border-radius:var(--r);transition:all .3s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden}
+.prod-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#005EB8,#00c2e0);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.prod-card:hover{border-color:#005EB8;box-shadow:0 0 0 1px rgba(0,94,184,.15),0 20px 48px rgba(0,94,184,.12);transform:translateY(-5px)}
+.prod-card:hover::before{transform:scaleX(1)}
+.prod-icon-wrap{display:none}
+.prod-info{flex:1}
+.prod-info h3{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.prod-info p{font-size:14px;line-height:1.7;color:var(--muted);margin-bottom:14px}
+.prod-tags{display:flex;flex-wrap:wrap;gap:6px}
+.prod-tag{padding:3px 10px;border-radius:4px;background:var(--soft);font-size:11px;font-weight:700;color:var(--navy2)}
+
+/* Platform */
+.platform-section{background:linear-gradient(160deg,var(--navy) 0%,#0d2547 60%,#0b3d5e 100%);padding:96px 0;position:relative;overflow:hidden}
+.platform-section::before{content:"";position:absolute;top:-40%;right:-20%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(0,94,184,.12),transparent 70%);pointer-events:none}
+.platform-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.platform-left .section-title{color:#fff}
+.platform-left .section-desc{color:rgba(255,255,255,.62)}
+.platform-actions{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+.feature-list{display:grid;gap:14px}
+.feature-item{padding:22px;border:1.5px solid rgba(255,255,255,.1);border-radius:var(--r);background:rgba(255,255,255,.04);display:flex;gap:16px;align-items:flex-start;transition:all .3s cubic-bezier(.4,0,.2,1);text-decoration:none;position:relative;overflow:hidden}
+.feature-item::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#00c2e0,#56c5ff);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.feature-item:hover{border-color:rgba(0,194,224,.5);background:rgba(0,94,184,.1);transform:translateY(-3px);box-shadow:0 0 0 1px rgba(0,194,224,.2),0 12px 36px rgba(0,0,0,.2)}
+.feature-item:hover::before{transform:scaleX(1)}
+.feat-icon{display:none}
+.feature-item h4{font-size:15px;font-weight:700;color:#fff;margin-bottom:4px}
+.feature-item p{font-size:13px;color:rgba(255,255,255,.55);line-height:1.65}
+
+/* CTA */
+.cta-band{padding:80px 0}
+.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;padding:50px 56px;border-radius:16px;background:linear-gradient(135deg,#0b1e38,#0d3d6e);position:relative;overflow:hidden}
+.cta-inner::before{content:"";position:absolute;right:-60px;top:-60px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(0,94,184,.2),transparent 65%)}
+.cta-text h2{font-size:clamp(24px,3vw,38px);font-weight:800;color:#fff;line-height:1.2;margin-bottom:10px}
+.cta-text p{color:rgba(255,255,255,.6);font-size:16px}
+.cta-actions{display:flex;gap:14px;flex-shrink:0;flex-wrap:wrap;position:relative}
+
+/* Footer */
+#footer{background:#fff;border-top:1.5px solid #005EB8;padding:29px 0 0;color:var(--muted)}
+
+
+/* Logo 左定 + 連結欄群：中間空白由 margin-left 明確控制 */
+.footer-top{
+  display:flex;
+  align-items:stretch;
+  padding-bottom:24px;
+  border-bottom:1px solid var(--line);
+}
+
+.footer-brand{
+  flex-shrink:0;
+  width:200px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-end;
+  text-align:center;
+  padding-bottom:26px;
+}
+.footer-brand .ftr-logo-gif{
+  display:block;
+  width:auto;
+  max-width:75px;
+  height:auto;
+}
+.footer-brand p{
+  font-size:11px;
+  line-height:1.8;
+  color:var(--muted);
+  margin-top:10px;
+  margin-bottom:0;
+}
+
+/* 4 個連結欄群組 — 調整 margin-left 控制與 Logo 的間距 */
+.footer-links{
+  margin-left:auto;
+  display:grid;
+  grid-template-columns:repeat(4,auto);
+  gap:0 52px;
+  align-items:start;
+}
+
+.footer-col h4{
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--navy);
+  margin-bottom:10px;
+  padding-bottom:7px;
+  border-bottom:1px solid var(--line);
+  white-space:nowrap;
+}
+.footer-col a{
+  display:block;
+  font-size:12.5px;
+  color:var(--muted);
+  margin-bottom:6px;
+  transition:color .2s;
+  white-space:nowrap;
+  line-height:1.6;
+}
+.footer-col a:hover{color:var(--blue)}
+
+.footer-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:8px 0;
+  font-size:11px;
+  color:var(--muted);
+  border-top:1px solid var(--line);
+  letter-spacing:.02em;
+}
+.footer-bottom a{color:var(--muted)}
+.footer-bottom a:hover{color:var(--blue)}
+
+/* Responsive */
+@media(max-width:1040px){
+  .sol-grid{grid-template-columns:repeat(3,1fr)}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .stat-item:nth-child(2){border-right:none}
+  .platform-inner{grid-template-columns:1fr;gap:50px}
+  /* Footer: 平板改為上下堆疊 */
+  .footer-top{flex-direction:column;gap:36px}
+  .footer-brand{width:100%}
+  .footer-links{grid-template-columns:repeat(2,1fr);gap:28px 36px;width:100%}
+}
+@media(max-width:768px){
+  .main-nav,.header-cta{display:none}
+  .hamburger{display:flex}
+  .hero-content{padding:120px 24px 60px;text-align:center}
+  .hero-title{font-size:clamp(36px,8vw,56px)}
+  .sol-grid{grid-template-columns:repeat(2,1fr)}
+  .prod-grid{grid-template-columns:1fr}
+  .section-header{flex-direction:column;align-items:flex-start}
+  .cta-inner{flex-direction:column;padding:36px 28px}
+}
+@media(max-width:480px){
+  .sol-grid{grid-template-columns:1fr}
+  .hero-left-content{padding:48px 24px}
+  .wrap{width:calc(100% - 32px)}
+}
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+</style>
+</head>
+<body>
+
+<!-- ════ HEADER ════ -->
+<header id="header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <img src="image/logo/senao_networks_vertical_logo.png" alt="SENAO Networks" style="height:44px;width:auto"/>
+    </a>
+    <nav class="main-nav">
+
+      <div class="nav-item">
+        <span class="nav-link">解決方案
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg>
+        </span>
+        <div class="dropdown">
+          <a href="pages/solutions/ai-infrastructure/index.html">AI 基礎架構</a>
+          <a href="pages/solutions/edge-computing/index.html">邊緣運算</a>
+          <a href="pages/solutions/cybersecurity/index.html">網路安全</a>
+          <a href="pages/solutions/telecom-5g/index.html">電信與 5G</a>
+          <a href="pages/solutions/cloud-infrastructure/index.html">雲端基礎架構</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <span class="nav-link">產品介紹
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg>
+        </span>
+        <div class="dropdown">
+          <a href="pages/products/servers/index.html">伺服器</a>
+          <a href="pages/products/smart-nics/index.html">智慧網卡</a>
+          <a href="pages/products/data-center-switches/index.html">資料中心交換器</a>
+          <a href="pages/products/power-solutions/index.html">電源解決方案</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <span class="nav-link">平台方案
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg>
+        </span>
+        <div class="dropdown">
+          <a href="pages/platforms/ai-platform/index.html">AI 推論平台</a>
+          <a href="pages/platforms/edge-platform/index.html">邊緣運算平台</a>
+          <a href="pages/platforms/cybersecurity-platform/index.html">網路安全平台</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <span class="nav-link">資源中心
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg>
+        </span>
+        <div class="dropdown">
+          <a href="pages/resources/datasheets/index.html">產品規格書</a>
+          <a href="pages/resources/whitepapers/index.html">技術白皮書</a>
+          <a href="pages/resources/videos/index.html">影音專區</a>
+          <a href="pages/resources/blog/index.html">技術部落格</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <span class="nav-link">關於我們
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg>
+        </span>
+        <div class="dropdown">
+          <a href="pages/about/index.html">關於 CNBU</a>
+          <a href="pages/about/company/index.html">公司簡介</a>
+          <a href="pages/about/manufacturing/index.html">生產製造</a>
+          <a href="pages/about/contact/index.html">聯絡我們</a>
+        </div>
+      </div>
+
+    </nav>
+    <div class="hdr-right">
+      <a href="pages/about/contact/index.html" class="header-cta">聯絡我們</a>
+      <div class="lang-switch">
+        <a href="#" class="active">CH</a>
+        <span class="lang-divider"></span>
+        <a href="#">EN</a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile nav -->
+<div class="mobile-nav" id="mobileNav">
+  <p class="m-cat">解決方案</p>
+  <a href="pages/solutions/ai-infrastructure/index.html">AI 基礎架構</a>
+  <a href="pages/solutions/edge-computing/index.html">邊緣運算</a>
+  <a href="pages/solutions/cybersecurity/index.html">網路安全</a>
+  <a href="pages/solutions/telecom-5g/index.html">電信與 5G</a>
+  <a href="pages/solutions/cloud-infrastructure/index.html">雲端基礎架構</a>
+  <p class="m-cat">產品介紹</p>
+  <a href="pages/products/index.html">全部產品</a>
+  <a href="pages/products/servers/index.html">伺服器</a>
+  <a href="pages/products/smart-nics/index.html">智慧網卡</a>
+  <a href="pages/products/data-center-switches/index.html">資料中心交換器</a>
+  <a href="pages/products/power-solutions/index.html">電源解決方案</a>
+  <p class="m-cat">平台方案</p>
+  <a href="pages/platforms/ai-platform/index.html">AI 推論平台</a>
+  <a href="pages/platforms/edge-platform/index.html">邊緣運算平台</a>
+  <a href="pages/platforms/cybersecurity-platform/index.html">網路安全平台</a>
+  <p class="m-cat">資源 / 關於</p>
+  <a href="pages/resources/index.html">資源中心</a>
+  <a href="pages/about/index.html">關於我們</a>
+  <a href="pages/about/contact/index.html">聯絡我們</a>
+</div>
+
+<!-- ════ HERO ════ -->
+<section id="hero">
+
+  <!-- Full-width video background -->
+  <div class="hero-video-bg">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="image/vecteezy_a-glowing-blue-cubic-grid-of-digital-data-nodes-and-flashing_24835279.mp4" type="video/mp4"/>
+    </video>
+  </div>
+  <div class="hero-glow"></div>
+
+  <!-- Centered text overlay -->
+  <div class="hero-content">
+    <div class="hero-inner">
+      <h1 class="hero-title"><em style="letter-spacing:5px">神準科技</em><br><span style="font-size:0.5em;font-weight:700;letter-spacing:.01em;opacity:.9">your reliable edge AI partner</span></h1>
+      <p class="hero-sub">從邊緣節點到雲端核心，整合高效能伺服器、智慧網卡、交換器與完整平台方案，協助企業部署可靠且可擴充的運算環境。</p>
+      <div class="hero-actions">
+        <a href="pages/products/index.html" class="btn btn-primary">瀏覽產品線</a>
+        <a href="pages/solutions/index.html" class="btn btn-secondary">查看解決方案</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ════ SOLUTIONS ════ -->
+<section class="section" id="solutions">
+  <div class="wrap">
+    <div class="section-header fade-up">
+      <div>
+        <span class="eyebrow">Solutions</span>
+        <h2 class="section-title">依部署場景選擇最佳方案</h2>
+        <p class="section-desc">針對不同業務需求，提供完整解決方案架構。</p>
+      </div>
+
+    </div>
+    <div class="sol-grid">
+      <a class="sol-card fade-up d1" href="pages/solutions/ai-infrastructure/index.html">
+        <div class="sol-icon">🤖</div>
+        <h3>AI 基礎架構</h3>
+        <p>高效能 GPU 伺服器與高速網路，支撐大規模 AI 訓練與推論。</p>
+        <span class="sol-arrow">了解更多 →</span>
+      </a>
+      <a class="sol-card fade-up d2" href="pages/solutions/edge-computing/index.html">
+        <div class="sol-icon">🌐</div>
+        <h3>邊緣運算</h3>
+        <p>輕量化邊緣節點解決方案，適用工廠、零售與智慧城市。</p>
+        <span class="sol-arrow">了解更多 →</span>
+      </a>
+      <a class="sol-card fade-up d3" href="pages/solutions/cybersecurity/index.html">
+        <div class="sol-icon">🔒</div>
+        <h3>網路安全</h3>
+        <p>整合式安全服務鏈，提供高速封包處理與可視化監測。</p>
+        <span class="sol-arrow">了解更多 →</span>
+      </a>
+      <a class="sol-card fade-up d4" href="pages/solutions/telecom-5g/index.html">
+        <div class="sol-icon">📡</div>
+        <h3>電信與 5G</h3>
+        <p>支援 Open RAN 與 5G 核心網路，符合電信級可靠度需求。</p>
+        <span class="sol-arrow">了解更多 →</span>
+      </a>
+      <a class="sol-card fade-up d5" href="pages/solutions/cloud-infrastructure/index.html">
+        <div class="sol-icon">☁️</div>
+        <h3>雲端基礎架構</h3>
+        <p>混合雲與私有雲完整硬體支援，HCI 彈性擴充設計。</p>
+        <span class="sol-arrow">了解更多 →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PRODUCTS ════ -->
+<section class="section products-section" id="products">
+  <div class="wrap">
+    <div class="section-header fade-up">
+      <div>
+        <span class="eyebrow">Products</span>
+        <h2 class="section-title">完整的硬體產品線</h2>
+      </div>
+
+    </div>
+    <div class="prod-grid">
+      <a class="prod-card fade-up d1" href="pages/products/servers/index.html">
+        <div class="prod-icon-wrap">🖥️</div>
+        <div class="prod-info">
+          <h3>高效能伺服器</h3>
+          <p>SE210 GPU 伺服器、SE110 邊緣伺服器、SR610 / SR710 機架伺服器，涵蓋 AI 訓練到邊緣部署的多元場景。</p>
+          <div class="prod-tags">
+            <span class="prod-tag">SE210</span><span class="prod-tag">SE110</span>
+            <span class="prod-tag">SR610</span><span class="prod-tag">SR710</span>
+          </div>
+        </div>
+      </a>
+      <a class="prod-card fade-up d2" href="pages/products/smart-nics/index.html">
+        <div class="prod-icon-wrap">⚡</div>
+        <div class="prod-info">
+          <h3>智慧網卡（SmartNIC / DPU）</h3>
+          <p>SX904 SmartNIC 與 SX906 DPU，將網路、安全與加速卸載整合至硬體，解放 CPU 算力。</p>
+          <div class="prod-tags">
+            <span class="prod-tag">SX904</span><span class="prod-tag">SX906</span><span class="prod-tag">DPU</span>
+          </div>
+        </div>
+      </a>
+      <a class="prod-card fade-up d3" href="pages/products/data-center-switches/index.html">
+        <div class="prod-icon-wrap">🔀</div>
+        <div class="prod-info">
+          <h3>資料中心交換器</h3>
+          <p>SND 系列高密度 400GbE 交換器，支援 VXLAN / EVPN Leaf-Spine 骨幹架構。</p>
+          <div class="prod-tags">
+            <span class="prod-tag">SND Series</span><span class="prod-tag">400GbE</span>
+          </div>
+        </div>
+      </a>
+      <a class="prod-card fade-up d4" href="pages/products/power-solutions/index.html">
+        <div class="prod-icon-wrap">🔋</div>
+        <div class="prod-info">
+          <h3>電源解決方案</h3>
+          <p>80 PLUS Titanium 高效能電源，搭配智慧電源管理平台，PUE 目標 1.15。</p>
+          <div class="prod-tags">
+            <span class="prod-tag">Titanium</span><span class="prod-tag">N+1 冗餘</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PLATFORMS ════ -->
+<section class="platform-section" id="platforms">
+  <div class="wrap">
+    <div class="platform-inner">
+      <div class="platform-left fade-up">
+        <span class="eyebrow">Platforms</span>
+        <h2 class="section-title">平台化交付<br>縮短部署時程</h2>
+        <p class="section-desc">將硬體、網路、安全與管理整合成可落地的參考架構，協助企業快速驗證並規模化部署。</p>
+        <div class="platform-actions">
+          <a href="pages/platforms/index.html" class="btn btn-primary">探索平台</a>
+          <a href="pages/about/contact/index.html" class="btn btn-secondary">預約諮詢</a>
+        </div>
+      </div>
+      <div class="feature-list fade-up d2">
+        <a class="feature-item" href="pages/platforms/ai-platform/index.html">
+          <div class="feat-icon">🧠</div>
+          <div>
+            <h4>AI 推論平台</h4>
+            <p>整合 GPU 伺服器、高速互連與推論框架，提供開箱即用的 AI 部署環境。</p>
+          </div>
+        </a>
+        <a class="feature-item" href="pages/platforms/edge-platform/index.html">
+          <div class="feat-icon">🌍</div>
+          <div>
+            <h4>邊緣運算平台</h4>
+            <p>輕量化硬體加統一管理介面，支援跨地點邊緣節點集中管理與遠端更新。</p>
+          </div>
+        </a>
+        <a class="feature-item" href="pages/platforms/cybersecurity-platform/index.html">
+          <div class="feat-icon">🛡️</div>
+          <div>
+            <h4>網路安全平台</h4>
+            <p>融合 DPI、IPS 與零信任架構，提供企業級多層次整合防護能力。</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ RESOURCES ════ -->
+<section class="section" id="resources-highlight" style="background:var(--soft);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-header fade-up">
+      <div>
+        <span class="eyebrow">Resources</span>
+        <h2 class="section-title">技術資源中心</h2>
+        <p class="section-desc">取得規格書、白皮書、教學影片與最新技術文章。</p>
+      </div>
+
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+      <a class="sol-card fade-up d1" href="pages/resources/datasheets/index.html">
+        <div class="sol-icon">📄</div>
+        <h3>產品規格書</h3>
+        <p>全系列產品完整技術參數與訂購型號。</p>
+        <span class="sol-arrow">立即下載 →</span>
+      </a>
+      <a class="sol-card fade-up d2" href="pages/resources/whitepapers/index.html">
+        <div class="sol-icon">📕</div>
+        <h3>技術白皮書</h3>
+        <p>AI 架構、5G 部署、安全防護的深度技術文件。</p>
+        <span class="sol-arrow">閱讀更多 →</span>
+      </a>
+      <a class="sol-card fade-up d3" href="pages/resources/videos/index.html">
+        <div class="sol-icon">🎬</div>
+        <h3>影音專區</h3>
+        <p>產品介紹、部署實錄與客戶成功案例影片。</p>
+        <span class="sol-arrow">線上觀看 →</span>
+      </a>
+      <a class="sol-card fade-up d4" href="pages/resources/blog/index.html">
+        <div class="sol-icon">✍️</div>
+        <h3>技術部落格</h3>
+        <p>每週更新產業洞察與工程師實戰分享。</p>
+        <span class="sol-arrow">開始閱讀 →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CTA ════ -->
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-inner fade-up">
+      <div class="cta-text">
+        <h2>準備好升級您的基礎架構了嗎？</h2>
+        <p>我們的技術顧問將協助您規劃最適合的解決方案，一個工作日內回覆。</p>
+      </div>
+      <div class="cta-actions">
+        <a href="pages/resources/datasheets/index.html" class="btn btn-secondary">下載規格書</a>
+        <a href="pages/about/contact/index.html" class="btn btn-primary">聯絡我們</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer id="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="image/logo/senao_networks_vertical_logo.png" alt="SENAO Networks" class="ftr-logo-gif" loading="lazy">
+        <p>一站式 AI 與資料中心架構<br>整合伺服器、網卡、交換器與完整平台</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>解決方案</h4>
+          <a href="pages/solutions/ai-infrastructure/index.html">AI 基礎架構</a>
+          <a href="pages/solutions/edge-computing/index.html">邊緣運算</a>
+          <a href="pages/solutions/cybersecurity/index.html">網路安全</a>
+          <a href="pages/solutions/telecom-5g/index.html">電信與 5G</a>
+          <a href="pages/solutions/cloud-infrastructure/index.html">雲端基礎架構</a>
+        </div>
+        <div class="footer-col">
+          <h4>產品</h4>
+          <a href="pages/products/servers/index.html">伺服器</a>
+          <a href="pages/products/smart-nics/index.html">智慧網卡</a>
+          <a href="pages/products/data-center-switches/index.html">資料中心交換器</a>
+          <a href="pages/products/power-solutions/index.html">電源解決方案</a>
+        </div>
+        <div class="footer-col">
+          <h4>資源</h4>
+          <a href="pages/resources/datasheets/index.html">產品規格書</a>
+          <a href="pages/resources/whitepapers/index.html">技術白皮書</a>
+          <a href="pages/resources/videos/index.html">影音專區</a>
+          <a href="pages/resources/blog/index.html">技術部落格</a>
+        </div>
+        <div class="footer-col">
+          <h4>關於我們</h4>
+          <a href="pages/about/company/index.html">公司簡介</a>
+          <a href="pages/about/manufacturing/index.html">生產製造</a>
+          <a href="pages/about/contact/index.html">聯絡我們</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CNBU Networks. All rights reserved.</span>
+      <div style="display:flex;gap:20px">
+        <a href="#">隱私政策</a>
+        <a href="#">使用條款</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Header scroll */
+const hdr=document.getElementById('header');
+window.addEventListener('scroll',()=>{
+  hdr.classList.toggle('scrolled',window.scrollY>60);
+},{passive:true});
+
+/* Hamburger */
+const burger=document.getElementById('hamburger');
+const mNav=document.getElementById('mobileNav');
+burger.addEventListener('click',()=>{
+  const o=mNav.classList.toggle('open');
+  burger.classList.toggle('open',o);
+  document.body.style.overflow=o?'hidden':'';
+});
+mNav.querySelectorAll('a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    mNav.classList.remove('open');
+    burger.classList.remove('open');
+    document.body.style.overflow='';
+  });
+});
+
+/* Fade-up */
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}
+  });
+},{threshold:0.12});
+document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

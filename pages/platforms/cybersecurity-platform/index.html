@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>網路安全平台 | CNBU Networks</title>
+<meta name="description" content="融合 DPI、IPS、ZTNA 與 SIEM 的整合式安全平台，從封包級到應用層提供多層次企業防護。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/css/styles.css">
+<style>
+/* ── Split Section ────────────────────────── */
+.split-section {
+  padding: 0;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.split-inner {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  min-height: 420px;
+  max-width: 100%;
+}
+
+/* Left: title only */
+.split-left {
+  padding: 56px 48px 56px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+}
+.split-eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+.split-left h2 {
+  font-size: clamp(22px, 2.5vw, 34px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -.025em;
+  color: var(--navy);
+  margin: 0;
+}
+
+/* Right: video banner */
+.split-right {
+  position: relative;
+  overflow: hidden;
+  background: #060e1e;
+  aspect-ratio: auto;
+}
+.split-right video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Left-edge fade into white — natural ease-in-out curve */
+.split-right::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 140px;
+  z-index: 2;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,1)    0%,
+    rgba(255,255,255,0.96) 10%,
+    rgba(255,255,255,0.82) 28%,
+    rgba(255,255,255,0.55) 50%,
+    rgba(255,255,255,0.22) 72%,
+    rgba(255,255,255,0.05) 88%,
+    transparent            100%
+  );
+  pointer-events: none;
+}
+
+/* ── Feature list (below) ─────────────────── */
+.feat-section {
+  padding: 72px 0;
+  background: var(--soft);
+}
+.feat-section .section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 36px;
+  display: block;
+}
+.feat-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.feat-card {
+  padding: 28px 32px;
+  background: #fff;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  transition: all .3s cubic-bezier(.4,0,.2,1);
+  position: relative;
+  overflow: hidden;
+}
+.feat-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #005EB8, #00c2e0);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+}
+.feat-card:hover {
+  border-color: #005EB8;
+  box-shadow: 0 0 0 1px rgba(0,94,184,.15), 0 20px 48px rgba(0,94,184,.12);
+  transform: translateY(-5px);
+}
+.feat-card:hover::before { transform: scaleX(1); }
+.feat-card h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.feat-card p {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+/* ── Stats strip ──────────────────────────── */
+.stats-strip {
+  background: linear-gradient(135deg, var(--navy) 0%, #152d52 100%);
+  padding: 56px 0;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: rgba(255,255,255,.06);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.08);
+}
+.stat-item {
+  padding: 32px 28px;
+  background: rgba(255,255,255,.03);
+  text-align: center;
+  transition: background .2s;
+}
+.stat-item:hover { background: rgba(0,94,184,.07); }
+.stat-num {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--cyan);
+  margin-bottom: 8px;
+  letter-spacing: -.03em;
+}
+.stat-label {
+  font-size: 13px;
+  color: rgba(255,255,255,.65);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .split-inner { grid-template-columns: 1fr; }
+  .split-left  { padding: 48px 0 32px; }
+  .split-right { min-height: 260px; }
+  .split-right::before { display: none; }
+  .feat-grid-2 { grid-template-columns: 1fr; }
+  .stats-grid  { grid-template-columns: repeat(2,1fr); }
+}
+</style>
+</head>
+<body data-root="../../../">
+<header id="site-header"></header>
+<main>
+
+<!-- ════ HERO ════ -->
+<section class="page-hero">
+<div class="wrap fu">
+  <nav class="breadcrumb">
+    <a href="../../../index.html">首頁</a><span class="sep">›</span>
+    <a href="../../../pages/platforms/index.html">平台方案</a><span class="sep">›</span>
+    <span>網路安全平台</span>
+  </nav>
+  <span class="eyebrow">Platform</span>
+  <h1>網路安全平台</h1>
+  <p class="page-desc">融合 DPI、IPS、ZTNA 與 SIEM 的整合式安全平台，從封包級到應用層提供多層次企業防護，實現零信任安全架構。</p>
+</div>
+</section>
+
+<!-- ════ SPLIT: Title + Video Banner ════ -->
+<section class="split-section">
+  <div class="wrap">
+    <div class="split-inner">
+
+      <!-- Left: title only -->
+      <div class="split-left fu">
+        <span class="split-eyebrow">Core Capabilities</span>
+        <h2>完整網路<br>安全能力架構</h2>
+      </div>
+
+      <!-- Right: video banner -->
+      <div class="split-right">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="Safety_09.mp4" type="video/mp4">
+        </video>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════ FEATURES ════ -->
+<section class="feat-section">
+  <div class="wrap">
+    <span class="section-label fu">Platform Features</span>
+    <div class="feat-grid-2">
+      <div class="feat-card fu d1">
+        <h4>深度封包檢測引擎</h4>
+        <p>識別 3,000+ 種協議，即時分析加密與未加密流量，SX906 DPU 卸載處理，對主機 CPU 影響 &lt; 1%。</p>
+      </div>
+      <div class="feat-card fu d2">
+        <h4>即時威脅情報</h4>
+        <p>整合 MITRE ATT&amp;CK 框架，CTI 平台每小時更新 IoC 指標，自動阻斷已知惡意 IP / 域名 / 雜湊值。</p>
+      </div>
+      <div class="feat-card fu d3">
+        <h4>零信任網路存取（ZTNA）</h4>
+        <p>以身份為核心的動態存取控制，SDP 隱藏服務端點，支援 MFA + 裝置健康檢查的複合驗證。</p>
+      </div>
+      <div class="feat-card fu d4">
+        <h4>SOC 整合與自動化</h4>
+        <p>SIEM / SOAR 整合，告警自動關聯分析，MTTR 從平均 4 小時縮短至 15 分鐘，降低 SOC 負荷。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ STATS ════ -->
+<section class="stats-strip">
+  <div class="wrap">
+    <div class="stats-grid fu">
+      <div class="stat-item">
+        <div class="stat-num">3K+</div>
+        <div class="stat-label">可識別協議<br>種類數量</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">&lt;1%</div>
+        <div class="stat-label">主機 CPU<br>影響佔比</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">15min</div>
+        <div class="stat-label">MTTR<br>平均修復時間</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">ZTNA</div>
+        <div class="stat-label">零信任<br>存取架構</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CTA ════ -->
+<section class="cta-band">
+<div class="wrap"><div class="cta-inner fu">
+  <div class="cta-text">
+    <h2>需要更多技術資訊？</h2>
+    <p>我們的技術顧問將協助您規劃最適合的網路安全部署方案。</p>
+  </div>
+  <div class="cta-actions">
+    <a href="../../../pages/resources/datasheets/index.html" class="btn btn-ghost">下載規格書</a>
+    <a href="../../../pages/about/contact/index.html" class="btn btn-primary">聯絡我們</a>
+  </div>
+</div></div>
+</section>
+
+</main>
+<footer id="site-footer"></footer>
+<script src="../../../assets/js/site.js"></script>
+</body>
+</html>

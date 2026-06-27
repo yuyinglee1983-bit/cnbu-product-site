@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>公司簡介 | CNBU Networks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/css/styles.css">
+<style>
+/* ── Company Hero ─────────────────────────────── */
+.co-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Image background layer */
+.co-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.co-hero-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Dark gradient overlay */
+.co-hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(7,17,31,.88) 0%,
+    rgba(11,30,56,.72) 55%,
+    rgba(7,17,31,.82) 100%
+  );
+}
+
+/* Content above background */
+.co-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 72px 0 64px;
+}
+.co-hero-content .breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+.co-hero-content .breadcrumb a       { color: rgba(255,255,255,.6); transition: color .15s; }
+.co-hero-content .breadcrumb a:hover { color: var(--cyan); }
+.co-hero-content .breadcrumb .sep    { color: rgba(255,255,255,.25); }
+.co-hero-content .breadcrumb span:last-child { color: rgba(255,255,255,.85); }
+.co-eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+.co-hero-content h1 {
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.025em;
+  color: #fff;
+  margin: 8px 0 16px;
+}
+.co-hero-content .co-desc {
+  font-size: 17px;
+  line-height: 1.9;
+  color: rgba(255,255,255,.75);
+  max-width: 800px;
+}
+
+/* Bottom accent line */
+.co-hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,94,184,.4), transparent);
+}
+
+/* ── Location Cards Hover ──────────────── */
+.loc-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 32px;
+  padding: 28px 32px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1.5px solid #edf0f5;
+  transition: transform .32s cubic-bezier(.4,0,.2,1),
+              box-shadow .32s cubic-bezier(.4,0,.2,1),
+              border-color .32s ease;
+  cursor: default;
+}
+.loc-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0,50,120,.12), 0 4px 12px rgba(0,50,120,.07);
+  border-color: rgba(0,94,184,.25);
+}
+@media(max-width:860px){
+  .loc-card { grid-template-columns: 1fr; }
+}
+
+/* ── Location info list ── */
+.loc-info { list-style:none; padding:0; margin:0; }
+.loc-info li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 6px 0;
+  font-size: 14px;
+  color: #444;
+  border-bottom: 1px solid #f0f2f5;
+}
+.loc-info li:last-child { border-bottom: none; }
+.loc-info .lbl {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #999;
+  min-width: 34px;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+</style>
+</head>
+<body data-root="../../../">
+<header id="site-header"></header>
+<main>
+<section class="co-hero">
+  <!-- 圖片背景層 -->
+  <div class="co-hero-bg">
+    <img src="company.jpg" alt="神準科技" loading="eager">
+  </div>
+  <!-- 內容層 -->
+  <div class="wrap co-hero-content fu">
+    <nav class="breadcrumb">
+      <a href="../../../index.html">首頁</a><span class="sep">›</span>
+      <a href="../../../pages/about/index.html">關於我們</a><span class="sep">›</span>
+      <span>公司簡介</span>
+    </nav>
+    <span class="co-eyebrow">About</span>
+    <h1>關於神準科技</h1>
+    <p class="co-desc">
+      神準集團總部位於台灣桃園華亞科技園區，並在台北市南港設有研發中心。<br>
+      全球員工超過 1,200 人，其中研發人員占比達 60%，每年研發投入最高達年營收的 8%。<br>
+      並於美國、日本、印度等地設有海外銷售服務據點或研發營運中心，提供全方位解決方案與在地支援。
+    </p>
+  </div>
+</section>
+
+
+<!-- ════ 神準全球據點與關係企業 ════ -->
+<section style="background:#fff; padding:60px 0;">
+<div style="max-width:1200px; margin:0 auto; padding:0 40px;">
+
+  <h2 style="font-size:26px; font-weight:700; color:#1a1a1a; text-align:left; display:table; border-bottom:3px solid #f5a623; padding-bottom:10px; margin-bottom:48px;">
+    神準全球據點與關係企業
+  </h2>
+
+  <!-- ── 1. 台灣（總公司）── -->
+  <div class="loc-card">
+    <div>
+      <p style="color:#005bac; font-weight:700; font-size:15px; margin-bottom:6px;">台灣（總公司）</p>
+      <h3 style="font-size:22px; font-weight:800; color:#1a1a1a; margin-bottom:20px;">神準科技股份有限公司</h3>
+      <ul class="loc-info">
+        <li><span class="lbl">地址</span><span>龜山區復興三路500號，<br>桃園市 333001, 台灣</span></li>
+        <li><span class="lbl">電話</span><span>+886-3-3289289</span></li>
+        <li><span class="lbl">傳真</span><span>+886-3-396-2222</span></li>
+      </ul>
+    </div>
+    <div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.8!2d121.3!3d25.06!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z6b6N5bGx5Y2A5b6M5YWo5LiJ6Lev500!5e0!3m2!1szh-TW!2stw!4v1"
+        width="100%" height="320" style="border:0; border-radius:4px; display:block;"
+        allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- ── 2. 台灣（南港研發中心）── -->
+  <div class="loc-card">
+    <div>
+      <p style="color:#005bac; font-weight:700; font-size:15px; margin-bottom:6px;">台灣（南港研發中心）</p>
+      <h3 style="font-size:22px; font-weight:800; color:#1a1a1a; margin-bottom:20px;">神準科技股份有限公司</h3>
+      <ul class="loc-info">
+        <li><span class="lbl">地址</span><span>南港路一段209號B棟，<br>台北市 115018, 台灣</span></li>
+        <li><span class="lbl">電話</span><span>+886-2-2786-2986</span></li>
+      </ul>
+    </div>
+    <div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.5!2d121.6!3d25.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zQua5kiwgTm8uIDIwOSDljZfmuqbot69kuIHmqZ8!5e0!3m2!1szh-TW!2stw!4v1"
+        width="100%" height="320" style="border:0; border-radius:4px; display:block;"
+        allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- ── 3. 美國（銷售與技術支援）── -->
+  <div class="loc-card">
+    <div>
+      <p style="color:#005bac; font-weight:700; font-size:15px; margin-bottom:6px;">美國（銷售與技術支援）</p>
+      <h3 style="font-size:22px; font-weight:800; color:#1a1a1a; margin-bottom:20px;">Senao Networks USA Inc.</h3>
+      <ul class="loc-info">
+        <li><span class="lbl">地址</span><span>860 N McCarthy Blvd Ste 200,<br>Milpitas, CA 95035, USA</span></li>
+      </ul>
+    </div>
+    <div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.0!2d-121.9!3d37.43!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s860+N+McCarthy+Blvd+%23200!5e0!3m2!1sen!2sus!4v1"
+        width="100%" height="320" style="border:0; border-radius:4px; display:block;"
+        allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- ── 4. 日本（銷售與技術支援）── -->
+  <div class="loc-card">
+    <div>
+      <p style="color:#005bac; font-weight:700; font-size:15px; margin-bottom:6px;">日本（銷售與技術支援）</p>
+      <h3 style="font-size:22px; font-weight:800; color:#1a1a1a; margin-bottom:20px;">Senao Networks Japan Inc.</h3>
+      <ul class="loc-info">
+        <li><span class="lbl">地址</span><span>10F, EXPERT TAMACHI,<br>3-6-14 Shibaura, Minato-ku,<br>Tokyo 108-0023, Japan</span></li>
+      </ul>
+    </div>
+    <div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.8!2d139.74!3d35.64!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s10F%2C+EXPERT+TAMACHI!5e0!3m2!1sen!2sjp!4v1"
+        width="100%" height="320" style="border:0; border-radius:4px; display:block;"
+        allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- ── 5. 印度（銷售、研發與製造）── -->
+  <div class="loc-card">
+    <div>
+      <p style="color:#005bac; font-weight:700; font-size:15px; margin-bottom:6px;">印度（銷售、研發與印度製造營運中心）</p>
+      <h3 style="font-size:22px; font-weight:800; color:#1a1a1a; margin-bottom:20px;">Senao Networks Private Limited</h3>
+      <ul class="loc-info">
+        <li><span class="lbl">地址</span><span>#901, 9th Floor Gowra Palladium,<br>Hi-Techcity Hyderabad,<br>Telangana 500081, India</span></li>
+      </ul>
+    </div>
+    <div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.3!2d78.37!3d17.44!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s%23901+Gowra+Palladium!5e0!3m2!1sen!2sin!4v1"
+        width="100%" height="320" style="border:0; border-radius:4px; display:block;"
+        allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- ── 6. 台灣（神準集團關係企業）── -->
+  <div class="loc-card">
+    <div>
+      <p style="color:#005bac; font-weight:700; font-size:15px; margin-bottom:6px;">台灣（神準集團）</p>
+      <h3 style="font-size:22px; font-weight:800; color:#1a1a1a; margin-bottom:20px;">恩嘉科技股份有限公司</h3>
+      <ul class="loc-info">
+        <li><span class="lbl">地址</span><span>南港路一段209號B棟10樓，<br>台北市 115018, 台灣</span></li>
+        <li><span class="lbl">網站</span><span><a href="https://www.emplustech.com/" style="color:#005bac;">www.emplustech.com</a></span></li>
+      </ul>
+    </div>
+    <div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.5!2d121.6!3d25.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z115!5e0!3m2!1szh-TW!2stw!4v1"
+        width="100%" height="320" style="border:0; border-radius:4px; display:block;"
+        allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="cta-band">
+<div class="wrap"><div class="cta-inner fu">
+  <div class="cta-text"><h2>需要更多技術資訊？</h2><p>我們的技術顧問將協助您規劃最適合的解決方案。</p></div>
+  <div class="cta-actions">
+    <a href="../../../pages/resources/datasheets/index.html" class="btn btn-ghost">下載規格書</a>
+    <a href="../../../pages/about/contact/index.html" class="btn btn-primary">聯絡我們</a>
+  </div>
+</div></div>
+</section>
+</main>
+<footer id="site-footer"></footer>
+<script src="../../../assets/js/site.js"></script>
+</body>
+</html>

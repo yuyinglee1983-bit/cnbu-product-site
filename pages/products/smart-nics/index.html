@@ -1,0 +1,160 @@
+﻿<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>智慧網卡（SmartNIC / DPU）| CNBU Networks</title>
+<meta name="description" content="SX904 SmartNIC 與 SX906 DPU，將網路、安全與儲存功能卸載至硬體加速引擎，大幅解放主機 CPU 算力。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/css/styles.css">
+<style>
+/* ── Video Hero ─────────────────────────────── */
+.srv-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Video layer */
+.srv-hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.srv-hero-video video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Dark gradient overlay */
+.srv-hero-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(7,17,31,.88) 0%,
+    rgba(11,30,56,.72) 55%,
+    rgba(7,17,31,.82) 100%
+  );
+}
+
+/* Content above video */
+.srv-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 72px 0 44px;
+}
+.srv-hero-content .breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+.srv-hero-content .breadcrumb a        { color: rgba(255,255,255,.6); transition: color .15s; }
+.srv-hero-content .breadcrumb a:hover  { color: var(--cyan); }
+.srv-hero-content .breadcrumb .sep     { color: rgba(255,255,255,.25); }
+.srv-hero-content .breadcrumb span:last-child { color: rgba(255,255,255,.85); }
+.srv-eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+.srv-hero-content h1 {
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.025em;
+  color: #fff;
+  margin: 8px 0 16px;
+}
+.srv-hero-content .srv-desc {
+  font-size: 17px;
+  line-height: 1.8;
+  color: rgba(255,255,255,.68);
+  max-width: 640px;
+}
+
+/* Bottom accent line */
+.srv-hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,94,184,.4), transparent);
+}
+
+/* ── Product Cards ──────────────────────────── */
+.srv-cards-section {
+  background: var(--soft);
+  padding: 72px 0;
+}
+</style>
+</head>
+<body data-root="../../../">
+<header id="site-header"></header>
+<main>
+
+<!-- ════ VIDEO HERO ════ -->
+<section class="srv-hero">
+  <div class="srv-hero-video">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="vecteezy_abstract-digital-background-featuring-neon-cyan-light-lines_81433830.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="wrap srv-hero-content">
+    <div class="fu">
+      <nav class="breadcrumb">
+        <a href="../../../index.html">首頁</a><span class="sep">›</span>
+        <a href="../../../pages/products/index.html">產品介紹</a><span class="sep">›</span>
+        <span>智慧網卡</span>
+      </nav>
+      <span class="srv-eyebrow">SmartNIC / DPU Product Line</span>
+      <h1>智慧網卡（SmartNIC / DPU）</h1>
+      <p class="srv-desc">SX904 SmartNIC 與 SX906 DPU，將網路、安全與儲存功能卸載至硬體加速引擎，大幅解放主機 CPU 算力，實現高效能低延遲基礎架構。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PRODUCT CARDS ════ -->
+<section class="srv-cards-section">
+  <div class="wrap">
+    <div class="card-grid col2">
+      <a class="f-card fu d1" href="../../../pages/products/smart-nics/sx904/index.html">
+        <div class="f-card-icon">⚡</div>
+        <h3>SX904</h3>
+        <p>100 GbE 智慧網卡，內建 Arm Cortex-A72，支援 DPDK / OVS 全速卸載，適用 NFV 與雲端閘道加速。</p>
+        <span class="tag">查看規格 →</span>
+      </a>
+      <a class="f-card fu d2" href="../../../pages/products/smart-nics/sx906/index.html">
+        <div class="f-card-icon">🚀</div>
+        <h3>SX906</h3>
+        <p>400 GbE 資料處理單元（DPU），P4 可程式化管線，完整支援網路、安全、儲存三大卸載場景。</p>
+        <span class="tag">查看規格 →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CTA ════ -->
+<section class="cta-band">
+<div class="wrap"><div class="cta-inner fu">
+  <div class="cta-text"><h2>需要更多技術資訊？</h2><p>我們的技術顧問將協助您規劃最適合的解決方案。</p></div>
+  <div class="cta-actions">
+    <a href="../../../pages/resources/datasheets/index.html" class="btn btn-ghost">下載規格書</a>
+    <a href="../../../pages/about/contact/index.html" class="btn btn-primary">聯絡我們</a>
+  </div>
+</div></div>
+</section>
+
+</main>
+<footer id="site-footer"></footer>
+<script src="../../../assets/js/site.js"></script>
+</body>
+</html>

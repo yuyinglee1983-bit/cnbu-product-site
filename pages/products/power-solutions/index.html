@@ -1,0 +1,170 @@
+﻿<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>電源解決方案 | CNBU Networks</title>
+<meta name="description" content="80 PLUS Titanium 高效能電源供應模組，N+1 熱插拔冗餘設計，搭配智慧電源管理平台（PMBus），PUE 目標 1.15。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/css/styles.css">
+<style>
+/* ── Video Hero ─────────────────────────────── */
+.srv-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Video layer */
+.srv-hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.srv-hero-video video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.2) saturate(1.2) brightness(1.05);
+}
+/* Dark gradient overlay */
+.srv-hero-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(7,17,31,.88) 0%,
+    rgba(11,30,56,.72) 55%,
+    rgba(7,17,31,.82) 100%
+  );
+}
+
+/* Content above video */
+.srv-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 72px 0 44px;
+}
+.srv-hero-content .breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+.srv-hero-content .breadcrumb a        { color: rgba(255,255,255,.6); transition: color .15s; }
+.srv-hero-content .breadcrumb a:hover  { color: var(--cyan); }
+.srv-hero-content .breadcrumb .sep     { color: rgba(255,255,255,.25); }
+.srv-hero-content .breadcrumb span:last-child { color: rgba(255,255,255,.85); }
+.srv-eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+.srv-hero-content h1 {
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.025em;
+  color: #fff;
+  margin: 8px 0 16px;
+}
+.srv-hero-content .srv-desc {
+  font-size: 17px;
+  line-height: 1.8;
+  color: rgba(255,255,255,.68);
+  max-width: 640px;
+}
+
+/* Bottom accent line */
+.srv-hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,94,184,.4), transparent);
+}
+
+/* ── Features Section ───────────────────────── */
+.srv-cards-section {
+  background: var(--soft);
+  padding: 72px 0;
+}
+</style>
+</head>
+<body data-root="../../../">
+<header id="site-header"></header>
+<main>
+
+<!-- ════ VIDEO HERO ════ -->
+<section class="srv-hero">
+  <div class="srv-hero-video">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="vecteezy_blue-corporate-background-loop-blue-technology-background_30934010.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="wrap srv-hero-content">
+    <div class="fu">
+      <nav class="breadcrumb">
+        <a href="../../../index.html">首頁</a><span class="sep">›</span>
+        <a href="../../../pages/products/index.html">產品介紹</a><span class="sep">›</span>
+        <span>電源解決方案</span>
+      </nav>
+      <span class="srv-eyebrow">Power Solution Product Line</span>
+      <h1>電源解決方案</h1>
+      <p class="srv-desc">80 PLUS Titanium 高效能電源供應模組，N+1 熱插拔冗餘設計，搭配智慧電源管理平台（PMBus / IPMI），PUE 目標 1.15，為資料中心提供高可靠供電保障。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FEATURES ════ -->
+<section class="srv-cards-section">
+  <div class="wrap">
+    <div class="feat-list fu">
+      <div class="feat-item">
+        <div class="fi-icon">🔌</div>
+        <div>
+          <h4>N+1 熱插拔冗餘</h4>
+          <p>無需停機即可更換故障電源，N+1 備援切換時間低於 100 毫秒，確保系統持續供電。</p>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="fi-icon">🎛️</div>
+        <div>
+          <h4>智慧電源管理（PMBus）</h4>
+          <p>透過 IPMI 2.0 與 PMBus 協議即時監控功耗、效率、溫度與健康狀態，支援遠端告警。</p>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="fi-icon">🌿</div>
+        <div>
+          <h4>80 PLUS Titanium（96%+）</h4>
+          <p>效率等級 Titanium，2000W / 2400W / 3600W 多規格選擇，PFC &gt; 0.99，節能效果顯著。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CTA ════ -->
+<section class="cta-band">
+<div class="wrap"><div class="cta-inner fu">
+  <div class="cta-text"><h2>需要更多技術資訊？</h2><p>我們的技術顧問將協助您規劃最適合的解決方案。</p></div>
+  <div class="cta-actions">
+    <a href="../../../pages/resources/datasheets/index.html" class="btn btn-ghost">下載規格書</a>
+    <a href="../../../pages/about/contact/index.html" class="btn btn-primary">聯絡我們</a>
+  </div>
+</div></div>
+</section>
+
+</main>
+<footer id="site-footer"></footer>
+<script src="../../../assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# 備份的原始影片（壓縮前）
+*_original.mp4
+*_original.mov
+*_tmp.mp4
+
+# 壓縮腳本（不需上傳）
+compress_videos.ps1
+
+# 系統檔案
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 編輯器暫存
+.vscode/
+*.swp
