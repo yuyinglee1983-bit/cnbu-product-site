@@ -174,37 +174,36 @@
 </div>
 </section>
 
-<!-- ════ UNBOXING VIDEO ════ -->
-<section class="unboxing-section">
-  <div class="unboxing-inner">
-    <video
-      id="sr710-unboxing-video"
-      src="SenaoServer_Unboxing.mp4"
-      playsinline
-      muted
-      loop
-      preload="none"
-    ></video>
+<!-- ════ UNBOXING VIDEO SHOWCASE ════ -->
+<section style="background:#f0f2f5;padding:60px 0">
+  <div class="wrap">
+    <div style="
+      background:#fff;
+      border-radius:20px;
+      box-shadow:0 8px 40px rgba(0,0,0,.08);
+      display:flex;
+      align-items:center;
+      gap:40px;
+      padding:40px 48px;
+    ">
+      <!-- Left: Text -->
+      <div style="flex:0 0 280px;min-width:0">
+        <p style="font-size:11px;font-weight:700;letter-spacing:.12em;color:#005EB8;text-transform:uppercase;margin:0 0 12px">Product Showcase</p>
+        <h2 style="font-size:26px;font-weight:800;line-height:1.2;color:#0d1b2e;margin:0 0 14px">Senao Networks<br>SR-710 Server<br>Unboxing</h2>
+        <p style="font-size:13.5px;color:#5a6a7e;line-height:1.6;margin:0">Experience the SR-710 enterprise server first-hand. Robust build quality, tool-less design, and enterprise-grade components engineered for demanding data center deployments.</p>
+      </div>
+      <!-- Right: Video -->
+      <div style="flex:1;min-width:0;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.15)">
+        <video
+          id="sr710-unboxing-video"
+          src="SenaoServer_Unboxing.mp4"
+          playsinline muted loop preload="none"
+          style="width:100%;display:block"
+        ></video>
+      </div>
+    </div>
   </div>
 </section>
-<style>
-.unboxing-section{
-  background:#f5f6f8;
-  padding:0;
-  line-height:0;
-}
-.unboxing-inner{
-  max-width:1200px;
-  margin:0 auto;
-  padding:56px 24px;
-  line-height:0;
-}
-.unboxing-inner video{
-  width:100%;
-  display:block;
-  border-radius:16px;
-}
-</style>
 <script>
 (function(){
   var v = document.getElementById('sr710-unboxing-video');
@@ -218,6 +217,7 @@
   io.observe(v);
 })();
 </script>
+
 
 <!-- ════ TECH CAPABILITIES ════ -->
 <section class="tech-section">
