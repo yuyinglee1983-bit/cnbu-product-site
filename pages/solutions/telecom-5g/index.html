@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -6,17 +6,56 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../../assets/css/styles.css">
+<style>
+/* ── Telecom 5G Hero ──────────────── */
+.t5g-hero { position: relative; overflow: hidden; }
+.t5g-hero-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.t5g-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
+.t5g-hero-bg::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,.82) 0%,
+    rgba(0,0,0,.55) 30%,
+    rgba(0,0,0,.10) 55%,
+    rgba(0,0,0,.0)  70%
+  );
+}
+.t5g-hero-content {
+  position: relative; z-index: 2;
+  padding: 72px 0 44px;
+}
+.t5g-hero-content .breadcrumb a       { color: rgba(255,255,255,.6); transition: color .15s; }
+.t5g-hero-content .breadcrumb a:hover { color: var(--cyan); }
+.t5g-hero-content .breadcrumb .sep    { color: rgba(255,255,255,.25); }
+.t5g-hero-content .breadcrumb span:last-child { color: rgba(255,255,255,.85); }
+.t5g-hero-content .eyebrow { color: var(--cyan); }
+.t5g-hero-content h1 {
+  font-size: clamp(36px, 5vw, 58px); font-weight: 800;
+  line-height: 1.08; letter-spacing: -.025em;
+  color: #fff; margin: 8px 0 16px;
+}
+.t5g-hero-content .page-desc { color: rgba(255,255,255,.78); max-width: 640px; }
+.t5g-hero::after {
+  content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,94,184,.4), transparent);
+}
+</style>
 </head>
 <body data-root="../../../">
 <header id="site-header"></header>
 <main>
-<section class="page-hero">
-<div class="wrap fu">
-  <nav class="breadcrumb"><a href="../../../index.html">首頁</a><span class="sep">›</span><a href="../../../pages/solutions/index.html">解決方案</a><span class="sep">›</span><span>電信與 5G</span></nav>
-  <span class="eyebrow">Solution</span>
-  <h1>電信與 5G 解決方案</h1>
-  <p class="page-desc">支援 Open RAN vRAN 硬體加速卡與 5G 核心網路，以雲原生架構協助電信商現代化網路基礎建設。</p>
-</div>
+<section class="t5g-hero">
+  <div class="t5g-hero-bg">
+    <img src="telecom_c.jpg" alt="Telecom 5G Solution" loading="eager">
+  </div>
+  <div class="wrap t5g-hero-content fu">
+    <nav class="breadcrumb"><a href="../../../index.html">首頁</a><span class="sep">›</span><a href="../../../pages/solutions/index.html">解決方案</a><span class="sep">›</span><span>電信與 5G</span></nav>
+    <span class="eyebrow">Solution</span>
+    <h1>電信與 5G 解決方案</h1>
+    <p class="page-desc">支援 Open RAN vRAN 硬體加速卡與 5G 核心網路，以雲原生架構協助電信商現代化網路基礎建設。</p>
+  </div>
 </section>
 <section class="section"><div class="wrap"><div class="feat-list fu"><div class="feat-item"><div class="fi-icon">📡</div><div><h4>Open RAN / vRAN 加速</h4><p>FAPI 2.0 硬體加速卡，L1 基頻處理卸載，電信商可用白牌硬體建構符合 O-RAN 規範的虛擬化基站。</p></div></div><div class="feat-item"><div class="fi-icon">⚡</div><div><h4>超低延遲時間同步</h4><p>IEEE 1588v2 PTP 硬體時間戳，同步精度低於 100 奈秒，確保 5G URLLC 業務的嚴格時序要求。</p></div></div><div class="feat-item"><div class="fi-icon">🌐</div><div><h4>5G 核心網路（5GC）</h4><p>雲原生 NFV 平台，支援 UPF、SMF、AMF 等核心網路功能虛擬化，符合 3GPP Release 17。</p></div></div><div class="feat-item"><div class="fi-icon">🔒</div><div><h4>電信級可靠度</h4><p>99.999% 系統可用率設計，N+1 冗餘電源、雙控制器、無中斷更新，符合電信業 NEBS Level 3 標準。</p></div></div></div></div></section>
 <section class="cta-band">
