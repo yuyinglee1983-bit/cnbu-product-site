@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -6,17 +6,56 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../../assets/css/styles.css">
+<style>
+/* ── Cloud Infrastructure Hero ──────── */
+.ci-hero { position: relative; overflow: hidden; }
+.ci-hero-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.ci-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
+.ci-hero-bg::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,.82) 0%,
+    rgba(0,0,0,.55) 30%,
+    rgba(0,0,0,.10) 55%,
+    rgba(0,0,0,.0)  70%
+  );
+}
+.ci-hero-content {
+  position: relative; z-index: 2;
+  padding: 72px 0 44px;
+}
+.ci-hero-content .breadcrumb a       { color: rgba(255,255,255,.6); transition: color .15s; }
+.ci-hero-content .breadcrumb a:hover { color: var(--cyan); }
+.ci-hero-content .breadcrumb .sep    { color: rgba(255,255,255,.25); }
+.ci-hero-content .breadcrumb span:last-child { color: rgba(255,255,255,.85); }
+.ci-hero-content .eyebrow { color: var(--cyan); }
+.ci-hero-content h1 {
+  font-size: clamp(36px, 5vw, 58px); font-weight: 800;
+  line-height: 1.08; letter-spacing: -.025em;
+  color: #fff; margin: 8px 0 16px;
+}
+.ci-hero-content .page-desc { color: rgba(255,255,255,.78); max-width: 640px; }
+.ci-hero::after {
+  content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,94,184,.4), transparent);
+}
+</style>
 </head>
 <body data-root="../../../">
 <header id="site-header"></header>
 <main>
-<section class="page-hero">
-<div class="wrap fu">
-  <nav class="breadcrumb"><a href="../../../index.html">首頁</a><span class="sep">›</span><a href="../../../pages/solutions/index.html">解決方案</a><span class="sep">›</span><span>雲端基礎架構</span></nav>
-  <span class="eyebrow">Solution</span>
-  <h1>雲端基礎架構解決方案</h1>
-  <p class="page-desc">混合雲與私有雲完整硬體支援，HCI 超融合架構彈性擴充，協助企業建構靈活可靠的雲端環境。</p>
-</div>
+<section class="ci-hero">
+  <div class="ci-hero-bg">
+    <img src="cloud.jpg" alt="Cloud Infrastructure Solution" loading="eager">
+  </div>
+  <div class="wrap ci-hero-content fu">
+    <nav class="breadcrumb"><a href="../../../index.html">首頁</a><span class="sep">›</span><a href="../../../pages/solutions/index.html">解決方案</a><span class="sep">›</span><span>雲端基礎架構</span></nav>
+    <span class="eyebrow">Solution</span>
+    <h1>雲端基礎架構解決方案</h1>
+    <p class="page-desc">混合雲與私有雲完整硬體支援，HCI 超融合架構彈性擴充，協助企業建構靈活可靠的雲端環境。</p>
+  </div>
 </section>
 <section class="section"><div class="wrap"><div class="feat-list fu"><div class="feat-item"><div class="fi-icon">☁️</div><div><h4>HCI 超融合架構</h4><p>計算、儲存、網路三合一節點，按需擴充，單節點故障不影響服務，適合中小型私有雲建構。</p></div></div><div class="feat-item"><div class="fi-icon">🔀</div><div><h4>混合雲橋接</h4><p>Leaf-Spine 骨幹架構搭配 VXLAN 覆蓋網路，無縫連接私有雲與公有雲，支援跨雲工作負載遷移。</p></div></div><div class="feat-item"><div class="fi-icon">📊</div><div><h4>統一資源管理</h4><p>OpenStack / VMware 相容平台，統一管理計算、儲存與網路資源，支援多租戶隔離與配額控制。</p></div></div><div class="feat-item"><div class="fi-icon">🌱</div><div><h4>Green Cloud 設計</h4><p>Titanium 電源 + 液冷方案，PUE 目標 1.15，協助企業達成碳中和 IT 基礎設施目標。</p></div></div></div></div></section>
 <section class="cta-band">
