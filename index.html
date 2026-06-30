@@ -165,12 +165,10 @@ img{max-width:100%;display:block}
 .section-desc{margin-top:12px;font-size:17px;line-height:1.8;color:var(--muted);max-width:560px}
 
 /* Solutions — Full-bleed image cards */
-@keyframes solFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 .sol-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
-.sol-card{position:relative;height:320px;border-radius:var(--r);background:var(--navy);overflow:hidden;transition:box-shadow .3s cubic-bezier(.4,0,.2,1),transform .3s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;justify-content:flex-end;border:none;animation:solFloat 6s ease-in-out infinite}
-.sol-card.d1{animation-delay:0s}.sol-card.d2{animation-delay:1.2s}.sol-card.d3{animation-delay:2.4s}.sol-card.d4{animation-delay:3.6s}.sol-card.d5{animation-delay:4.8s}
+.sol-card{position:relative;height:320px;border-radius:var(--r);background:var(--navy);overflow:hidden;transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .3s ease;display:flex;flex-direction:column;justify-content:flex-end;border:none}
 .sol-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#005EB8,#00c2e0);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:3}
-.sol-card:hover{animation-play-state:paused;transform:translateY(-8px);box-shadow:0 0 0 1px rgba(0,94,184,.15),0 20px 48px rgba(0,94,184,.12)}
+.sol-card:hover{transform:translateY(-10px);box-shadow:0 0 0 1px rgba(0,94,184,.15),0 28px 56px rgba(0,94,184,.18)}
 .sol-card:hover::before{transform:scaleX(1)}
 .sol-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;transition:transform .6s cubic-bezier(.4,0,.2,1)}
 .sol-card:hover .sol-bg{transform:scale(1.07)}
