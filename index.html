@@ -180,18 +180,17 @@ img{max-width:100%;display:block}
 .sol-arrow{display:inline-flex;align-items:center;gap:4px;margin-top:10px;font-size:12px;font-weight:700;color:#7ec8ff;opacity:0;transform:translateX(-6px);transition:all .2s}
 .sol-card:hover .sol-arrow{opacity:1;transform:none}
 
-/* Resources — horizontal strip list */
-.res-list{display:flex;flex-direction:column;gap:3px}
-.res-strip{display:flex;align-items:center;gap:28px;padding:22px 28px;background:#f4f6f8;border-left:3px solid transparent;text-decoration:none;transition:background .25s ease,border-color .25s ease,transform .3s cubic-bezier(.34,1.56,.64,1)}
-.res-strip:nth-child(2){background:#f0f3f7}
-.res-strip:nth-child(3){background:#edf1f6}
-.res-strip:nth-child(4){background:#e9eef4}
-.res-strip:hover{background:#e4ecf7;border-left-color:#005EB8;transform:translateX(6px)}
-.res-num{font-size:10px;font-weight:800;letter-spacing:.14em;color:#005EB8;opacity:.5;min-width:20px;flex-shrink:0}
+/* Resources — card strips (mirrors feature-item style) */
+.res-list{display:grid;gap:12px}
+.res-strip{display:flex;align-items:center;gap:24px;padding:22px 24px;background:rgba(0,0,0,.025);border:1.5px solid rgba(0,0,0,.07);border-radius:var(--r);text-decoration:none;position:relative;overflow:hidden;transition:all .3s cubic-bezier(.4,0,.2,1)}
+.res-strip::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#005EB8,#00c2e0);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.res-strip:hover{border-color:rgba(0,94,184,.3);background:rgba(0,94,184,.05);transform:translateY(-4px);box-shadow:0 0 0 1px rgba(0,94,184,.1),0 14px 40px rgba(0,94,184,.08)}
+.res-strip:hover::before{transform:scaleX(1)}
+.res-num{font-size:10px;font-weight:800;letter-spacing:.14em;color:#005EB8;opacity:.45;min-width:20px;flex-shrink:0}
 .res-text{flex:1;min-width:0}
 .res-text strong{display:block;font-size:15px;font-weight:700;color:#0b1e38;margin-bottom:4px;line-height:1.3}
-.res-text span{font-size:13px;color:#64748b;line-height:1.5}
-.res-cta{font-size:13px;font-weight:600;color:#005EB8;white-space:nowrap;flex-shrink:0;opacity:.8}
+.res-text span{font-size:13px;color:#64748b;line-height:1.6}
+.res-cta{font-size:13px;font-weight:600;color:#005EB8;white-space:nowrap;flex-shrink:0;opacity:.75}
 .res-strip:hover .res-cta{opacity:1}
 
 /* Products — 4-col grid with product photos */
