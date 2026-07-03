@@ -101,7 +101,52 @@
 .usecase-card:hover { border-color: #005EB8; box-shadow: 0 16px 40px rgba(0,94,184,.10); transform: translateY(-4px); }
 .usecase-card:hover::before { transform: scaleX(1); }
 .usecase-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
-.usecase-card p { font-size: 13px; line-height: 1.75; color: var(--muted); margin: 0; }
+.usecase-card > p { font-size: 13px; line-height: 1.75; color: var(--muted); margin: 0 0 20px; }
+/* flow breakdown inside usecase card */
+.uc-flow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--soft);
+  font-size: 12px;
+}
+.uc-col {
+  padding: 14px 16px;
+  border-right: 1px solid var(--line);
+}
+.uc-col:last-child { border-right: none; }
+.uc-col-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.uc-col-center .uc-col-label { color: var(--blue); }
+.uc-col ul { list-style: none; padding: 0; margin: 0; }
+.uc-col ul li {
+  font-size: 11.5px;
+  color: var(--ink);
+  padding: 2.5px 0;
+  line-height: 1.45;
+}
+.uc-col-center { background: rgba(0,94,184,.03); }
+.uc-boundary-item {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 1px;
+}
+.uc-boundary-sub {
+  font-size: 10.5px;
+  color: var(--muted);
+  margin-bottom: 7px;
+  line-height: 1.35;
+}
 
 /* ── Feature Grid ─────────────────────────── */
 .feat-section {
@@ -294,22 +339,159 @@
     <h2 class="section-title fu">Solving Real Enterprise Problems</h2>
     <p class="section-desc fu">From industry use cases to product capabilities — find the right entry point for your organization.</p>
     <div class="usecase-grid">
+
+      <!-- Smart Manufacturing -->
       <div class="usecase-card fu d1">
         <h4>Smart Manufacturing</h4>
         <p>Decades of tribal knowledge, scattered manuals, and siloed production data — unified inside Raxel. Floor technicians get instant cited answers. Knowledge stays when people leave.</p>
+        <div class="uc-flow">
+          <div class="uc-col">
+            <div class="uc-col-label">Data Sources</div>
+            <ul>
+              <li>Equipment Manuals</li>
+              <li>Maintenance Logs</li>
+              <li>Process SOPs</li>
+              <li>Quality Reports</li>
+              <li>Production Data</li>
+              <li>Supplier Records</li>
+            </ul>
+          </div>
+          <div class="uc-col uc-col-center">
+            <div class="uc-col-label">Raxel Boundary</div>
+            <div class="uc-boundary-item">Knowledge Engine</div>
+            <div class="uc-boundary-sub">Ingest · Index · Retrieve</div>
+            <div class="uc-boundary-item">AI Reasoning</div>
+            <div class="uc-boundary-sub">Understand · Answer · Cite</div>
+            <div class="uc-boundary-item">Governance Layer</div>
+            <div class="uc-boundary-sub">Permissions · Audit</div>
+          </div>
+          <div class="uc-col">
+            <div class="uc-col-label">AI Response &amp; Users</div>
+            <ul>
+              <li>Root cause answer</li>
+              <li>Cited source doc</li>
+              <li>Defect trend</li>
+              <li>Traceability report</li>
+              <li>Training guide</li>
+            </ul>
+          </div>
+        </div>
       </div>
+
+      <!-- Smart Retail -->
       <div class="usecase-card fu d2">
         <h4>Smart Retail</h4>
         <p>Store, e-commerce, inventory, and membership systems unified inside Raxel. Business users get data-driven answers without waiting for IT — and customer data never touches the cloud.</p>
+        <div class="uc-flow">
+          <div class="uc-col">
+            <div class="uc-col-label">Data Sources</div>
+            <ul>
+              <li>POS / Store Systems</li>
+              <li>E-Commerce Platform</li>
+              <li>Inventory System</li>
+              <li>Membership DB</li>
+              <li>Supplier / ERP</li>
+              <li>Promo Records</li>
+            </ul>
+          </div>
+          <div class="uc-col uc-col-center">
+            <div class="uc-col-label">Raxel Boundary</div>
+            <div class="uc-boundary-item">Data Integration</div>
+            <div class="uc-boundary-sub">Connect · Unify · Normalize</div>
+            <div class="uc-boundary-item">NL to Query</div>
+            <div class="uc-boundary-sub">Parse · Execute · Visualize</div>
+            <div class="uc-boundary-item">Governance Layer</div>
+            <div class="uc-boundary-sub">Permissions · Audit</div>
+          </div>
+          <div class="uc-col">
+            <div class="uc-col-label">AI Response &amp; Users</div>
+            <ul>
+              <li>SKU performance</li>
+              <li>Return rate analysis</li>
+              <li>Promo effectiveness</li>
+              <li>Inventory forecast</li>
+              <li>Trend charts</li>
+            </ul>
+          </div>
+        </div>
       </div>
+
+      <!-- Smart Office -->
       <div class="usecase-card fu d3">
         <h4>Smart Office</h4>
         <p>Contracts, approvals, and meeting minutes consolidated into one queryable knowledge base. Employees get cited answers — sensitive documents never uploaded to external AI tools.</p>
+        <div class="uc-flow">
+          <div class="uc-col">
+            <div class="uc-col-label">Data Sources</div>
+            <ul>
+              <li>Contracts / NAS</li>
+              <li>Approvals / ERP</li>
+              <li>Meeting Minutes</li>
+              <li>Reports / Policies</li>
+              <li>HR Documents</li>
+              <li>Email / Decisions</li>
+            </ul>
+          </div>
+          <div class="uc-col uc-col-center">
+            <div class="uc-col-label">Raxel Boundary</div>
+            <div class="uc-boundary-item">Document Intelligence</div>
+            <div class="uc-boundary-sub">Parse · Chunk · Embed</div>
+            <div class="uc-boundary-item">Semantic Retrieval</div>
+            <div class="uc-boundary-sub">Search · Rank · Cite</div>
+            <div class="uc-boundary-item">Governance Layer</div>
+            <div class="uc-boundary-sub">SSO · Role Access · Audit</div>
+          </div>
+          <div class="uc-col">
+            <div class="uc-col-label">AI Response &amp; Users</div>
+            <ul>
+              <li>Contract clause answer</li>
+              <li>Cross-doc comparison</li>
+              <li>Decision summary</li>
+              <li>Policy lookup</li>
+              <li>Source cited always</li>
+            </ul>
+          </div>
+        </div>
       </div>
+
+      <!-- Smart Security -->
       <div class="usecase-card fu d4">
         <h4>Smart Security</h4>
         <p>All logs analyzed inside the firewall. Threats surfaced before damage is done, incidents reconstructed in minutes — security data never sent to an external platform for analysis.</p>
+        <div class="uc-flow">
+          <div class="uc-col">
+            <div class="uc-col-label">Data Sources</div>
+            <ul>
+              <li>System / App Logs</li>
+              <li>Access Records</li>
+              <li>Network Traffic</li>
+              <li>Endpoint Alerts</li>
+              <li>Firewall Events</li>
+              <li>Auth / IAM Logs</li>
+            </ul>
+          </div>
+          <div class="uc-col uc-col-center">
+            <div class="uc-col-label">Raxel Boundary</div>
+            <div class="uc-boundary-item">Log Aggregation</div>
+            <div class="uc-boundary-sub">Collect · Normalize · Index</div>
+            <div class="uc-boundary-item">Anomaly Detection</div>
+            <div class="uc-boundary-sub">Pattern · Score · Alert</div>
+            <div class="uc-boundary-item">Governance Layer</div>
+            <div class="uc-boundary-sub">Audit · Compliance · Report</div>
+          </div>
+          <div class="uc-col">
+            <div class="uc-col-label">AI Response &amp; Users</div>
+            <ul>
+              <li>Daily risk summary</li>
+              <li>Anomalous accounts</li>
+              <li>Incident timeline</li>
+              <li>Threat patterns</li>
+              <li>Compliance report</li>
+            </ul>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
