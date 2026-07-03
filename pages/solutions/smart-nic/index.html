@@ -1,0 +1,155 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SmartNIC Solutions | Senao Networks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Noto+Sans+TC:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/css/styles.css">
+<style>
+.sol-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #0b1e38;
+}
+.sol-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, #07111f 0%, #0d2847 100%);
+  opacity: 0.8;
+}
+.sol-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 72px 0 64px;
+}
+.sol-hero-content .breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+.sol-hero-content .breadcrumb a       { color: rgba(255,255,255,.6); transition: color .15s; }
+.sol-hero-content .breadcrumb a:hover { color: var(--cyan); }
+.sol-hero-content .breadcrumb .sep    { color: rgba(255,255,255,.25); }
+.sol-hero-content .breadcrumb span:last-child { color: rgba(255,255,255,.85); }
+.sol-eyebrow {display:none}
+.sol-hero-content h1 {
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.025em;
+  color: #fff;
+  margin: 8px 0 16px;
+}
+.sol-hero-content .sol-desc {
+  font-size: 17px;
+  line-height: 1.9;
+  color: rgba(255,255,255,.75);
+  max-width: 800px;
+}
+.sol-section {
+  background: var(--soft);
+  padding: 80px 0;
+}
+.sol-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+.sol-card {
+  background: #fff;
+  border: 1px solid #edf0f5;
+  border-radius: 12px;
+  padding: 32px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.sol-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,50,120,0.08);
+}
+.sol-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0d1b2e;
+  margin-bottom: 12px;
+}
+.sol-card p {
+  font-size: 14px;
+  color: #5a6a7e;
+  line-height: 1.6;
+}
+.sol-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--cyan);
+  background: rgba(0,210,255,0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+</style>
+</head>
+<body data-root="../../../">
+<header id="site-header"></header>
+<main>
+<section class="sol-hero">
+  <div class="sol-hero-bg"></div>
+  <div class="wrap sol-hero-content">
+    <div class="fu">
+      <nav class="breadcrumb">
+        <a href="../../../index.html">Home</a><span class="sep">›</span>
+        <span>Use Case</span><span class="sep">›</span>
+        <span>SmartNIC</span>
+      </nav>
+      <span class="sol-eyebrow">SmartNIC Applications</span>
+      <h1>SmartNIC Solutions</h1>
+      <p class="sol-desc">Accelerate datacenter services, minimize server overhead, and scale virtualized network functions via dedicated hardware offloads.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sol-section">
+  <div class="wrap">
+    <div class="fu">
+      <h2 style="font-size:32px; font-weight:800; color:#0d1b2e; text-align:center; margin-bottom:10px;">Accelerated Networking Frameworks</h2>
+      <p style="font-size:16px; color:#5a6a7e; text-align:center; max-width:600px; margin:0 auto 50px;">Offloading networking, security, and storage tasks directly onto SmartNIC co-processors to optimize virtualization ratios.</p>
+    </div>
+
+    <div class="sol-grid">
+      <div class="sol-card fu d1">
+        <div class="sol-tag">Infrastructure</div>
+        <h3>OVS Offloading</h3>
+        <p>Accelerate Open vSwitch processing using hardware flow tables. Reclaim host CPU cycles while processing millions of packet flows per second at line-rate speed.</p>
+      </div>
+
+      <div class="sol-card fu d2">
+        <div class="sol-tag">Security</div>
+        <h3>Inline Cryptography</h3>
+        <p>Enable high-throughput IPsec and TLS hardware-level packet encryption. Achieve maximum system throughput without sacrificing application performance.</p>
+      </div>
+
+      <div class="sol-card fu d3">
+        <div class="sol-tag">Virtualization</div>
+        <h3>VNF Acceleration</h3>
+        <p>Optimize network services (firewalls, load balancers, and gatekeepers) using low-latency flow steering technology combined with SR-IOV and DPDK drivers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer id="site-footer"></footer>
+<script src="../../../assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Edge SCM | Senao Networks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Noto+Sans+TC:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../assets/css/styles.css">
+<style>
+.pd-hero{background:#fff;padding:0;overflow:hidden;position:relative;border-bottom:1px solid var(--line)}
+.pd-hero::before{content:"";position:absolute;top:-20%;right:-5%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,94,184,.06),transparent 65%);pointer-events:none}
+.pd-hero-inner{display:grid;grid-template-columns:1fr 1.1fr;min-height:520px;align-items:center;gap:0}
+.pd-hero-text{padding:72px 56px 72px 0;position:relative;z-index:2}
+.pd-breadcrumb{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:24px;font-size:12px;color:var(--muted)}
+.pd-breadcrumb a{color:var(--blue);transition:color .15s}
+.pd-breadcrumb a:hover{color:var(--cyan)}
+.pd-breadcrumb .sep{color:var(--line)}
+.pd-eyebrow{display:none}
+.pd-hero-text h1{font-size:clamp(32px,4vw,54px);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--navy);margin-bottom:18px}
+.pd-hero-text .pd-desc{font-size:16px;line-height:1.8;color:var(--muted);margin-bottom:36px;max-width:480px}
+.pd-tags{display:flex;flex-wrap:wrap;gap:8px}
+.pd-tag{padding:5px 14px;border:1px solid rgba(26,111,196,.2);border-radius:100px;font-size:12px;font-weight:600;color:var(--blue);background:rgba(26,111,196,.06);letter-spacing:.02em}
+.pd-hero-img{position:relative;display:flex;align-items:center;justify-content:center;padding:48px 0 48px 48px;height:100%}
+.pd-hero-img::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(26,111,196,.04) 0%,transparent 70%);pointer-events:none}
+.pd-img-frame{position:relative;width:100%;max-width:640px}
+.pd-img-frame img{width:100%;height:auto;max-height:420px;object-fit:contain;display:block;filter:drop-shadow(0 8px 20px rgba(11,30,56,.08)) drop-shadow(0 2px 6px rgba(11,30,56,.05))}
+.pd-spec{background:linear-gradient(180deg,#060e1e 0%,#0b1e38 100%);padding:72px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.pd-spec .section-title{color:#fff;margin-bottom:40px}
+.pd-spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.06);border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.pd-spec-item{padding:24px 28px;background:rgba(255,255,255,.03);transition:background .2s}
+.pd-spec-item:hover{background:rgba(0,94,184,.06)}
+.pd-spec-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(0,94,184,.9);margin-bottom:8px}
+.pd-spec-value{font-size:15px;font-weight:700;color:#fff;line-height:1.4}
+@media(max-width:900px){.pd-hero-inner{grid-template-columns:1fr;min-height:auto}.pd-hero-text{padding:56px 0 32px}.pd-hero-img{padding:0 0 48px}.pd-spec-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.pd-spec-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-root="../../../../">
+<header id="site-header"></header>
+<main>
+<section class="pd-hero">
+<div class="wrap">
+  <div class="pd-hero-inner">
+    <div class="pd-hero-text fu">
+      <nav class="pd-breadcrumb">
+        <a href="../../../../index.html">Home</a><span class="sep">&rsaquo;</span>
+        <a href="../../../../pages/products/edge-appliance/index.html">Edge Appliance</a><span class="sep">&rsaquo;</span>
+        <span>Edge SCM</span>
+      </nav>
+      <span class="pd-eyebrow">Edge Appliance Management</span>
+      <h1>Edge SCM Module<br>Edge Secure Control Module</h1>
+      <p class="pd-desc">Designed to support manageability and monitoring of edge appliances, isolating system management from primary processor planes to improve security.</p>
+      <div class="pd-tags">
+        <span class="pd-tag">Edge Management Module</span>
+        <span class="pd-tag">Isolated BMC Subsystem</span>
+        <span class="pd-tag">Hardware Level Root of Trust</span>
+        <span class="pd-tag">Remote Power Cycling</span>
+      </div>
+    </div>
+    <div class="pd-hero-img">
+      <div class="pd-img-frame fu">
+        <img src="../se110/SE110__F_20260512.png" alt="Edge SCM Module"/>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<section class="pd-spec">
+<div class="wrap">
+  <h2 class="section-title fu">Specifications</h2>
+  <div class="pd-spec-grid fu">
+    <div class="pd-spec-item"><div class="pd-spec-label">Module Type</div><div class="pd-spec-value">Compact Form Factor Edge Management Card</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">BMC Controller</div><div class="pd-spec-value">Low-power AST BMC Processor</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Bus Interface</div><div class="pd-spec-value">System Management Bus / SMBus, I2C, SPI</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Network Out-of-Band</div><div class="pd-spec-value">1x Fast Ethernet / 1GbE RJ45 dedicated out-of-band port</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Features</div><div class="pd-spec-value">Remote IPMI, Serial-over-LAN (SoL), temperature and fan monitoring</div></div>
+  </div>
+</div>
+</section>
+</main>
+<footer id="site-footer"></footer>
+<script src="../../../../assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Solutions Accordion — Landing Layout Demo</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Inter",sans-serif;background:#070e1c;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:48px 40px}
+
+/* ── Two-column landing layout ── */
+.landing{
+  display:flex;
+  align-items:center;
+  gap:64px;
+  width:100%;
+  max-width:1280px;
+}
+
+/* LEFT: text content */
+.landing-left{
+  flex:0 0 340px;
+}
+.eyebrow{
+  display:block;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#00c2e0;
+  margin-bottom:20px;
+}
+.landing-left h2{
+  font-size:clamp(28px,3vw,42px);
+  font-weight:800;
+  color:#fff;
+  line-height:1.18;
+  margin-bottom:18px;
+}
+.landing-left p{
+  font-size:15px;
+  line-height:1.75;
+  color:rgba(255,255,255,.52);
+  margin-bottom:32px;
+}
+.btn-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 24px;
+  background:#005EB8;
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+  border-radius:8px;
+  text-decoration:none;
+  transition:background .2s,transform .2s;
+}
+.btn-cta:hover{background:#0070d8;transform:translateY(-2px)}
+.btn-secondary{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 24px;
+  border:1.5px solid rgba(255,255,255,.18);
+  color:rgba(255,255,255,.75);
+  font-size:14px;
+  font-weight:600;
+  border-radius:8px;
+  text-decoration:none;
+  margin-left:12px;
+  transition:border-color .2s,color .2s;
+}
+.btn-secondary:hover{border-color:rgba(255,255,255,.4);color:#fff}
+
+/* RIGHT: accordion */
+.landing-right{
+  flex:1;
+  min-width:0;
+}
+
+.acc-wrap{
+  display:flex;
+  gap:8px;
+  height:500px;
+}
+
+.acc-panel{
+  position:relative;
+  flex:.12;
+  overflow:hidden;
+  border-radius:16px;
+  cursor:pointer;
+  transition:flex .6s cubic-bezier(.4,0,.2,1);
+  background:#0d1928;
+  min-width:52px;
+}
+
+.acc-panel.active{
+  flex:4;
+}
+
+/* Background image */
+.acc-bg{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:.55;
+  transition:transform .7s cubic-bezier(.4,0,.2,1), opacity .4s;
+}
+.acc-panel.active .acc-bg{
+  transform:scale(1.04);
+  opacity:.7;
+}
+
+/* Gradient overlay */
+.acc-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(5,12,25,.96) 0%,rgba(5,12,25,.4) 55%,rgba(5,12,25,.05) 100%);
+}
+
+/* Top accent line */
+.acc-panel::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:linear-gradient(90deg,#005EB8,#00c2e0);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .45s cubic-bezier(.4,0,.2,1);
+  z-index:4;
+  border-radius:16px 16px 0 0;
+}
+.acc-panel.active::before{transform:scaleX(1)}
+
+/* ── Collapsed label (rotated vertical) ── */
+.acc-label{
+  position:absolute;
+  bottom:36px;
+  left:50%;
+  /* rotate so text reads bottom→top */
+  transform:translateX(-50%) rotate(-90deg);
+  transform-origin:50% 50%;
+  white-space:nowrap;
+  font-size:13px;
+  font-weight:700;
+  color:rgba(255,255,255,.8);
+  letter-spacing:.03em;
+  z-index:3;
+  transition:opacity .3s, transform .3s;
+  pointer-events:none;
+}
+.acc-panel.active .acc-label{
+  opacity:0;
+  transform:translateX(-50%) rotate(-90deg) translateY(12px);
+}
+
+/* ── Expanded bottom content ── */
+.acc-content{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  padding:28px 26px;
+  z-index:3;
+  opacity:0;
+  transform:translateY(16px);
+  transition:opacity .35s .18s, transform .35s .18s;
+  pointer-events:none;
+}
+.acc-panel.active .acc-content{
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+.acc-tag{
+  display:inline-block;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#00c2e0;
+  margin-bottom:10px;
+}
+.acc-content h3{
+  font-size:20px;
+  font-weight:800;
+  color:#fff;
+  line-height:1.3;
+  margin-bottom:9px;
+}
+.acc-content p{
+  font-size:13.5px;
+  line-height:1.7;
+  color:rgba(255,255,255,.6);
+  margin-bottom:16px;
+  max-width:320px;
+}
+.acc-link{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  font-size:13px;
+  font-weight:700;
+  color:#00c2e0;
+  text-decoration:none;
+}
+.acc-link span{display:inline-block;transition:transform .2s}
+.acc-link:hover span{transform:translateX(4px)}
+
+/* Panel index badge */
+.acc-index{
+  position:absolute;
+  top:16px;right:14px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.1em;
+  color:rgba(255,255,255,.22);
+  z-index:3;
+}
+</style>
+</head>
+<body>
+
+<div class="landing">
+
+  <!-- LEFT: text block -->
+  <div class="landing-left">
+    <span class="eyebrow">Solutions</span>
+    <h2>Choose the Best Solution<br>by Deployment Scenario</h2>
+    <p>We provide complete AI, Edge, Security, 5G, and Cloud architectures tailored to diverse workloads to accelerate enterprise deployment.</p>
+    <a class="btn-cta" href="pages/solutions/index.html">Explore Solutions <span>→</span></a>
+    <a class="btn-secondary" href="pages/about/contact/index.html">Book a Consultation</a>
+  </div>
+
+  <!-- RIGHT: accordion -->
+  <div class="landing-right">
+    <div class="acc-wrap">
+
+      <!-- Panel 1: AI 基礎架構 (default active) -->
+      <div class="acc-panel active" data-index="0">
+        <div class="acc-bg" style="background-image:url('pages/solutions/ai-infrastructure/AI-infrastructure.jpg')"></div>
+        <div class="acc-overlay"></div>
+        <span class="acc-index">01</span>
+        <span class="acc-label">AI Infrastructure</span>
+        <div class="acc-content">
+          <span class="acc-tag">AI Infrastructure</span>
+          <h3>AI Infrastructure</h3>
+          <p>High-performance GPU servers and high-speed networking supporting large-scale AI training and inference.</p>
+          <a class="acc-link" href="pages/solutions/ai-infrastructure/index.html">Learn More <span>→</span></a>
+        </div>
+      </div>
+
+      <!-- Panel 2: 邊緣運算 -->
+      <div class="acc-panel" data-index="1">
+        <div class="acc-bg" style="background-image:url('pages/solutions/edge-computing/%E9%82%8A%E7%B7%A3%E9%81%8B%E7%AE%97%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%A1%88_c.jpg')"></div>
+        <div class="acc-overlay"></div>
+        <span class="acc-index">02</span>
+        <span class="acc-label">Edge Computing</span>
+        <div class="acc-content">
+          <span class="acc-tag">Edge Computing</span>
+          <h3>Edge Computing</h3>
+          <p>Lightweight edge node solutions for smart factories, retail, and smart cities.</p>
+          <a class="acc-link" href="pages/solutions/edge-computing/index.html">Learn More <span>→</span></a>
+        </div>
+      </div>
+
+      <!-- Panel 3: 網路安全 -->
+      <div class="acc-panel" data-index="2">
+        <div class="acc-bg" style="background-image:url('pages/solutions/cybersecurity/cybersecurity.jpg')"></div>
+        <div class="acc-overlay"></div>
+        <span class="acc-index">03</span>
+        <span class="acc-label">Cybersecurity</span>
+        <div class="acc-content">
+          <span class="acc-tag">Cybersecurity</span>
+          <h3>Cybersecurity</h3>
+          <p>Integrated security service chaining providing high-speed packet processing and threat visibility.</p>
+          <a class="acc-link" href="pages/solutions/cybersecurity/index.html">Learn More <span>→</span></a>
+        </div>
+      </div>
+
+      <!-- Panel 4: 電信與 5G -->
+      <div class="acc-panel" data-index="3">
+        <div class="acc-bg" style="background-image:url('pages/solutions/telecom-5g/telecom-5g.jpg')"></div>
+        <div class="acc-overlay"></div>
+        <span class="acc-index">04</span>
+        <span class="acc-label">Telecom & 5G</span>
+        <div class="acc-content">
+          <span class="acc-tag">Telecom & 5G</span>
+          <h3>Telecom & 5G</h3>
+          <p>Supporting Open RAN and 5G core networks to meet carrier-grade reliability demands.</p>
+          <a class="acc-link" href="pages/solutions/telecom-5g/index.html">Learn More <span>→</span></a>
+        </div>
+      </div>
+
+      <!-- Panel 5: 雲端基礎架構 -->
+      <div class="acc-panel" data-index="4">
+        <div class="acc-bg" style="background-image:url('pages/solutions/cloud-infrastructure/cloud-infrastructure.jpg')"></div>
+        <div class="acc-overlay"></div>
+        <span class="acc-index">05</span>
+        <span class="acc-label">Cloud Infrastructure</span>
+        <div class="acc-content">
+          <span class="acc-tag">Cloud Infrastructure</span>
+          <h3>Cloud Infrastructure</h3>
+          <p>Complete hardware support for hybrid and private clouds, featuring elastic HCI scaling.</p>
+          <a class="acc-link" href="pages/solutions/cloud-infrastructure/index.html">Learn More <span>→</span></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+const panels = document.querySelectorAll('.acc-panel');
+panels.forEach(panel => {
+  panel.addEventListener('click', () => {
+    panels.forEach(p => p.classList.remove('active'));
+    panel.classList.add('active');
+  });
+});
+</script>
+
+</body>
+</html>

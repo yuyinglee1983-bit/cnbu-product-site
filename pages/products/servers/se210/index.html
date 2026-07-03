@@ -1,10 +1,10 @@
-<!doctype html>
-<html lang="zh-Hant">
+﻿<!doctype html>
+<html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SE210 GPU 伺服器 | CNBU Networks</title>
+<title>SE210 GPU Server | CNBU Networks</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Noto+Sans+TC:wght@400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../../../assets/css/styles.css">
 <style>
 /* ── SE210 Product Page ────────────────────────── */
@@ -54,15 +54,7 @@
 .pd-breadcrumb a { color: var(--blue); transition: color .15s; }
 .pd-breadcrumb a:hover { color: var(--cyan); }
 .pd-breadcrumb .sep { color: var(--line); }
-.pd-eyebrow {
-  display: inline-block;
-  margin-bottom: 14px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--blue);
-}
+.pd-eyebrow {display:none}
 .pd-hero-text h1 {
   font-size: clamp(32px, 4vw, 54px);
   font-weight: 800;
@@ -253,14 +245,14 @@
     <!-- Left: info -->
     <div class="pd-hero-text fu">
       <nav class="pd-breadcrumb">
-        <a href="../../../../index.html">首頁</a><span class="sep">›</span>
-        <a href="../../../../pages/products/index.html">產品介紹</a><span class="sep">›</span>
-        <a href="../../../../pages/products/servers/index.html">伺服器</a><span class="sep">›</span>
+        <a href="../../../../index.html">Home</a><span class="sep">›</span>
+        <a href="../../../../pages/products/index.html">Products</a><span class="sep">›</span>
+        <a href="../../../../pages/products/servers/index.html">Server</a><span class="sep">›</span>
         <span>SE210</span>
       </nav>
       <span class="pd-eyebrow">GPU Server · 2U Rack</span>
-      <h1>SE210<br>GPU 伺服器</h1>
-      <p class="pd-desc">AI 訓練專用 2U 伺服器，支援 4× NVIDIA A100 / H100 GPU，NVLink 4.0 全互連架構，為大規模模型訓練而生。</p>
+      <h1>SE210<br>GPU Server</h1>
+      <p class="pd-desc">2U Edge AI server supporting 4x high-spec PCIe/OAM GPU accelerators, optimized airflow, and massive throughput for edge LLM training.</p>
       <div class="pd-tags">
         <span class="pd-tag">4× NVIDIA H100</span>
         <span class="pd-tag">NVLink 4.0</span>
@@ -272,7 +264,7 @@
     <!-- Right: product image -->
     <div class="pd-hero-img">
       <div class="pd-img-frame fu">
-        <img src="SE210_S1_20250516.1015.png" alt="SE210 GPU 伺服器正面圖" loading="lazy"/>
+        <img src="SE210_S1_20250516.1015.png" alt="SE210 GPU Server Front View" loading="lazy"/>
       </div>
     </div>
 
@@ -283,17 +275,17 @@
 <!-- ════ SPECS ════ -->
 <section class="pd-spec">
 <div class="wrap">
-  <h2 class="section-title fu">產品規格</h2>
+  <h2 class="section-title fu">Specifications</h2>
   <div class="pd-spec-grid fu">
-    <div class="pd-spec-item"><div class="pd-spec-label">外型規格</div><div class="pd-spec-value">2U 機架式</div></div>
-    <div class="pd-spec-item"><div class="pd-spec-label">GPU 配置</div><div class="pd-spec-value">4× NVIDIA A100 / H100 SXM5</div></div>
-    <div class="pd-spec-item"><div class="pd-spec-label">GPU 互連</div><div class="pd-spec-value">NVLink 4.0（900 GB/s）</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Form Factor</div><div class="pd-spec-value">2U Rackmount</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">GPU Configuration</div><div class="pd-spec-value">4x NVIDIA A100 / H100 SXM5</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">GPU Interconnect</div><div class="pd-spec-value">NVLink 4.0 (900 GB/s)</div></div>
     <div class="pd-spec-item"><div class="pd-spec-label">CPU</div><div class="pd-spec-value">2× Intel Xeon Platinum 8480+</div></div>
-    <div class="pd-spec-item"><div class="pd-spec-label">記憶體</div><div class="pd-spec-value">Up to 4 TB DDR5-4800</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Memory</div><div class="pd-spec-value">Up to 4 TB DDR5-4800</div></div>
     <div class="pd-spec-item"><div class="pd-spec-label">PCIe</div><div class="pd-spec-value">PCIe 5.0 x16 × 4</div></div>
-    <div class="pd-spec-item"><div class="pd-spec-label">儲存</div><div class="pd-spec-value">8× NVMe U.2 / U.3</div></div>
-    <div class="pd-spec-item"><div class="pd-spec-label">網路</div><div class="pd-spec-value">2× 100 GbE QSFP28</div></div>
-    <div class="pd-spec-item"><div class="pd-spec-label">功耗</div><div class="pd-spec-value">3,000W（Titanium PSU）</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Storage</div><div class="pd-spec-value">8× NVMe U.2 / U.3</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Networking</div><div class="pd-spec-value">2× 100 GbE QSFP28</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Power</div><div class="pd-spec-value">3,000W（Titanium PSU）</div></div>
   </div>
 </div>
 </section>
@@ -317,34 +309,34 @@
 <!-- ════ FEATURES ════ -->
 <section class="pd-features">
 <div class="wrap">
-  <h2 class="section-title fu">技術特色</h2>
+  <h2 class="section-title fu">Key Features</h2>
   <div class="pd-feat-grid">
     <div class="pd-feat-card fu">
-      <div class="pd-feat-icon">🤖</div>
+      <div class="pd-feat-icon">??</div>
       <div>
-        <h4>NVLink 4.0 全互連</h4>
-        <p>4 個 GPU 透過 NVLink 4.0 達到 900 GB/s 雙向頻寬，消除 PCIe 瓶頸，分散式訓練效率提升 60%。</p>
+        <h4>NVLink 4.0 Interconnect</h4>
+        <p>4x GPUs linked via NVLink 4.0 reach 900 GB/s bi-directional bandwidth, eliminating bottlenecks and raising efficiency by 60%.</p>
       </div>
     </div>
     <div class="pd-feat-card fu d1">
-      <div class="pd-feat-icon">⚡</div>
+      <div class="pd-feat-icon">?</div>
       <div>
-        <h4>PCIe 5.0 全速連接</h4>
-        <p>四個 x16 PCIe 5.0 插槽，主機到 GPU 傳輸速率達 64 GB/s，支援高速 NVMe 與網路卡並行不降速。</p>
+        <h4>PCIe 5.0 Full-Speed Connection</h4>
+        <p>4x x16 PCIe 5.0 slots enable 64 GB/s CPU-to-GPU transfer rates, supporting high-speed NVMe and networking accelerators.</p>
       </div>
     </div>
     <div class="pd-feat-card fu d2">
-      <div class="pd-feat-icon">❄️</div>
+      <div class="pd-feat-icon">??</div>
       <div>
-        <h4>液冷 / 風冷雙方案</h4>
-        <p>標準版支援高效風冷，選配直接液冷（DLC）背板，PUE 降至 1.12，適合高密度 GPU 叢集。</p>
+        <h4>Liquid & Air Cooling Options</h4>
+        <p>Supports high-efficiency air cooling or optional direct liquid cooling (DLC), bringing PUE down to 1.12 for GPU clusters.</p>
       </div>
     </div>
     <div class="pd-feat-card fu d3">
-      <div class="pd-feat-icon">🔧</div>
+      <div class="pd-feat-icon">??</div>
       <div>
-        <h4>整合管理平台</h4>
-        <p>IPMI 2.0 + Redfish API 完整遠端管理，支援 GPU 健康監控、功耗調校與韌體批量更新。</p>
+        <h4>Integrated Management Platform</h4>
+        <p>IPMI 2.0 and Redfish APIs provide out-of-band monitoring, GPU health checks, power tuning, and firmware updates.</p>
       </div>
     </div>
   </div>
@@ -356,12 +348,12 @@
 <div class="wrap">
   <div class="cta-inner fu">
     <div class="cta-text">
-      <h2>需要更多技術資訊？</h2>
-      <p>我們的技術顧問將協助您規劃最適合的 AI 運算方案。</p>
+      <h2>Need More Technical Information?</h2>
+      <p>Our technical consultants will assist you in planning the most suitable AI computing solution.</p>
     </div>
     <div class="cta-actions">
-      <a href="../../../../pages/resources/datasheets/index.html" class="btn btn-ghost">下載規格書</a>
-      <a href="../../../../pages/about/contact/index.html" class="btn btn-primary">聯絡我們</a>
+      <a href="../../../../pages/resources/datasheets/index.html" class="btn btn-ghost">Download Datasheets</a>
+      <a href="../../../../pages/about/contact/index.html" class="btn btn-primary">Contact Us</a>
     </div>
   </div>
 </div>

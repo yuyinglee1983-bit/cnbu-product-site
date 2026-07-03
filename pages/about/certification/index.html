@@ -1,0 +1,161 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Certification | Senao Networks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Noto+Sans+TC:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/css/styles.css">
+<style>
+.cert-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #0b1e38;
+}
+.cert-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, #07111f 0%, #112e56 100%);
+  opacity: 0.8;
+}
+.cert-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 72px 0 64px;
+}
+.cert-hero-content .breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+.cert-hero-content .breadcrumb a       { color: rgba(255,255,255,.6); transition: color .15s; }
+.cert-hero-content .breadcrumb a:hover { color: var(--cyan); }
+.cert-hero-content .breadcrumb .sep    { color: rgba(255,255,255,.25); }
+.cert-hero-content .breadcrumb span:last-child { color: rgba(255,255,255,.85); }
+.cert-eyebrow {display:none}
+.cert-hero-content h1 {
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.025em;
+  color: #fff;
+  margin: 8px 0 16px;
+}
+.cert-hero-content .cert-desc {
+  font-size: 17px;
+  line-height: 1.9;
+  color: rgba(255,255,255,.75);
+  max-width: 800px;
+}
+.cert-section {
+  background: var(--soft);
+  padding: 80px 0;
+}
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+.cert-card {
+  background: #fff;
+  border: 1px solid #edf0f5;
+  border-radius: 12px;
+  padding: 32px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,50,120,0.08);
+}
+.cert-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0d1b2e;
+  margin-bottom: 12px;
+}
+.cert-card p {
+  font-size: 14px;
+  color: #5a6a7e;
+  line-height: 1.6;
+}
+.cert-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary);
+  background: rgba(0,94,184,0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+</style>
+</head>
+<body data-root="../../../">
+<header id="site-header"></header>
+<main>
+<section class="cert-hero">
+  <div class="cert-hero-bg"></div>
+  <div class="wrap cert-hero-content">
+    <div class="fu">
+      <nav class="breadcrumb">
+        <a href="../../../index.html">Home</a><span class="sep">›</span>
+        <span>About</span><span class="sep">›</span>
+        <span>Certification</span>
+      </nav>
+      <span class="cert-eyebrow">Quality & Compliance</span>
+      <h1>Certification</h1>
+      <p class="cert-desc">Our manufacturing bases and operations hold international standards of excellence for quality, environmental care, and safety compliance.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cert-section">
+  <div class="wrap">
+    <div class="fu">
+      <h2 style="font-size:32px; font-weight:800; color:#0d1b2e; text-align:center; margin-bottom:10px;">Our Standard Accreditations</h2>
+      <p style="font-size:16px; color:#5a6a7e; text-align:center; max-width:600px; margin:0 auto 50px;">Senao Networks guarantees high-performance reliability by adhering strictly to the highest certification benchmarks.</p>
+    </div>
+
+    <div class="cert-grid">
+      <div class="cert-card fu d1">
+        <div class="cert-tag">Quality Management</div>
+        <h3>ISO 9001</h3>
+        <p>Comprehensive standard verification for high-efficiency design control, production standards, and persistent optimization of telecom devices.</p>
+      </div>
+
+      <div class="cert-card fu d2">
+        <div class="cert-tag">Environmental Care</div>
+        <h3>ISO 14001</h3>
+        <p>Dedicated framework of environmental preservation, waste reduction, green materials sourcing, and compliance across manufacturing facilities.</p>
+      </div>
+
+      <div class="cert-card fu d3">
+        <div class="cert-tag">Information Security</div>
+        <h3>ISO 27001</h3>
+        <p>High-security infrastructure protecting network logic intellectual assets, cloud provisioning protocols, and sensitive product datasets.</p>
+      </div>
+
+      <div class="cert-card fu d4">
+        <div class="cert-tag">Telecom Standard</div>
+        <h3>TL 9000</h3>
+        <p>Specific hardware and software reliability measurements designed to meet global carrier-grade hardware metrics.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer id="site-footer"></footer>
+<script src="../../../assets/js/site.js"></script>
+</body>
+</html>

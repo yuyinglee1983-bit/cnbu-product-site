@@ -2,6 +2,8 @@
    CNBU Networks — Shared Stylesheet  v2.1
    適用首頁 + 全部子頁面
    ────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Noto+Sans+TC:wght@300;400;500;700;800&display=swap');
+
 
 /* ── Tokens ─────────────────────────────── */
 :root{
@@ -18,11 +20,15 @@
 /* ── Reset ───────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:"Noto Sans TC","Inter",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;overflow-x:hidden}
+body{font-family:"Google Sans","Noto Sans TC",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .wrap{width:min(1200px,calc(100% - 48px));margin:0 auto}
-.eyebrow{display:inline-block;margin-bottom:10px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan)}
+.eyebrow{display:none}
+[class*="eyebrow"]{display:none}
+/* ── Breadcrumb separator fix (encoding repair) ── */
+.sep{font-size:0;line-height:1}
+.sep::before{content:"›";font-size:12px;opacity:.45}
 
 /* ── Buttons ─────────────────────────────── */
 .btn{display:inline-flex;align-items:center;gap:8px;padding:0 24px;min-height:48px;border-radius:8px;font-weight:700;font-size:14px;transition:all .2s;cursor:pointer;white-space:nowrap;border:none;font-family:inherit}
@@ -176,8 +182,8 @@ img{max-width:100%;display:block}
 .ftr-cols{
   margin-left:auto;
   display:grid;
-  grid-template-columns:repeat(4,auto);
-  gap:0 52px;
+  grid-template-columns:repeat(5,auto);
+  gap:0 40px;
   align-items:start;
 }
 .ftr-col h5{
@@ -222,7 +228,7 @@ img{max-width:100%;display:block}
   /* Footer: 平板以下改為上下堆疊 */
   .ftr-top{flex-direction:column;gap:36px}
   .ftr-brand{width:100%}
-  .ftr-cols{grid-template-columns:repeat(2,1fr);gap:28px 36px;width:100%}
+  .ftr-cols{grid-template-columns:repeat(3,1fr);gap:24px 28px;width:100%}
 }
 @media(max-width:560px){
   .col2,.col3,.col4{grid-template-columns:1fr}
@@ -247,3 +253,75 @@ img{max-width:100%;display:block}
 .res-icon,
 .ci-icon,
 .pd-feat-icon { display:none !important; }
+
+/* ── Mega Menu — Horizontal Row Layout ──────── */
+.dropdown.mega-menu, .hdr-drop.mega-menu {
+  left: 50% !important;
+  transform: translate(-50%, -6px) !important;
+  width: max-content !important;
+  max-width: 820px !important;
+  min-width: 560px !important;
+  padding: 18px 24px !important;
+  display: block !important;
+}
+.nav-item:hover .dropdown.mega-menu, .hdr-item:hover .hdr-drop.mega-menu {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translate(-50%, 0) !important;
+}
+.mega-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mega-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+}
+.mega-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.mega-row-title {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+  flex-shrink: 0;
+  width: 160px;
+  min-width: 160px;
+  text-align: right;
+  padding-right: 16px;
+  border-right: 1.5px solid var(--line);
+}
+.mega-row-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  flex: 1;
+}
+a.mega-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  transition: all .15s;
+  white-space: nowrap;
+  text-decoration: none;
+}
+a.mega-pill:hover {
+  background: var(--blue);
+  color: #fff;
+  border-color: var(--blue);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,94,184,.2);
+}

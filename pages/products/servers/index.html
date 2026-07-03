@@ -1,10 +1,10 @@
-<!doctype html>
-<html lang="zh-Hant">
+﻿<!doctype html>
+<html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>伺服器產品線 | CNBU Networks</title>
+<title>Server Product Line | CNBU Networks</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Noto+Sans+TC:wght@400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../../assets/css/styles.css">
 <style>
 /* ── Video Hero ─────────────────────────────── */
@@ -56,15 +56,7 @@
 .srv-hero-content .breadcrumb a:hover  { color: var(--cyan); }
 .srv-hero-content .breadcrumb .sep     { color: rgba(255,255,255,.25); }
 .srv-hero-content .breadcrumb span:last-child { color: rgba(255,255,255,.85); }
-.srv-eyebrow {
-  display: inline-block;
-  margin-bottom: 14px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--cyan);
-}
+.srv-eyebrow {display:none}
 .srv-hero-content h1 {
   font-size: clamp(36px, 5vw, 58px);
   font-weight: 800;
@@ -110,44 +102,73 @@
   <div class="wrap srv-hero-content">
     <div class="fu">
       <nav class="breadcrumb">
-        <a href="../../../index.html">首頁</a><span class="sep">›</span>
-        <a href="../../../pages/products/index.html">產品介紹</a><span class="sep">›</span>
-        <span>伺服器</span>
+        <a href="../../../index.html">Home</a><span class="sep">›</span>
+        <a href="../../../pages/products/index.html">Products</a><span class="sep">›</span>
+        <span>Server</span>
       </nav>
       <span class="srv-eyebrow">Server Product Line</span>
-      <h1>伺服器產品線</h1>
-      <p class="srv-desc">覆蓋 AI 訓練、邊緣運算到高密度計算的完整伺服器系列，SE210 / SE110 / SR610 / SR710 各取所需。</p>
+      <h1>Server Product Line</h1>
+      <p class="srv-desc">A complete server series covering AI training, edge computing, and high-density computing, customizable for your needs.</p>
     </div>
   </div>
 </section>
 
 <!-- ════ PRODUCT CARDS ════ -->
-<section class="srv-cards-section">
-  <div class="wrap">
-    <div class="card-grid col2">
-      <a class="f-card fu d1" href="../../../pages/products/servers/se210/index.html">
-        <div class="f-card-icon">🤖</div>
-        <h3>SE210</h3>
-        <p>2U AI 訓練專用，4× NVIDIA A100 / H100，NVLink 4.0 全互連。</p>
-        <span class="tag">查看規格 →</span>
-      </a>
-      <a class="f-card fu d2" href="../../../pages/products/servers/se110/index.html">
-        <div class="f-card-icon">📦</div>
-        <h3>SE110</h3>
-        <p>1U 輕量邊緣，廣溫 -20°C～70°C，靜音低功耗設計。</p>
-        <span class="tag">查看規格 →</span>
-      </a>
-      <a class="f-card fu d3" href="../../../pages/products/servers/sr610/index.html">
-        <div class="f-card-icon">💾</div>
+<section class="srv-cards-section" style="padding-top: 50px;">
+  <div class="wrap" id="rack-servers" style="margin-bottom: 60px; scroll-margin-top: 100px;">
+    <h2 style="font-size: 28px; font-weight: 800; color: #0d1b2e; margin-bottom: 24px; border-left: 4px solid var(--primary); padding-left: 12px;">Server (Rack Series)</h2>
+    <div class="card-grid col3" style="margin-bottom: 30px;">
+      <a class="f-card fu d1" href="../../../pages/products/servers/sr610/index.html">
+        <div class="f-card-icon">??</div>
         <h3>SR610</h3>
-        <p>雙路 AMD EPYC 9004，24× NVMe U.3，DDR5 高頻寬。</p>
-        <span class="tag">查看規格 →</span>
+        <p>Dual AMD EPYC 9004, 24x NVMe U.3, DDR5 High-bandwidth rackmount server.</p>
+        <span class="tag">Learn More →</span>
       </a>
-      <a class="f-card fu d4" href="../../../pages/products/servers/sr710/index.html">
-        <div class="f-card-icon">⚡</div>
+      <a class="f-card fu d2" href="../../../pages/products/servers/sr710/index.html">
+        <div class="f-card-icon">?</div>
         <h3>SR710</h3>
-        <p>雙路 Intel Sapphire Rapids，DDR5+HBM2e，PCIe 5.0。</p>
-        <span class="tag">查看規格 →</span>
+        <p>Dual Intel Sapphire Rapids, DDR5+HBM2e modular high-density datacenter server.</p>
+        <span class="tag">Learn More →</span>
+      </a>
+      <a class="f-card fu d3" href="../../../pages/products/servers/sr710g/index.html">
+        <div class="f-card-icon">??</div>
+        <h3>SR710G</h3>
+        <p>High-density GPU Computing Server optimized for deep learning and AI acceleration workloads.</p>
+        <span class="tag">Learn More →</span>
+      </a>
+    </div>
+
+    <h3 style="font-size: 20px; font-weight: 800; color: #475569; margin: 36px 0 16px 12px; letter-spacing: 0.05em; text-transform: uppercase;">Sub Modules & Adapters</h3>
+    <div class="card-grid col3">
+      <a class="f-card fu d1" href="../../../pages/products/servers/dc-scm/index.html">
+        <div class="f-card-icon">???</div>
+        <h3>DC-SCM</h3>
+        <p>OCP DC-SCM Compliant Secure Control Module separating management plane.</p>
+        <span class="tag">Learn More →</span>
+      </a>
+      <a class="f-card fu d2" href="../../../pages/products/servers/10g-nic/index.html">
+        <div class="f-card-icon">??</div>
+        <h3>10G NIC</h3>
+        <p>Dual-Port 10GbE PCI Express Network Interface Card for server deployments.</p>
+        <span class="tag">Learn More →</span>
+      </a>
+      <a class="f-card fu d3" href="../../../pages/products/servers/25g-nic/index.html">
+        <div class="f-card-icon">??</div>
+        <h3>25G NIC</h3>
+        <p>Dual-Port 25GbE high speed network interface card with hardware offloads.</p>
+        <span class="tag">Learn More →</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="wrap" id="edge-servers" style="scroll-margin-top: 100px;">
+    <h2 style="font-size: 28px; font-weight: 800; color: #0d1b2e; margin-bottom: 24px; border-left: 4px solid var(--primary); padding-left: 12px;">Edge Server</h2>
+    <div class="card-grid col1" style="max-width: 580px;">
+      <a class="f-card fu d1" href="../../../pages/products/servers/se210/index.html">
+        <div class="f-card-icon">??</div>
+        <h3>SE210</h3>
+        <p>2U Edge AI training server, supporting 4x NVIDIA A100 / H100 with NVLink.</p>
+        <span class="tag">Learn More →</span>
       </a>
     </div>
   </div>
@@ -156,10 +177,10 @@
 <!-- ════ CTA ════ -->
 <section class="cta-band">
 <div class="wrap"><div class="cta-inner fu">
-  <div class="cta-text"><h2>需要更多技術資訊？</h2><p>我們的技術顧問將協助您規劃最適合的解決方案。</p></div>
+  <div class="cta-text"><h2>Need More Technical Information?</h2><p>Our technical consultants will assist you in planning the most suitable solution.</p></div>
   <div class="cta-actions">
-    <a href="../../../pages/resources/datasheets/index.html" class="btn btn-ghost">下載規格書</a>
-    <a href="../../../pages/about/contact/index.html" class="btn btn-primary">聯絡我們</a>
+    <a href="../../../pages/resources/datasheets/index.html" class="btn btn-ghost">Download Datasheets</a>
+    <a href="../../../pages/about/contact/index.html" class="btn btn-primary">Contact Us</a>
   </div>
 </div></div>
 </section>

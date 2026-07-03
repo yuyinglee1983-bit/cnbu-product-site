@@ -1,0 +1,240 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Edge Appliance | CNBU Networks</title>
+<meta name="description" content="Purpose-built edge security and computing appliances. SC9435B SD-WAN gateway, SA9832b network appliance, and Edge SCM for distributed enterprise and carrier deployments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Noto+Sans+TC:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/css/styles.css">
+<style>
+/* ?? Page Hero ?? */
+.srv-hero{position:relative;background:linear-gradient(160deg,#060e1e 0%,#0b1e38 55%,#0d3060 100%);padding:80px 0 64px;overflow:hidden}
+.srv-hero::before{content:"";position:absolute;top:-30%;right:-10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,94,184,.18),transparent 65%);pointer-events:none}
+.srv-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.srv-hero-text .breadcrumb a{color:rgba(255,255,255,.55)}
+.srv-hero-text .breadcrumb .sep{color:rgba(255,255,255,.2)}
+.srv-hero-text .breadcrumb span:last-child{color:rgba(255,255,255,.8)}
+.srv-hero-text h1{font-size:clamp(34px,4.5vw,58px);font-weight:800;line-height:1.08;letter-spacing:-.03em;color:#fff;margin:14px 0 18px}
+.srv-hero-text .srv-desc{font-size:17px;line-height:1.85;color:rgba(255,255,255,.68);max-width:520px}
+.srv-hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.srv-badge{padding:5px 14px;border:1px solid rgba(0,94,184,.5);border-radius:20px;font-size:12px;font-weight:600;color:#7ec8ff;background:rgba(0,94,184,.12)}
+.srv-hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.srv-stat{padding:24px 20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;text-align:center}
+.srv-stat-num{font-size:32px;font-weight:800;color:#fff;letter-spacing:-.03em}
+.srv-stat-label{font-size:12px;color:rgba(255,255,255,.5);margin-top:4px;line-height:1.4}
+
+/* ?? Product cards ?? */
+.srv-card-section{padding:72px 0;background:#fff}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.srv-card{border:1.5px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:all .3s cubic-bezier(.4,0,.2,1);position:relative;background:#fff}
+.srv-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#005EB8,#00c2e0);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.srv-card:hover{border-color:#005EB8;box-shadow:0 0 0 1px rgba(0,94,184,.15),0 24px 56px rgba(0,94,184,.12);transform:translateY(-6px)}
+.srv-card:hover::before{transform:scaleX(1)}
+.srv-card-img{height:200px;background:linear-gradient(135deg,#f3f6fb,#e8eef9);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}
+.srv-card-img svg{opacity:.6}
+.srv-card-body{flex:1;padding:28px}
+.srv-card-eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:8px}
+.srv-card-body h3{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:10px;line-height:1.2}
+.srv-card-body p{font-size:14px;color:var(--muted);line-height:1.72;margin-bottom:20px}
+.srv-card-tags{display:flex;flex-wrap:wrap;gap:6px}
+.srv-card-tag{padding:4px 10px;background:var(--soft);border-radius:4px;font-size:11px;font-weight:700;color:var(--navy2)}
+.srv-card-link{display:inline-flex;align-items:center;gap:6px;margin-top:auto;padding-top:20px;border-top:1px solid var(--line);font-size:13px;font-weight:700;color:var(--blue)}
+.srv-card:hover .srv-card-link{gap:10px}
+
+/* ?? Spec band ?? */
+.srv-spec-band{padding:72px 0;background:var(--soft);border-top:1px solid var(--line)}
+.srv-spec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+.srv-spec-item{padding:24px;background:#fff;border:1px solid var(--line);border-radius:10px;text-align:center}
+.srv-spec-val{font-size:28px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.srv-spec-label{font-size:12px;color:var(--muted);line-height:1.4}
+
+@media(max-width:900px){
+  .srv-hero-inner{grid-template-columns:1fr}
+  .srv-grid{grid-template-columns:repeat(2,1fr)}
+  .srv-spec-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .srv-grid{grid-template-columns:1fr}
+  .srv-spec-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body data-root="../../../">
+<header id="site-header"></header>
+<main>
+
+<!-- HERO -->
+<section class="srv-hero">
+  <div class="wrap">
+    <div class="srv-hero-inner">
+      <div class="srv-hero-text fu">
+        <nav class="breadcrumb">
+          <a href="../../../index.html">Home</a><span class="sep">›</span>
+          <span>Products Series</span><span class="sep">›</span>
+          <span>Edge Appliance</span>
+        </nav>
+        <span class="eyebrow">Edge Appliance</span>
+        <h1>Purpose-Built Edge &amp;<br>Security Appliances</h1>
+        <p class="srv-desc">Hardware platforms purpose-engineered for SD-WAN gateways, enterprise NGFW, and distributed edge computing ??built for reliability from branch to carrier.</p>
+        <div class="srv-hero-badges">
+          <span class="srv-badge">SD-WAN</span>
+          <span class="srv-badge">NGFW / UTM</span>
+          <span class="srv-badge">Hardware QAT Crypto</span>
+          <span class="srv-badge">Fanless / 1U Options</span>
+        </div>
+      </div>
+      <div class="srv-hero-stats fu d2">
+        <div class="srv-stat">
+          <div class="srv-stat-num">40G+</div>
+          <div class="srv-stat-label">Firewall Throughput<br>per Appliance</div>
+        </div>
+        <div class="srv-stat">
+          <div class="srv-stat-num">10G</div>
+          <div class="srv-stat-label">SFP+ WAN<br>Ports</div>
+        </div>
+        <div class="srv-stat">
+          <div class="srv-stat-num">64GB</div>
+          <div class="srv-stat-label">Max DDR4 ECC<br>Memory</div>
+        </div>
+        <div class="srv-stat">
+          <div class="srv-stat-num">QAT</div>
+          <div class="srv-stat-label">Intel Hardware<br>Crypto Acceleration</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT CARDS -->
+<section class="srv-card-section">
+  <div class="wrap">
+    <span class="eyebrow fu">Product Lineup</span>
+    <h2 class="section-title fu">Edge Appliance Product Line</h2>
+    <p class="section-desc fu">From compact desktop gateways to 1U rack appliances and embedded system modules ??purpose-built hardware for every edge deployment scenario.</p>
+
+    <div class="srv-grid">
+
+      <!-- SC9435B -->
+      <a class="srv-card fu d1" href="../../../pages/products/edge-appliance/sc9435b/index.html">
+        <div class="srv-card-img">
+          <svg width="140" height="60" viewBox="0 0 140 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="8" width="136" height="32" rx="3" fill="#c8d4e8"/>
+            <rect x="8" y="12" width="40" height="8" rx="1.5" fill="#005EB8" opacity=".5"/>
+            <rect x="8" y="22" width="28" height="4" rx="1" fill="#aab8cc"/>
+            <circle cx="124" cy="24" r="6" fill="#005EB8" opacity=".45"/>
+            <circle cx="110" cy="24" r="6" fill="#005EB8" opacity=".3"/>
+            <rect x="2" y="44" width="136" height="8" rx="2" fill="#dce3ed"/>
+          </svg>
+        </div>
+        <div class="srv-card-body">
+          <div class="srv-card-eyebrow">Enterprise Gateway</div>
+          <h3>SC9435B</h3>
+          <p>Enterprise SD-WAN &amp; Edge Computing Security Appliance engineered for branch offices. Robust SD-WAN throughput and hardware QAT crypto acceleration.</p>
+          <div class="srv-card-tags">
+            <span class="srv-card-tag">Multi-Core SoC</span>
+            <span class="srv-card-tag">4x 10G SFP+</span>
+            <span class="srv-card-tag">QAT Crypto</span>
+          </div>
+          <div class="srv-card-link">View Specs ??/div>
+        </div>
+      </a>
+
+      <!-- SA9832b -->
+      <a class="srv-card fu d2" href="../../../pages/products/edge-appliance/sa9832b/index.html">
+        <div class="srv-card-img">
+          <svg width="140" height="60" viewBox="0 0 140 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="4" width="136" height="24" rx="3" fill="#c8d4e8"/>
+            <rect x="2" y="32" width="136" height="24" rx="3" fill="#dce3ed"/>
+            <rect x="8" y="8" width="32" height="6" rx="1" fill="#005EB8" opacity=".5"/>
+            <rect x="8" y="36" width="32" height="6" rx="1" fill="#005EB8" opacity=".35"/>
+            <circle cx="124" cy="16" r="5" fill="#005EB8" opacity=".4"/>
+            <circle cx="124" cy="44" r="5" fill="#005EB8" opacity=".25"/>
+          </svg>
+        </div>
+        <div class="srv-card-body">
+          <div class="srv-card-eyebrow">High-Performance Appliance</div>
+          <h3>SA9832b</h3>
+          <p>High-density 2U network appliance featuring dual processor support, multiple high-speed NIC modules, and carrier-grade reliability for NGFW and data-plane workloads.</p>
+          <div class="srv-card-tags">
+            <span class="srv-card-tag">Dual CPU</span>
+            <span class="srv-card-tag">100G Capable</span>
+            <span class="srv-card-tag">Hot-Swap PSU</span>
+          </div>
+          <div class="srv-card-link">View Specs ??/div>
+        </div>
+      </a>
+
+      <!-- Edge SCM -->
+      <a class="srv-card fu d3" href="../../../pages/products/edge-appliance/edge-scm/index.html">
+        <div class="srv-card-img">
+          <svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="100" height="40" rx="4" fill="#dce3ed"/>
+            <rect x="18" y="18" width="30" height="10" rx="2" fill="#005EB8" opacity=".55"/>
+            <rect x="54" y="18" width="20" height="10" rx="2" fill="#005EB8" opacity=".35"/>
+            <rect x="18" y="32" width="56" height="4" rx="1" fill="#aab8cc"/>
+            <circle cx="94" cy="37" r="4" fill="#005EB8" opacity=".3"/>
+          </svg>
+        </div>
+        <div class="srv-card-body">
+          <div class="srv-card-eyebrow">System Control Module</div>
+          <h3>Edge SCM</h3>
+          <p>Embedded system control module for scalable edge infrastructure management ??handling out-of-band control, power sequencing, and sensor telemetry in edge racks.</p>
+          <div class="srv-card-tags">
+            <span class="srv-card-tag">OOB Management</span>
+            <span class="srv-card-tag">IPMI 2.0</span>
+            <span class="srv-card-tag">Edge Rack</span>
+          </div>
+          <div class="srv-card-link">View Specs ??/div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- KEY SPECS BAND -->
+<section class="srv-spec-band">
+  <div class="wrap">
+    <span class="eyebrow fu">Performance Highlights</span>
+    <h2 class="section-title fu">Edge Appliance Key Metrics</h2>
+    <div class="srv-spec-grid">
+      <div class="srv-spec-item fu d1">
+        <div class="srv-spec-val">40G+</div>
+        <div class="srv-spec-label">Firewall / NGFW<br>Throughput</div>
+      </div>
+      <div class="srv-spec-item fu d2">
+        <div class="srv-spec-val">10G</div>
+        <div class="srv-spec-label">SFP+ WAN Ports<br>per Appliance</div>
+      </div>
+      <div class="srv-spec-item fu d3">
+        <div class="srv-spec-val">QAT</div>
+        <div class="srv-spec-label">Intel QuickAssist<br>Hardware Crypto</div>
+      </div>
+      <div class="srv-spec-item fu d4">
+        <div class="srv-spec-val">1U / 2U</div>
+        <div class="srv-spec-label">Rackmount or<br>Desktop Form Factors</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="wrap"><div class="cta-inner fu">
+    <div class="cta-text">
+      <h2>Need Edge Appliance Guidance?</h2>
+      <p>Our technical consultants will help you select the right platform for your SD-WAN, security, or edge deployment.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="../../../pages/resources/datasheets/index.html" class="btn btn-ghost">Download Datasheet</a>
+      <a href="../../../pages/about/contact/index.html" class="btn btn-primary">Contact Us</a>
+    </div>
+  </div></div>
+</section>
+
+</main>
+<footer id="site-footer"></footer>
+<script src="../../../assets/js/site.js"></script>
+</body>
+</html>
