@@ -1,17 +1,17 @@
 (function(){
 var R=document.body.dataset.root||'';
 var NAV=[
-  {label:'About',subs:[
+  {label:'About Us',subs:[
     {l:'About Senao Computing',h:'pages/about/index.html'},
     {l:'Why Senao Computing',h:'pages/about/company/index.html'},
     {l:'Global Presence',h:'pages/about/manufacturing/index.html'},
     {l:'Certification',h:'pages/about/certification/index.html'}
   ]},
-  {label:'Use Case',subs:[
+  {label:'Solutions',subs:[
     {l:'RAXEL AI',h:'pages/platforms/edge-platform/index.html'},
     {l:'SmartNIC',h:'pages/solutions/smart-nic/index.html'}
   ]},
-  {label:'Products Series',isMega:true,rows:[
+  {label:'Products',isMega:true,rows:[
     {title:'Server',items:[
       {l:'SR610',h:'pages/products/servers/sr610/index.html'},
       {l:'SR710',h:'pages/products/servers/sr710/index.html'},
@@ -138,17 +138,17 @@ if(ftr){
     +'<p>High-Performance Servers, SmartNICs & Platform Solutions<br>Comprehensive Experts in Data Center Infrastructure</p>'
     +'</div>'
     +'<div class="ftr-cols">'
-    +'<div class="ftr-col"><h5>About</h5>'
+    +'<div class="ftr-col"><h5>About Us</h5>'
       +'<a href="'+R+'pages/about/index.html">About Senao Computing</a>'
       +'<a href="'+R+'pages/about/company/index.html">Why Senao Computing</a>'
       +'<a href="'+R+'pages/about/manufacturing/index.html">Global Presence</a>'
       +'<a href="'+R+'pages/about/certification/index.html">Certification</a>'
     +'</div>'
-    +'<div class="ftr-col"><h5>Use Case</h5>'
+    +'<div class="ftr-col"><h5>Solutions</h5>'
       +'<a href="'+R+'pages/platforms/edge-platform/index.html">RAXEL AI</a>'
       +'<a href="'+R+'pages/solutions/smart-nic/index.html">SmartNIC</a>'
     +'</div>'
-    +'<div class="ftr-col"><h5>Products Series</h5>'
+    +'<div class="ftr-col"><h5>Products</h5>'
       +'<a href="'+R+'pages/products/servers/index.html">Server</a>'
       +'<a href="'+R+'pages/products/smart-nics/index.html">SmartNIC</a>'
       +'<a href="'+R+'pages/products/data-center-switches/index.html">Data Center Switches</a>'
