@@ -72,7 +72,7 @@
     </div>
     <div class="pd-hero-img">
       <div class="pd-img-frame fu">
-        <img src="SX906_00.png" alt="SX906 DPU"/>
+        <img src="SX906 (14).png" alt="SX906 DPU"/>
       </div>
     </div>
   </div>
@@ -90,6 +90,84 @@
     <div class="pd-spec-item"><div class="pd-spec-label">On-board Memory</div><div class="pd-spec-value">Up to 32 GB LPDDR5 / DDR5 ECC</div></div>
     <div class="pd-spec-item"><div class="pd-spec-label">Offloads</div><div class="pd-spec-value">NVMe-oF, IPsec/TLS, OVS, NVMe Emulation</div></div>
     <div class="pd-spec-item"><div class="pd-spec-label">Form Factor</div><div class="pd-spec-value">Half-Height Half-Length (HHHL)</div></div>
+  </div>
+</div>
+</section>
+
+<!-- ── Product Diagram ──────────────────────── -->
+<section class="pd-diagram-section">
+<style>
+.pd-diagram-section {
+  background: #f4f6fa;
+  padding: 56px 0;
+  border-bottom: 1px solid var(--line);
+}
+.pd-diagram-row {
+  display: grid;
+  grid-template-columns: 150px 1fr 150px;
+  align-items: center;
+  gap: 56px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.pd-diagram-row img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 8px 32px rgba(11,30,56,.12));
+}
+.pd-side-col {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.pd-side-col.right { align-items: flex-start; }
+.pd-side-col.left  { align-items: flex-end; text-align: right; }
+.pd-anno-card h5 {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 6px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--cyan);
+  line-height: 1.4;
+  display: inline-block;
+}
+.pd-anno-card p {
+  font-size: 12px;
+  line-height: 1.75;
+  color: var(--muted);
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .pd-diagram-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .pd-side-col.left { align-items: flex-start; text-align: left; }
+}
+</style>
+<div class="pd-diagram-row fu">
+  <!-- Left annotations -->
+  <div class="pd-side-col left">
+    <div class="pd-anno-card">
+      <h5>PCIe 5.0 x16 Host Interface</h5>
+      <p>Dual x8 bifurcation supports high-throughput host connectivity with minimal latency.</p>
+    </div>
+  </div>
+  <!-- Center product image -->
+  <img src="SX906_00.png" alt="SX906 DPU Product View" loading="lazy">
+  <!-- Right annotations -->
+  <div class="pd-side-col right">
+    <div class="pd-anno-card">
+      <h5>2× QSFP56 Network Ports</h5>
+      <p>Up to 200 Gbps total bandwidth for high-density data center connectivity.</p>
+    </div>
+    <div class="pd-anno-card">
+      <h5>On-board ARM Processor</h5>
+      <p>Independent ARM core complex runs isolated management OS for zero-trust control plane.</p>
+    </div>
   </div>
 </div>
 </section>
