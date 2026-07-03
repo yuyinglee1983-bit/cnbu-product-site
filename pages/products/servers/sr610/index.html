@@ -1,266 +1,80 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SR610 Rackmount Server | CNBU Networks</title>
+<title>SR610 Rack Server | CNBU Networks</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Noto+Sans+TC:wght@400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../../../assets/css/styles.css">
 <style>
-/* ── SR610 Product Page ────────────────────────── */
-
-.pd-hero {
-  background: #fff;
-  padding: 0;
-  overflow: hidden;
-  position: relative;
-  border-bottom: 1px solid var(--line);
-}
-.pd-hero::before {
-  content: "";
-  position: absolute;
-  top: -20%;
-  right: -5%;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,94,184,.06), transparent 65%);
-  pointer-events: none;
-}
-.pd-hero::after { display: none; }
-
-.pd-hero-inner {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  min-height: 560px;
-  align-items: center;
-  gap: 0;
-}
-
-.pd-hero-text {
-  padding: 72px 56px 72px 0;
-  position: relative;
-  z-index: 2;
-}
-.pd-breadcrumb {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 24px;
-  font-size: 12px;
-  color: var(--muted);
-}
-.pd-breadcrumb a { color: var(--blue); transition: color .15s; }
-.pd-breadcrumb a:hover { color: var(--cyan); }
-.pd-breadcrumb .sep { color: var(--line); }
-.pd-eyebrow {
-  display: inline-block;
-  margin-bottom: 14px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--blue);
-}
-.pd-hero-text h1 {
-  font-size: clamp(32px, 4vw, 54px);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -.03em;
-  color: var(--navy);
-  margin-bottom: 18px;
-}
-.pd-hero-text .pd-desc {
-  font-size: 16px;
-  line-height: 1.8;
-  color: var(--muted);
-  margin-bottom: 36px;
-  max-width: 480px;
-}
-.pd-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.pd-tag {
-  padding: 5px 14px;
-  border: 1px solid rgba(26,111,196,.2);
-  border-radius: 100px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--blue);
-  background: rgba(26,111,196,.06);
-  letter-spacing: .02em;
-}
-
-.pd-hero-img {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 48px 0 48px 48px;
-  height: 100%;
-}
-.pd-hero-img::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, rgba(26,111,196,.04) 0%, transparent 70%);
-  pointer-events: none;
-}
-.pd-img-frame {
-  position: relative;
-  width: 100%;
-  max-width: 640px;
-}
-.pd-img-frame img {
-  width: 100%;
-  height: auto;
-  max-height: 420px;
-  object-fit: contain;
-  display: block;
-  filter: drop-shadow(0 8px 20px rgba(11,30,56,.08)) drop-shadow(0 2px 6px rgba(11,30,56,.05));
-  transition: transform .4s ease;
-}
-.pd-img-frame img:hover {
-  transform: scale(1.02) translateY(-4px);
-}
-.pd-img-frame::after {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  left: 10%;
-  right: 10%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(26,111,196,.2), transparent);
-  filter: blur(4px);
-}
-
-/* ── Spec Section (dark) ────────── */
-.pd-spec {
-  background: linear-gradient(180deg, #060e1e 0%, #0b1e38 100%);
-  padding: 72px 0;
-  border-top: 1px solid rgba(255,255,255,.06);
-  border-bottom: 1px solid rgba(255,255,255,.06);
-}
-.pd-spec .section-title { color: #fff; margin-bottom: 40px; }
-.pd-spec-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  background: rgba(255,255,255,.06);
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,.08);
-}
-.pd-spec-item {
-  padding: 24px 28px;
-  background: rgba(255,255,255,.03);
-  transition: background .2s;
-}
-.pd-spec-item:hover { background: rgba(0,94,184,.06); }
-.pd-spec-label {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: rgba(0,94,184,.9);
-  margin-bottom: 8px;
-}
-.pd-spec-value {
-  font-size: 15px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.4;
-}
-
-/* ── Features Section (white) ──── */
-.pd-features {
-  background: #fff;
-  padding: 72px 0;
-}
-.pd-features .section-title { color: var(--navy); margin-bottom: 40px; }
-.pd-feat-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-.pd-feat-card {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  padding: 28px;
-  border: 1.5px solid var(--line);
-  border-radius: 12px;
-  background: #fff;
-  transition: all .3s cubic-bezier(.4,0,.2,1);
-  position: relative;
-  overflow: hidden;
-}
-.pd-feat-card::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #005EB8, #00c2e0);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .35s cubic-bezier(.4,0,.2,1);
-}
-.pd-feat-card:hover {
-  border-color: #005EB8;
-  box-shadow: 0 0 0 1px rgba(0,94,184,.15), 0 20px 48px rgba(0,94,184,.12);
-  transform: translateY(-5px);
-}
-.pd-feat-card:hover::before { transform: scaleX(1); }
-.pd-feat-icon {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(0,94,184,.12), rgba(0,94,184,.1));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-}
-.pd-feat-card h4 { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
-.pd-feat-card p  { font-size: 13px; line-height: 1.7; color: var(--muted); }
-
-/* ── Responsive ─────────────────── */
-@media(max-width: 900px) {
-  .pd-hero-inner { grid-template-columns: 1fr; min-height: auto; }
-  .pd-hero-text  { padding: 56px 0 32px; }
-  .pd-hero-img   { padding: 0 0 48px; }
-  .pd-spec-grid  { grid-template-columns: repeat(2, 1fr); }
-  .pd-feat-grid  { grid-template-columns: 1fr; }
-}
-@media(max-width: 560px) {
-  .pd-spec-grid  { grid-template-columns: 1fr; }
-}
+.pd-hero{background:#fff;padding:0;overflow:hidden;position:relative;border-bottom:1px solid var(--line)}
+.pd-hero::before{content:"";position:absolute;top:-20%;right:-5%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,94,184,.06),transparent 65%);pointer-events:none}
+.pd-hero-inner{display:grid;grid-template-columns:1fr 1.1fr;min-height:520px;align-items:center;gap:0}
+.pd-hero-text{padding:72px 56px 72px 0;position:relative;z-index:2}
+.pd-breadcrumb{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:24px;font-size:12px;color:var(--muted)}
+.pd-breadcrumb a{color:var(--blue);transition:color .15s}
+.pd-breadcrumb a:hover{color:var(--cyan)}
+.pd-breadcrumb .sep{color:var(--line)}
+.pd-eyebrow{display:none}
+.pd-hero-text h1{font-size:clamp(32px,4vw,54px);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--navy);margin-bottom:18px}
+.pd-hero-text .pd-desc{font-size:16px;line-height:1.8;color:var(--muted);margin-bottom:36px;max-width:480px}
+.pd-tags{display:flex;flex-wrap:wrap;gap:8px}
+.pd-tag{padding:5px 14px;border:1px solid rgba(26,111,196,.2);border-radius:100px;font-size:12px;font-weight:600;color:var(--blue);background:rgba(26,111,196,.06);letter-spacing:.02em}
+.pd-hero-img{position:relative;display:flex;align-items:center;justify-content:center;padding:48px 0 48px 48px;height:100%}
+.pd-hero-img::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(26,111,196,.04) 0%,transparent 70%);pointer-events:none}
+.pd-img-frame{position:relative;width:100%;max-width:640px}
+.pd-img-frame img{width:100%;height:auto;max-height:420px;object-fit:contain;display:block;filter:drop-shadow(0 8px 20px rgba(11,30,56,.08)) drop-shadow(0 2px 6px rgba(11,30,56,.05))}
+/* Specs */
+.pd-spec{background:linear-gradient(180deg,#060e1e 0%,#0b1e38 100%);padding:72px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.pd-spec .section-title{color:#fff;margin-bottom:40px}
+.pd-spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.06);border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.pd-spec-item{padding:24px 28px;background:rgba(255,255,255,.03);transition:background .2s}
+.pd-spec-item:hover{background:rgba(0,94,184,.06)}
+.pd-spec-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(0,94,184,.9);margin-bottom:8px}
+.pd-spec-value{font-size:15px;font-weight:700;color:#fff;line-height:1.4}
+/* Features */
+.pd-features{background:#fff;padding:72px 0}
+.pd-features .section-title{color:var(--navy);margin-bottom:40px}
+.pd-feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.pd-feat-card{display:flex;gap:20px;align-items:flex-start;padding:28px;border:1.5px solid var(--line);border-radius:12px;background:#fff;transition:all .3s cubic-bezier(.4,0,.2,1)}
+.pd-feat-card:hover{border-color:#005EB8;box-shadow:0 20px 48px rgba(0,94,184,.12);transform:translateY(-5px)}
+.pd-feat-card h4{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.pd-feat-card p{font-size:13px;line-height:1.7;color:var(--muted)}
+/* Gallery */
+.pd-gallery{background:var(--soft,#f4f8ff);padding:72px 0;border-top:1px solid rgba(0,94,184,.08)}
+.pd-gallery .section-title{color:var(--navy);margin-bottom:40px}
+.pd-gallery-grid{display:grid;grid-template-columns:1fr 1fr 1.6fr;gap:16px;align-items:center}
+.pd-gallery-img{border-radius:12px;overflow:hidden;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:20px}
+.pd-gallery-img img{width:100%;height:auto;max-height:260px;object-fit:contain;display:block}
+.pd-gallery-img.main-img{padding:0;background:#f7f9fc}
+.pd-gallery-img.main-img img{max-height:320px;object-fit:cover}
+/* Video */
+.pd-video{background:#fff;padding:72px 0;border-top:1px solid var(--line)}
+.pd-video .section-title{color:var(--navy);margin-bottom:40px}
+.pd-video-wrap{border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 8px 32px rgba(11,30,56,.08);max-width:960px;margin:0 auto}
+.pd-video-wrap video{width:100%;height:auto;display:block;max-height:540px;background:#000}
+/* Responsive */
+@media(max-width:900px){.pd-hero-inner{grid-template-columns:1fr;min-height:auto}.pd-hero-text{padding:56px 0 32px}.pd-hero-img{padding:0 0 48px}.pd-spec-grid{grid-template-columns:repeat(2,1fr)}.pd-feat-grid{grid-template-columns:1fr}.pd-gallery-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.pd-spec-grid{grid-template-columns:1fr}.pd-gallery-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body data-root="../../../../">
 <header id="site-header"></header>
 <main>
 
-<!-- ════ HERO ════ -->
+<!-- ── Hero ─────────────────────────────────── -->
 <section class="pd-hero">
 <div class="wrap">
   <div class="pd-hero-inner">
-
-    <!-- Left: info -->
     <div class="pd-hero-text fu">
       <nav class="pd-breadcrumb">
         <a href="../../../../index.html">Home</a><span class="sep">›</span>
-        <a href="../../../../pages/products/index.html">Products</a><span class="sep">›</span>
         <a href="../../../../pages/products/servers/index.html">Server</a><span class="sep">›</span>
         <span>SR610</span>
       </nav>
-      <span class="pd-eyebrow">Rack Server · 2U</span>
-      <h1>SR610<br>Rack Server</h1>
-      <p class="pd-desc">Dual AMD EPYC 9004 platform, 24x NVMe U.3 bays, DDR5-4800, optimized for high-performance databases, HPC, and virtualization.</p>
+      <span class="pd-eyebrow">Rack Server</span>
+      <h1>SR610<br>Dual-Socket Rack Server</h1>
+      <p class="pd-desc">Dual AMD EPYC 9004 platform with 24x NVMe U.3 bays and DDR5-4800 memory, optimized for high-performance databases, HPC, and virtualization workloads.</p>
       <div class="pd-tags">
         <span class="pd-tag">2× AMD EPYC 9004</span>
         <span class="pd-tag">24× NVMe U.3</span>
@@ -268,101 +82,93 @@
         <span class="pd-tag">DDR5-4800</span>
       </div>
     </div>
-
-    <!-- Right: product image -->
     <div class="pd-hero-img">
       <div class="pd-img-frame fu">
-        <img src="SR610_S1_20241230.png" alt="SR610 Rack Server Front View" loading="lazy"/>
+        <img src="SR610_S1_20241230.png" alt="SR610 Rack Server"/>
       </div>
     </div>
-
   </div>
 </div>
 </section>
 
-<!-- ════ SPECS ════ -->
+<!-- ── Specifications ────────────────────────── -->
 <section class="pd-spec">
 <div class="wrap">
   <h2 class="section-title fu">Specifications</h2>
   <div class="pd-spec-grid fu">
     <div class="pd-spec-item"><div class="pd-spec-label">Form Factor</div><div class="pd-spec-value">2U Rackmount</div></div>
-    <div class="pd-spec-item"><div class="pd-spec-label">CPU</div><div class="pd-spec-value">2× AMD EPYC 9004（Genoa）</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Processors</div><div class="pd-spec-value">2× AMD EPYC 9004 (Genoa)</div></div>
     <div class="pd-spec-item"><div class="pd-spec-label">Cores</div><div class="pd-spec-value">Up to 2 × 96 Cores</div></div>
     <div class="pd-spec-item"><div class="pd-spec-label">Memory</div><div class="pd-spec-value">Up to 6 TB DDR5-4800</div></div>
-    <div class="pd-spec-item"><div class="pd-spec-label">Storage</div><div class="pd-spec-value">24x NVMe U.3 2.5"</div></div>
-    <div class="pd-spec-item"><div class="pd-spec-label">PCIe</div><div class="pd-spec-value">PCIe 5.0 x16 × 6</div></div>
-    <div class="pd-spec-item"><div class="pd-spec-label">Networking</div><div class="pd-spec-value">2x 25 GbE + OCP 3.0</div></div>
-    <div class="pd-spec-item"><div class="pd-spec-label">Power</div><div class="pd-spec-value">1,600W (Titanium, N+1 Redundant)</div></div>
-    <div class="pd-spec-item"><div class="pd-spec-label">Certification</div><div class="pd-spec-value">CE / FCC / RoHS</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Storage</div><div class="pd-spec-value">24× NVMe U.3 2.5"</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Expansion</div><div class="pd-spec-value">PCIe 5.0 x16 × 6</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Networking</div><div class="pd-spec-value">2× 25 GbE + OCP 3.0</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Power Supply</div><div class="pd-spec-value">1,600W Titanium (N+1 Redundant)</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Compliance</div><div class="pd-spec-value">CE / FCC / RoHS</div></div>
   </div>
 </div>
 </section>
 
-<!-- ════ PRODUCT VIDEO ════ -->
-<section style="background:#fff;padding:5px 0">
-  <div style="max-width:1400px;margin:0 auto;padding:0 40px;position:relative">
-    <!-- Image: absolute, overlaps left edge of video -->
-    <img src="Intel Xeon 6.png" alt="Intel Xeon 6" loading="lazy"
-         style="position:absolute;left:24%;top:50%;transform:translateY(-50%);height:200px;object-fit:contain;z-index:2">
-    <!-- Video: full width, right-aligned -->
-    <div style="display:flex;justify-content:flex-end">
-      <video autoplay muted loop playsinline preload="metadata"
-             style="width:72%;max-width:900px;display:block">
-        <source src="0625(3).mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-</section>
-
-<!-- ════ FEATURES ════ -->
+<!-- ── Key Features ──────────────────────────── -->
 <section class="pd-features">
 <div class="wrap">
   <h2 class="section-title fu">Key Features</h2>
-  <div class="pd-feat-grid">
-    <div class="pd-feat-card fu">
-      <div class="pd-feat-icon">🖥️</div>
+  <div class="pd-feat-grid fu">
+    <div class="pd-feat-card">
       <div>
-        <h4>Dual AMD EPYC 9004 Platform</h4>
-        <p>Up to 192 cores / 384 threads supporting AVX-512, handling enterprise databases and HPC simulation workloads in a single node.</p>
+        <h4>High-Density NVMe Storage</h4>
+        <p>24 hot-swappable NVMe U.3 bays deliver exceptional I/O throughput for database and analytics workloads, with end-to-end PCIe 5.0 bandwidth.</p>
       </div>
     </div>
-    <div class="pd-feat-card fu d1">
-      <div class="pd-feat-icon">💾</div>
+    <div class="pd-feat-card">
       <div>
-        <h4>24-Bay All-NVMe Storage</h4>
-        <p>24x U.3 NVMe 2.5" bays with PCIe 5.0 interface. Sequential reads up to 200 GB/s eliminate disk bottlenecks.</p>
+        <h4>AMD EPYC Dual-Socket Platform</h4>
+        <p>Twin AMD EPYC 9004 processors provide up to 192 cores and 6 TB DDR5-4800 ECC memory capacity for enterprise virtualization and HPC environments.</p>
       </div>
     </div>
-    <div class="pd-feat-card fu d2">
-      <div class="pd-feat-icon">⚡</div>
+    <div class="pd-feat-card">
       <div>
-        <h4>DDR5-4800 High Capacity Memory</h4>
-        <p>Up to 6 TB DDR5-4800 ECC RDIMM increases memory bandwidth by 36%, ideal for In-Memory databases and deployments.</p>
+        <h4>OCP 3.0 Networking Flexibility</h4>
+        <p>Built-in dual 25 GbE ports with OCP 3.0 mezzanine slot allow flexible network upgrades without additional PCIe slot consumption.</p>
       </div>
     </div>
-    <div class="pd-feat-card fu d3">
-      <div class="pd-feat-icon">🔧</div>
+    <div class="pd-feat-card">
       <div>
-        <h4>Redfish Smart Management</h4>
-        <p>IPMI 2.0 + OpenBMC + Redfish API support out-of-band monitoring, node deployment, and firmware batch updates.</p>
+        <h4>Redundant Titanium Power</h4>
+        <p>1,600W Titanium-certified N+1 redundant power supply ensures continuous operation and maximum energy efficiency for data center deployments.</p>
       </div>
     </div>
   </div>
 </div>
 </section>
 
-<!-- ════ CTA ════ -->
-<section class="cta-band">
+<!-- ── Product Gallery ───────────────────────── -->
+<section class="pd-gallery">
 <div class="wrap">
-  <div class="cta-inner fu">
-    <div class="cta-text">
-      <h2>Need More Technical Information?</h2>
-      <p>Our technical consultants will assist you in designing the most optimal computing solution.</p>
+  <h2 class="section-title fu">Product Gallery</h2>
+  <div class="pd-gallery-grid fu">
+    <div class="pd-gallery-img">
+      <img src="Intel Xeon 6.png" alt="Intel Xeon 6 Processor"/>
     </div>
-    <div class="cta-actions">
-      <a href="../../../../pages/resources/datasheets/index.html" class="btn btn-ghost">Download Datasheets</a>
-      <a href="../../../../pages/about/contact/index.html" class="btn btn-primary">Contact Us</a>
+    <div class="pd-gallery-img">
+      <img src="Intel Xeon 6-2.png" alt="Intel Xeon 6 Detail"/>
     </div>
+    <div class="pd-gallery-img main-img">
+      <img src="SR610_S1_20241230.png" alt="SR610 Server — Internal View"/>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ── Product Video ─────────────────────────── -->
+<section class="pd-video">
+<div class="wrap">
+  <h2 class="section-title fu">Product Overview</h2>
+  <div class="pd-video-wrap fu">
+    <video controls preload="metadata" poster="SR610_S1_20241230.png">
+      <source src="0625(3).mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
 </div>
 </section>
