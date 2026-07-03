@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -215,49 +215,6 @@
   </div>
 </section>
 
-<!-- ════ 3D ANIMATION VIDEO ════ -->
-<section class="edge-video-section">
-  <div class="edge-video-inner">
-    <video
-      id="edge-anim-video"
-      src="SLD-0801 3D Animation.mp4"
-      playsinline
-      muted
-      loop
-      preload="metadata"
-    ></video>
-  </div>
-</section>
-<style>
-.edge-video-section{
-  background:#fff;
-  padding:0;
-}
-.edge-video-inner{
-  max-width:1200px;
-  margin:0 auto;
-  padding:56px 24px;
-  line-height:0;
-}
-.edge-video-inner video{
-  width:100%;
-  display:block;
-  border-radius:16px;
-}
-</style>
-<script>
-(function(){
-  var v = document.getElementById('edge-anim-video');
-  if(!v) return;
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){ v.play(); }
-      else { v.pause(); }
-    });
-  }, { threshold: 0.3 });
-  io.observe(v);
-})();
-</script>
 
 <!-- ════ FEATURES ════ -->
 <section class="feat-section">
