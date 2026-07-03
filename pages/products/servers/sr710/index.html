@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -9,7 +9,6 @@
 <style>
 .pd-hero{background:#fff;padding:0;overflow:hidden;position:relative;border-bottom:1px solid var(--line)}
 .pd-hero::before{content:"";position:absolute;top:-20%;right:-5%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,94,184,.06),transparent 65%);pointer-events:none}
-.pd-hero::after{display:none}
 .pd-hero-inner{display:grid;grid-template-columns:1fr 1.1fr;min-height:520px;align-items:center;gap:0}
 .pd-hero-text{padding:72px 56px 72px 0;position:relative;z-index:2}
 .pd-breadcrumb{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:24px;font-size:12px;color:var(--muted)}
@@ -24,9 +23,7 @@
 .pd-hero-img{position:relative;display:flex;align-items:center;justify-content:center;padding:48px 0 48px 48px;height:100%}
 .pd-hero-img::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(26,111,196,.04) 0%,transparent 70%);pointer-events:none}
 .pd-img-frame{position:relative;width:100%;max-width:640px}
-.pd-img-frame img{width:100%;height:auto;max-height:420px;object-fit:contain;display:block;filter:drop-shadow(0 8px 20px rgba(11,30,56,.08)) drop-shadow(0 2px 6px rgba(11,30,56,.05));transition:transform .4s ease}
-.pd-img-frame img:hover{transform:scale(1.02) translateY(-4px)}
-.pd-img-frame::after{content:"";position:absolute;bottom:-20px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,transparent,rgba(26,111,196,.2),transparent);filter:blur(4px)}
+.pd-img-frame img{width:100%;height:auto;max-height:420px;object-fit:contain;display:block;filter:drop-shadow(0 8px 20px rgba(11,30,56,.08)) drop-shadow(0 2px 6px rgba(11,30,56,.05))}
 .pd-spec{background:linear-gradient(180deg,#060e1e 0%,#0b1e38 100%);padding:72px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
 .pd-spec .section-title{color:#fff;margin-bottom:40px}
 .pd-spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.06);border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
@@ -37,333 +34,90 @@
 .pd-features{background:#fff;padding:72px 0}
 .pd-features .section-title{color:var(--navy);margin-bottom:40px}
 .pd-feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.pd-feat-card{display:flex;gap:20px;align-items:flex-start;padding:28px;border:1.5px solid var(--line);border-radius:12px;background:#fff;transition:all .3s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden}
-.pd-feat-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#005EB8,#00c2e0);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.4,0,.2,1)}
-.pd-feat-card:hover{border-color:#005EB8;box-shadow:0 0 0 1px rgba(0,94,184,.15),0 20px 48px rgba(0,94,184,.12);transform:translateY(-5px)}
-.pd-feat-card:hover::before{transform:scaleX(1)}
-.pd-feat-icon{display:none}
+.pd-feat-card{display:flex;gap:20px;align-items:flex-start;padding:28px;border:1.5px solid var(--line);border-radius:12px;background:#fff;transition:all .3s cubic-bezier(.4,0,.2,1)}
+.pd-feat-card:hover{border-color:#005EB8;box-shadow:0 20px 48px rgba(0,94,184,.12);transform:translateY(-5px)}
 .pd-feat-card h4{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:8px}
 .pd-feat-card p{font-size:13px;line-height:1.7;color:var(--muted)}
 @media(max-width:900px){.pd-hero-inner{grid-template-columns:1fr;min-height:auto}.pd-hero-text{padding:56px 0 32px}.pd-hero-img{padding:0 0 48px}.pd-spec-grid{grid-template-columns:repeat(2,1fr)}.pd-feat-grid{grid-template-columns:1fr}}
 @media(max-width:560px){.pd-spec-grid{grid-template-columns:1fr}}
-/* ?? Tech Cards ??????????????????? */
-.tech-section{background:linear-gradient(180deg,#f4f8ff 0%,#fff 100%);padding:72px 0;border-top:1px solid rgba(0,94,184,.08)}
-.tech-section .section-title{color:var(--navy);margin-bottom:48px}
-.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.tech-card{background:#fff;border:1px solid rgba(255,199,44,.15);border-radius:16px;padding:18px 26px 16px;transition:all .3s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden}
-.tech-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#FFC72C,#FFE066);opacity:0;transition:opacity .3s}
-.tech-card:hover{transform:translateY(-5px);box-shadow:0 20px 60px rgba(255,199,44,.15);border-color:#FFC72C}
-.tech-card:hover::before{opacity:1}
-.tech-icon-row{display:flex;align-items:center;gap:12px;margin-bottom:20px}
-.tech-icon{width:44px;height:44px;flex-shrink:0;color:#005EB8}
-.tech-card h4{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:10px;letter-spacing:-.01em}
-.tech-card p{font-size:13px;line-height:1.75;color:var(--muted)}
-.tech-badge{display:inline-flex;align-items:center;padding:4px 12px;background:rgba(0,94,184,.06);border-radius:100px;font-size:11px;font-weight:700;color:#005EB8;letter-spacing:.08em;text-transform:uppercase}
-@media(max-width:900px){.tech-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.tech-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body data-root="../../../../">
 <header id="site-header"></header>
 <main>
 
-<!-- ???? HERO ???? -->
 <section class="pd-hero">
 <div class="wrap">
   <div class="pd-hero-inner">
     <div class="pd-hero-text fu">
       <nav class="pd-breadcrumb">
         <a href="../../../../index.html">Home</a><span class="sep">›</span>
-        <a href="../../../../pages/products/index.html">Products</a><span class="sep">›</span>
         <a href="../../../../pages/products/servers/index.html">Server</a><span class="sep">›</span>
         <span>SR710</span>
       </nav>
-      <span class="pd-eyebrow">DC-MHS Server</span>
-      <h1>SR710<br>Modularity Engineered for Data Centers</h1>
-      <p class="pd-desc">Transform your data center with high-performance, scalable solutions tailored for cloud computing, AI, and data analytics. Experience modular architecture built on open standards.</p>
+      <span class="pd-eyebrow">Data Center Server</span>
+      <h1>SR710<br>Modular Data Center Server</h1>
+      <p class="pd-desc">Intel Xeon Scalable dual-socket platform designed for cloud computing, AI data analytics, and enterprise workloads. Modular architecture built on open standards for maximum flexibility.</p>
       <div class="pd-tags">
-        <span class="pd-tag">2? Intel Xeon SPR</span>
+        <span class="pd-tag">2× Intel Xeon SPR</span>
         <span class="pd-tag">DDR5 + HBM2e</span>
-        <span class="pd-tag">8? PCIe 5.0</span>
+        <span class="pd-tag">8× PCIe 5.0</span>
         <span class="pd-tag">Intel TDX / SGX</span>
       </div>
     </div>
     <div class="pd-hero-img">
       <div class="pd-img-frame fu">
-        <img src="SR710__F-8_20260512.png" alt="SR710 High-Density Server Front View"/>
+        <img src="SR710__F-8_20260512.png" alt="SR710 Data Center Server"/>
       </div>
     </div>
   </div>
 </div>
 </section>
 
-<!-- ???? SPECS ???? -->
 <section class="pd-spec">
 <div class="wrap">
   <h2 class="section-title fu">Specifications</h2>
   <div class="pd-spec-grid fu">
     <div class="pd-spec-item"><div class="pd-spec-label">Form Factor</div><div class="pd-spec-value">2U Rackmount</div></div>
-    <div class="pd-spec-item"><div class="pd-spec-label">CPU</div><div class="pd-spec-value">2? Intel Xeon Scalable嚗apphire Rapids嚗?/div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Processors</div><div class="pd-spec-value">2× Intel Xeon Scalable (Sapphire Rapids)</div></div>
     <div class="pd-spec-item"><div class="pd-spec-label">Memory</div><div class="pd-spec-value">Up to 8 TB DDR5-4800 + HBM2e</div></div>
-    <div class="pd-spec-item"><div class="pd-spec-label">Expansion Slots</div><div class="pd-spec-value">8x PCIe 5.0 x16</div></div>
-    <div class="pd-spec-item"><div class="pd-spec-label">Storage (Front)</div><div class="pd-spec-value">12x 2.5" NVMe</div></div>
-    <div class="pd-spec-item"><div class="pd-spec-label">Storage (Rear)</div><div class="pd-spec-value">2x 2.5" NVMe</div></div>
-    <div class="pd-spec-item"><div class="pd-spec-label">Networking</div><div class="pd-spec-value">2? 100 GbE + OCP 3.0</div></div>
-    <div class="pd-spec-item"><div class="pd-spec-label">Security Features</div><div class="pd-spec-value">Intel TDX / SGX</div></div>
-    <div class="pd-spec-item"><div class="pd-spec-label">Power</div><div class="pd-spec-value">2,400W嚗itanium嚗+1嚗?/div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Expansion</div><div class="pd-spec-value">8× PCIe 5.0 x16</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Primary Storage</div><div class="pd-spec-value">12× 2.5" NVMe</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Secondary Storage</div><div class="pd-spec-value">2× 2.5" NVMe</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Networking</div><div class="pd-spec-value">2× 100 GbE + OCP 3.0</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Security</div><div class="pd-spec-value">Intel TDX / SGX</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Power Supply</div><div class="pd-spec-value">2,400W Titanium (N+1 Redundant)</div></div>
   </div>
 </div>
 </section>
 
-<!-- ???? PRODUCT VIDEO ???? -->
-<section style="background:#fff;padding:5px 0">
-  <div style="max-width:1400px;margin:0 auto;padding:0 40px;position:relative">
-    <!-- Image: absolute, overlaps left edge of video -->
-    <img src="../sr610/Intel Xeon 6.png" alt="Intel Xeon 6" loading="lazy"
-         style="position:absolute;left:24%;top:50%;transform:translateY(-50%);height:200px;object-fit:contain;z-index:2">
-    <!-- Video: full width, right-aligned -->
-    <div style="display:flex;justify-content:flex-end">
-      <video autoplay muted loop playsinline preload="metadata"
-             style="width:72%;max-width:900px;display:block">
-        <source src="0625(2).mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-</section>
-
-
+<section class="pd-features">
 <div class="wrap">
   <h2 class="section-title fu">Key Features</h2>
-  <div class="pd-feat-grid">
-    <div class="pd-feat-card fu d1">
-      <div class="pd-feat-icon">??/div>
+  <div class="pd-feat-grid fu">
+    <div class="pd-feat-card">
       <div>
-        <h4>High-Speed Compute with Intel簧 Xeon簧 6</h4>
-        <p>Harness the power of Intel簧 Xeon簧 6 processors to support demanding workloads while optimizing efficiency across cloud, AI, and big data queries.</p>
+        <h4>Intel Xeon Scalable Dual-Socket</h4>
+        <p>Latest Sapphire Rapids architecture with up to 8 TB DDR5-4800 plus HBM2e, delivering exceptional memory bandwidth for AI inference and analytics workloads.</p>
       </div>
     </div>
-    <div class="pd-feat-card fu d2">
-      <div class="pd-feat-icon">?</div>
+    <div class="pd-feat-card">
       <div>
-        <h4>Flexible & Scalable Modular Architecture</h4>
-        <p>OCP DC-MHS architecture enables decoupled scaling of compute, storage, and networking resources, delivering flexible hardware orchestration.</p>
+        <h4>PCIe 5.0 Expansion Architecture</h4>
+        <p>Eight full-bandwidth PCIe 5.0 x16 slots enable flexible GPU, SmartNIC, and accelerator configurations for cloud and AI infrastructure deployments.</p>
       </div>
     </div>
-    <div class="pd-feat-card fu d3">
-      <div class="pd-feat-icon">??</div>
+    <div class="pd-feat-card">
       <div>
-        <h4>Open Standard Interoperability</h4>
-        <p>Compliance with OCP DC-MHS specifications secures multi-vendor ecosystem interoperability and prevents vendor lock-in.</p>
+        <h4>Confidential Computing Ready</h4>
+        <p>Intel TDX and SGX hardware security technologies protect sensitive workloads in multi-tenant cloud environments with hardware-enforced memory encryption.</p>
       </div>
     </div>
-    <div class="pd-feat-card fu d4">
-      <div class="pd-feat-icon">??儭?/div>
+    <div class="pd-feat-card">
       <div>
-        <h4>Optimized Deployment for Hyperscale Centers</h4>
-        <p>Engineered for high density, energy efficiency, and thermal management, supporting rack-level optimization in hyperscale centers.</p>
+        <h4>100 GbE High-Speed Networking</h4>
+        <p>Dual 100 GbE onboard ports with OCP 3.0 mezzanine support provide the network bandwidth required for distributed AI training and data analytics clusters.</p>
       </div>
-    </div>
-    <div class="pd-feat-card fu d5">
-      <div class="pd-feat-icon">??</div>
-      <div>
-        <h4>One-Stop Power & Networking Integration</h4>
-        <p>Featuring redundant Titanium CRPS modules and Senao SX904 SmartNICs for integrated power stability and network offloading.</p>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- ???? UNBOXING VIDEO SHOWCASE ???? -->
-<section style="background:#f0f2f5;padding:60px 0">
-  <div class="wrap">
-    <div style="
-      background:#fff;
-      border-radius:20px;
-      box-shadow:0 8px 40px rgba(0,0,0,.08);
-      display:flex;
-      align-items:center;
-      gap:40px;
-      padding:40px 48px;
-    ">
-      <!-- Left: Text -->
-      <div style="flex:0 0 280px;min-width:0">
-        <p style="font-size:11px;font-weight:700;letter-spacing:.12em;color:#005EB8;text-transform:uppercase;margin:0 0 12px">Product Showcase</p>
-        <h2 style="font-size:26px;font-weight:800;line-height:1.2;color:#0d1b2e;margin:0 0 14px">Senao Networks<br>SR-710 Server<br>Unboxing</h2>
-        <p style="font-size:13.5px;color:#5a6a7e;line-height:1.6;margin:0">Experience the SR-710 enterprise server first-hand. Robust build quality, tool-less design, and enterprise-grade components engineered for demanding data center deployments.</p>
-      </div>
-      <!-- Right: Video -->
-      <div style="flex:1;min-width:0;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.15)">
-        <video
-          id="sr710-unboxing-video"
-          src="SenaoServer_Unboxing.mp4"
-          playsinline muted loop preload="none"
-          style="width:100%;display:block"
-        ></video>
-      </div>
-    </div>
-  </div>
-</section>
-<script>
-(function(){
-  var v = document.getElementById('sr710-unboxing-video');
-  if(!v) return;
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){ v.play(); }
-      else { v.pause(); }
-    });
-  }, { threshold: 0.3 });
-  io.observe(v);
-})();
-</script>
-
-
-<!-- ???? TECH CAPABILITIES ???? -->
-<section class="tech-section">
-<div class="wrap">
-  <h2 class="section-title fu">Key Features for Maximum Efficiency</h2>
-  <div class="tech-grid">
-
-    <!-- 1 -->
-    <div class="tech-card fu d1">
-      <div class="tech-icon-row"><svg class="tech-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="12" y="12" width="20" height="20" rx="3"/>
-        <rect x="17" y="17" width="10" height="10" rx="1.5" fill="currentColor" opacity=".15" stroke="none"/>
-        <line x1="8" y1="16" x2="12" y2="16"/><line x1="8" y1="22" x2="12" y2="22"/><line x1="8" y1="28" x2="12" y2="28"/>
-        <line x1="32" y1="16" x2="36" y2="16"/><line x1="32" y1="22" x2="36" y2="22"/><line x1="32" y1="28" x2="36" y2="28"/>
-        <line x1="16" y1="8" x2="16" y2="12"/><line x1="22" y1="8" x2="22" y2="12"/><line x1="28" y1="8" x2="28" y2="12"/>
-        <line x1="16" y1="32" x2="16" y2="36"/><line x1="22" y1="32" x2="22" y2="36"/><line x1="28" y1="32" x2="28" y2="36"/>
-      </svg>
-      </svg><span class="tech-badge">Performance</span></div>
-      <h4>Optimized Performance</h4>
-      <p>Utilize Intel簧 Xeon簧 6 processors to process demanding workloads, ensuring high throughput, power efficiency, and smart scheduling.</p>
-    </div>
-
-    <!-- 2 -->
-    <div class="tech-card fu d2">
-      <div class="tech-icon-row"><svg class="tech-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="6" y="24" width="14" height="12" rx="2"/>
-        <rect x="24" y="24" width="14" height="12" rx="2"/>
-        <rect x="15" y="10" width="14" height="12" rx="2"/>
-        <line x1="13" y1="24" x2="22" y2="22"/><line x1="31" y1="24" x2="22" y2="22"/>
-      </svg>
-      </svg><span class="tech-badge">Scalability</span></div>
-      <h4>Elastic Scalability</h4>
-      <p>Independently scale and upgrade compute, storage, and networking modules to match evolving business demands.</p>
-    </div>
-
-    <!-- 3 -->
-    <div class="tech-card fu d3">
-      <div class="tech-icon-row"><svg class="tech-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="22" cy="22" r="4"/>
-        <circle cx="8" cy="14" r="3"/><circle cx="36" cy="14" r="3"/>
-        <circle cx="8" cy="30" r="3"/><circle cx="36" cy="30" r="3"/>
-        <circle cx="22" cy="8" r="3"/><circle cx="22" cy="36" r="3"/>
-        <line x1="10.5" y1="15.5" x2="19" y2="19.5"/><line x1="33.5" y1="15.5" x2="25" y2="19.5"/>
-        <line x1="10.5" y1="28.5" x2="19" y2="24.5"/><line x1="33.5" y1="28.5" x2="25" y2="24.5"/>
-        <line x1="22" y1="11" x2="22" y2="18"/><line x1="22" y1="26" x2="22" y2="33"/>
-      </svg>
-      </svg><span class="tech-badge">Open Standard</span></div>
-      <h4>Open Standard Compliance</h4>
-      <p>OCP DC-MHS design ensures multi-vendor compatibility, preventing vendor lock-in and supporting customized configurations.</p>
-    </div>
-
-    <!-- 4 -->
-    <div class="tech-card fu d4">
-      <div class="tech-icon-row"><svg class="tech-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="6,30 12,20 18,26 24,14 30,20 36,10"/>
-        <rect x="28" y="32" width="8" height="6" rx="1"/>
-        <rect x="18" y="34" width="8" height="4" rx="1"/>
-        <rect x="8" y="35" width="8" height="3" rx="1"/>
-        <line x1="6" y1="38" x2="38" y2="38"/>
-      </svg>
-      </svg><span class="tech-badge">Technology</span></div>
-      <h4>State-of-the-Art Core Specs</h4>
-      <p>Incorporating DDR5, PCIe 5.0, and Gen5 NVMe storage to enable high-speed transport and extreme processing capacity.</p>
-    </div>
-
-    <!-- 5 -->
-    <div class="tech-card fu d5">
-      <div class="tech-icon-row"><svg class="tech-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 6 L16 22 H21 L18 38 L28 20 H23 L26 6 Z"/>
-      </svg>
-      </svg><span class="tech-badge">Power</span></div>
-      <h4>Hot-Swappable Power Supplies</h4>
-      <p>Redundant 2kW/1.6kW Titanium CRPS modules maximize system runtime and guarantee power reliability.</p>
-    </div>
-
-    <!-- 6 -->
-    <div class="tech-card fu d6">
-      <div class="tech-icon-row"><svg class="tech-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="6" y="14" width="32" height="16" rx="3"/>
-        <rect x="10" y="18" width="6" height="8" rx="1"/>
-        <rect x="19" y="18" width="6" height="8" rx="1"/>
-        <circle cx="33" cy="22" r="2.5" fill="currentColor" opacity=".3" stroke="none"/>
-        <line x1="6" y1="30" x2="6" y2="34"/><line x1="38" y1="30" x2="38" y2="34"/>
-      </svg>
-      </svg><span class="tech-badge">Storage</span></div>
-      <h4>Rapid Data Access</h4>
-      <p>Supports U.2 NVMe interfaces for low-latency storage access, boosting I/O throughput and scalability.</p>
-    </div>
-
-    <!-- 7 -->
-    <div class="tech-card fu d7">
-      <div class="tech-icon-row"><svg class="tech-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="22" cy="22" r="6"/>
-        <line x1="6" y1="22" x2="16" y2="22"/><line x1="28" y1="22" x2="38" y2="22"/>
-        <line x1="22" y1="6" x2="22" y2="16"/><line x1="22" y1="28" x2="22" y2="38"/>
-        <line x1="9" y1="9" x2="16.5" y2="16.5"/><line x1="35" y1="9" x2="27.5" y2="16.5"/>
-        <line x1="9" y1="35" x2="16.5" y2="27.5"/><line x1="35" y1="35" x2="27.5" y2="27.5"/>
-      </svg>
-      </svg><span class="tech-badge">Networking</span></div>
-      <h4>High-Speed Connectivity</h4>
-      <p>Dual 100 GbE interfaces paired with Senao SmartNIC hardware offloads ensure ultra-low latency and maximum bandwidth.</p>
-    </div>
-
-    <!-- 8 -->
-    <div class="tech-card fu d8">
-      <div class="tech-icon-row"><svg class="tech-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="6" y="8" width="32" height="6" rx="2"/>
-        <rect x="6" y="17" width="32" height="6" rx="2"/>
-        <rect x="6" y="26" width="32" height="6" rx="2"/>
-        <circle cx="34" cy="11" r="1.5" fill="currentColor" opacity=".4" stroke="none"/>
-        <circle cx="34" cy="20" r="1.5" fill="currentColor" opacity=".4" stroke="none"/>
-        <circle cx="34" cy="29" r="1.5" fill="currentColor" opacity=".4" stroke="none"/>
-        <line x1="6" y1="36" x2="38" y2="36"/>
-      </svg>
-      </svg><span class="tech-badge">Efficiency</span></div>
-      <h4>Space & Energy Efficiency</h4>
-      <p>High-density 2U rack design paired with optimized cooling paths maximizes space utilization and lowers overall energy draw.</p>
-    </div>
-
-    <!-- 9 -->
-    <div class="tech-card fu d9">
-      <div class="tech-icon-row"><svg class="tech-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="6" y="8" width="32" height="24" rx="3"/>
-        <line x1="14" y1="36" x2="30" y2="36"/><line x1="22" y1="32" x2="22" y2="36"/>
-        <polyline points="12,20 16,16 20,20 24,14 28,18 32,14"/>
-      </svg>
-      </svg><span class="tech-badge">Management</span></div>
-      <h4>Complete Remote Management</h4>
-      <p>On-board BMC, IPMI 2.0, and Redfish APIs enable 24/7/365 remote monitoring, diagnostics, and telemetry.</p>
-    </div>
-
-  </div>
-</div>
-</section>
-
-<!-- ???? CTA ???? -->
-<section class="cta-band">
-<div class="wrap">
-  <div class="cta-inner fu">
-    <div class="cta-text">
-      <h2>Need More Technical Information?</h2>
-      <p>Our technical consultants will assist you in designing the most optimal high-density computing solution.</p>
-    </div>
-    <div class="cta-actions">
-      <a href="../../../../pages/resources/datasheets/index.html" class="btn btn-ghost">Download Datasheets</a>
-      <a href="../../../../pages/about/contact/index.html" class="btn btn-primary">Contact Us</a>
     </div>
   </div>
 </div>
