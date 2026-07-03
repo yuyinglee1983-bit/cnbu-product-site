@@ -15,7 +15,7 @@ var NAV=[
     {title:'Server',items:[
       {l:'SR610',h:'pages/products/servers/sr610/index.html'},
       {l:'SR710',h:'pages/products/servers/sr710/index.html'},
-      {l:'SR710G',h:'pages/products/servers/sr710g/index.html'}
+      {l:'SR810',h:'pages/products/servers/sr710g/index.html'}
     ]},
     {title:'Edge Server',items:[
       {l:'SE110',h:'pages/products/servers/se110/index.html'},
