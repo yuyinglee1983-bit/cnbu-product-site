@@ -28,7 +28,7 @@ img{max-width:100%;display:block}
 [class*="eyebrow"]{display:none}
 /* ── Breadcrumb separator fix (encoding repair) ── */
 .sep{font-size:0;line-height:1}
-.sep::before{content:"›";font-size:12px;opacity:.45}
+.sep::before{content:"›";font-size:13px;opacity:1}
 
 /* ── Buttons ─────────────────────────────── */
 .btn{display:inline-flex;align-items:center;gap:8px;padding:0 24px;min-height:48px;border-radius:8px;font-weight:700;font-size:14px;transition:all .2s;cursor:pointer;white-space:nowrap;border:none;font-family:inherit}
@@ -82,7 +82,7 @@ img{max-width:100%;display:block}
 .breadcrumb{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:18px;font-size:13px;color:var(--muted)}
 .breadcrumb a{color:var(--blue)}
 .breadcrumb a:hover{text-decoration:underline}
-.sep{color:var(--line)}
+.sep{color:var(--muted)}
 
 /* ── Page Hero (sub-pages) ───────────────── */
 .page-hero{padding:72px 0 44px;border-bottom:1px solid var(--line);background:linear-gradient(160deg,var(--soft) 0%,#fff 100%)}
