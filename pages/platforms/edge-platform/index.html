@@ -454,10 +454,53 @@
 .tab-section .usecase-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 24px;
+  margin-top: 0;
 }
 .tab-section .usecase-card {
   padding: 28px 28px 24px;
+  background: #ffffff;
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(0,0,0,.05);
+  position: relative;
+  overflow: hidden;
+  transition: all .3s cubic-bezier(.4,0,.2,1);
+}
+.tab-section .usecase-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #005EB8, #00c2e0);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+}
+.tab-section .usecase-card:hover {
+  border-color: #005EB8;
+  box-shadow: 0 12px 40px rgba(0,94,184,.12);
+  transform: translateY(-4px);
+}
+.tab-section .usecase-card:hover::before { transform: scaleX(1); }
+.tab-section .usecase-card h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 4px 0 10px;
+}
+.tab-section .usecase-card > p {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+.tab-section .uc-flow {
+  background: #f4f7fb;
+  border: 1px solid #dce5ef;
+}
+.tab-section .uc-col-center {
+  background: rgba(0,94,184,.04);
 }
 .uc-tag {
   display: inline-block;
