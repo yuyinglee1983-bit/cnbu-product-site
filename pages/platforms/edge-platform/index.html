@@ -379,6 +379,102 @@
   object-fit: cover;
 }
 
+
+/* ── Tab Section ───────────────────────────── */
+.tab-section {
+  padding: 80px 0 88px;
+  background: linear-gradient(180deg, #f7f9fc 0%, #fff 60%);
+  border-bottom: 1px solid var(--line);
+}
+.tab-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.tab-main-title {
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -.025em;
+  margin: 0 0 12px;
+}
+.tab-main-desc {
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+/* Tab pill bar */
+.tab-pills {
+  display: flex;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 5px;
+  gap: 4px;
+  margin-bottom: 36px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tab-pill {
+  flex: 1;
+  padding: 11px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .22s cubic-bezier(.4,0,.2,1);
+  background: transparent;
+  color: var(--muted);
+  letter-spacing: .01em;
+  font-family: inherit;
+}
+.tab-pill.active {
+  background: #005EB8;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0,94,184,.28);
+}
+.tab-pill:hover:not(.active) {
+  background: #fff;
+  color: var(--ink);
+}
+/* Tab panels */
+.tab-panel {
+  display: none;
+  animation: tabFadeIn .3s ease;
+}
+.tab-panel.active { display: block; }
+@keyframes tabFadeIn {
+  from { opacity:0; transform:translateY(10px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+/* Usecase grid inside tab */
+.tab-section .usecase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.tab-section .usecase-card {
+  padding: 28px 28px 24px;
+}
+.uc-tag {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+/* Feat card icon */
+.feat-icon-wrap {
+  font-size: 28px;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+
 </style>
 </head>
 <body data-root="../../../">
@@ -444,15 +540,207 @@
 </section>
 
 
-<!-- ════ USE CASES ════ -->
-<section class="usecase-section">
+<!-- ════ TABBED: SOLVING ENTERPRISE PROBLEMS ════ -->
+<section class="tab-section">
   <div class="wrap">
-    <h2 class="section-title fu">Solving Real Enterprise Problems</h2>
-    <p class="section-desc fu">From industry use cases to product capabilities — find the right entry point for your organization.</p>
-    <div class="usecase-grid">
+    <div class="tab-header fu">
+      <h2 class="tab-main-title">Solving Real Enterprise Problems</h2>
+      <p class="tab-main-desc">From industry use cases to product capabilities — find the right entry point for your organization.</p>
+    </div>
 
-      <!-- Smart Manufacturing -->
-      <div class="usecase-card fu d1">
+    <!-- Tab Pills -->
+    <div class="tab-pills" role="tablist">
+      <button class="tab-pill active" data-tab="usecases" role="tab" aria-selected="true">
+        Industry Use Cases
+      </button>
+      <button class="tab-pill" data-tab="capabilities" role="tab" aria-selected="false">
+        Product Capabilities
+      </button>
+    </div>
+
+    <!-- Panel: Industry Use Cases -->
+    <div class="tab-panel active" id="panel-usecases">
+      <div class="usecase-grid">
+
+        <!-- Smart Manufacturing -->
+        <div class="usecase-card">
+          <div class="uc-tag">Smart Manufacturing</div>
+          <h4>Smart Manufacturing</h4>
+          <p>Decades of tribal knowledge, scattered manuals, and siloed production data — unified inside Raxel. Floor technicians get instant cited answers. Knowledge stays when people leave.</p>
+          <div class="uc-flow">
+            <div class="uc-col">
+              <div class="uc-col-label">Data Sources</div>
+              <ul>
+                <li>Equipment Manuals</li><li>Maintenance Logs</li><li>Process SOPs</li>
+                <li>Quality Reports</li><li>Production Data</li><li>Supplier Records</li>
+              </ul>
+            </div>
+            <div class="uc-col uc-col-center">
+              <div class="uc-col-label">Raxel Boundary</div>
+              <div class="uc-boundary-item">Knowledge Engine</div><div class="uc-boundary-sub">Ingest · Index · Retrieve</div>
+              <div class="uc-boundary-item">AI Reasoning</div><div class="uc-boundary-sub">Understand · Answer · Cite</div>
+              <div class="uc-boundary-item">Governance Layer</div><div class="uc-boundary-sub">Permissions · Audit</div>
+            </div>
+            <div class="uc-col">
+              <div class="uc-col-label">AI Response &amp; Users</div>
+              <ul>
+                <li>Root cause answer</li><li>Cited source doc</li><li>Defect trend</li>
+                <li>Traceability report</li><li>Training guide</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Smart Retail -->
+        <div class="usecase-card">
+          <div class="uc-tag">Smart Retail</div>
+          <h4>Smart Retail</h4>
+          <p>Store, e-commerce, inventory, and membership systems unified inside Raxel. Business users get data-driven answers without waiting for IT — customer data never touches the cloud.</p>
+          <div class="uc-flow">
+            <div class="uc-col">
+              <div class="uc-col-label">Data Sources</div>
+              <ul>
+                <li>POS / Store Systems</li><li>E-Commerce Platform</li><li>Inventory System</li>
+                <li>Membership DB</li><li>Supplier / ERP</li><li>Promo Records</li>
+              </ul>
+            </div>
+            <div class="uc-col uc-col-center">
+              <div class="uc-col-label">Raxel Boundary</div>
+              <div class="uc-boundary-item">Data Integration</div><div class="uc-boundary-sub">Connect · Unify · Normalize</div>
+              <div class="uc-boundary-item">NL to Query</div><div class="uc-boundary-sub">Parse · Execute · Visualize</div>
+              <div class="uc-boundary-item">Governance Layer</div><div class="uc-boundary-sub">Permissions · Audit</div>
+            </div>
+            <div class="uc-col">
+              <div class="uc-col-label">AI Response &amp; Users</div>
+              <ul>
+                <li>SKU performance</li><li>Return rate analysis</li><li>Promo effectiveness</li>
+                <li>Inventory forecast</li><li>Trend charts</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Smart Office -->
+        <div class="usecase-card">
+          <div class="uc-tag">Smart Office</div>
+          <h4>Smart Office</h4>
+          <p>Contracts, approvals, and meeting minutes consolidated into one queryable knowledge base. Employees get cited answers — sensitive documents never uploaded to external AI tools.</p>
+          <div class="uc-flow">
+            <div class="uc-col">
+              <div class="uc-col-label">Data Sources</div>
+              <ul>
+                <li>Contracts / NAS</li><li>Approvals / ERP</li><li>Meeting Minutes</li>
+                <li>Reports / Policies</li><li>HR Documents</li><li>Email / Decisions</li>
+              </ul>
+            </div>
+            <div class="uc-col uc-col-center">
+              <div class="uc-col-label">Raxel Boundary</div>
+              <div class="uc-boundary-item">Document Intelligence</div><div class="uc-boundary-sub">Parse · Chunk · Embed</div>
+              <div class="uc-boundary-item">Semantic Retrieval</div><div class="uc-boundary-sub">Search · Rank · Cite</div>
+              <div class="uc-boundary-item">Governance Layer</div><div class="uc-boundary-sub">SSO · Role Access · Audit</div>
+            </div>
+            <div class="uc-col">
+              <div class="uc-col-label">AI Response &amp; Users</div>
+              <ul>
+                <li>Contract clause answer</li><li>Cross-doc comparison</li><li>Decision summary</li>
+                <li>Policy lookup</li><li>Source cited always</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Smart Security -->
+        <div class="usecase-card">
+          <div class="uc-tag">Smart Security</div>
+          <h4>Smart Security</h4>
+          <p>All logs analyzed inside the firewall. Threats surfaced before damage is done, incidents reconstructed in minutes — security data never sent to an external platform for analysis.</p>
+          <div class="uc-flow">
+            <div class="uc-col">
+              <div class="uc-col-label">Data Sources</div>
+              <ul>
+                <li>System / App Logs</li><li>Access Records</li><li>Network Traffic</li>
+                <li>Endpoint Alerts</li><li>Firewall Events</li><li>Auth / IAM Logs</li>
+              </ul>
+            </div>
+            <div class="uc-col uc-col-center">
+              <div class="uc-col-label">Raxel Boundary</div>
+              <div class="uc-boundary-item">Log Aggregation</div><div class="uc-boundary-sub">Collect · Normalize · Index</div>
+              <div class="uc-boundary-item">Anomaly Detection</div><div class="uc-boundary-sub">Pattern · Score · Alert</div>
+              <div class="uc-boundary-item">Governance Layer</div><div class="uc-boundary-sub">Audit · Compliance · Report</div>
+            </div>
+            <div class="uc-col">
+              <div class="uc-col-label">AI Response &amp; Users</div>
+              <ul>
+                <li>Daily risk summary</li><li>Anomalous accounts</li><li>Incident timeline</li>
+                <li>Threat patterns</li><li>Compliance report</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /usecase-grid -->
+    </div><!-- /panel-usecases -->
+
+    <!-- Panel: Product Capabilities -->
+    <div class="tab-panel" id="panel-capabilities">
+      <div class="feat-grid-2">
+        <div class="feat-card">
+          <div class="feat-icon-wrap">&#128196;</div>
+          <h4>Document Intelligence</h4>
+          <p>Transform unstructured enterprise content — PDFs, Word files, scanned documents, presentations — into a queryable, citable, and comparable knowledge resource.</p>
+          <ul>
+            <li>Multi-format parsing: PDF, Word, Excel, scanned images</li>
+            <li>Semantic search — find relevant content without exact keywords</li>
+            <li>Cross-document comparison</li>
+            <li>Source citation on every answer — no hallucinated content</li>
+            <li>Role-based access control by department</li>
+          </ul>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon-wrap">&#9881;&#65039;</div>
+          <h4>IT Operations Intelligence</h4>
+          <p>Turn the flood of daily logs, alerts, and tickets from noise into actionable intelligence — protecting more with less manual effort.</p>
+          <ul>
+            <li>Multi-source log aggregation and semantic analysis</li>
+            <li>Anomaly pattern recognition with proactive alerts</li>
+            <li>Natural language log queries</li>
+            <li>Incident timeline reconstruction for forensic investigation</li>
+            <li>Auto-generated compliance reports</li>
+          </ul>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon-wrap">&#129504;</div>
+          <h4>Enterprise Knowledge</h4>
+          <p>Organizational knowledge shouldn't live only in people's heads. Make every document, every decision, and every lesson learned available to whoever needs it next.</p>
+          <ul>
+            <li>Unified knowledge ingestion from documents and systems</li>
+            <li>Mixed retrieval across structured and unstructured content</li>
+            <li>Version tracking — always the most current information</li>
+            <li>Query audit trail — who asked what, and when</li>
+            <li>Cross-language support for mixed environments</li>
+          </ul>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon-wrap">&#128202;</div>
+          <h4>Data Insights</h4>
+          <p>Structured enterprise data shouldn't be accessible only to those who can write SQL. Enable every business user to talk directly to their data.</p>
+          <ul>
+            <li>Natural language to query — ask in plain language</li>
+            <li>Cross-source integration: ERP, CRM, MES, and more</li>
+            <li>Auto-generated visualizations on demand</li>
+            <li>Business language mapping — no field names needed</li>
+            <li>Role-based query permissions</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- /panel-capabilities -->
+
+  </div>
+</section>
+
+
+
+
         <h4>Smart Manufacturing</h4>
         <p>Decades of tribal knowledge, scattered manuals, and siloed production data — unified inside Raxel. Floor technicians get instant cited answers. Knowledge stays when people leave.</p>
         <div class="uc-flow">
@@ -609,58 +897,6 @@
 
 
 <!-- ════ PRODUCT CAPABILITIES ════ -->
-<section class="feat-section">
-  <div class="wrap">
-    <span class="section-label fu">Product Capabilities</span>
-    <div class="feat-grid-2">
-      <div class="feat-card fu d1">
-        <h4>Document Intelligence</h4>
-        <p>Transform unstructured enterprise content — PDFs, Word files, scanned documents, presentations — into a queryable, citable, and comparable knowledge resource.</p>
-        <ul>
-          <li>Multi-format parsing: PDF, Word, Excel, scanned images</li>
-          <li>Semantic search — find relevant content without exact keywords</li>
-          <li>Cross-document comparison</li>
-          <li>Source citation on every answer — no hallucinated content</li>
-          <li>Role-based access control by department</li>
-        </ul>
-      </div>
-      <div class="feat-card fu d2">
-        <h4>IT Operations Intelligence</h4>
-        <p>Turn the flood of daily logs, alerts, and tickets from noise into actionable intelligence — protecting more with less manual effort.</p>
-        <ul>
-          <li>Multi-source log aggregation and semantic analysis</li>
-          <li>Anomaly pattern recognition with proactive alerts</li>
-          <li>Natural language log queries</li>
-          <li>Incident timeline reconstruction for forensic investigation</li>
-          <li>Auto-generated compliance reports</li>
-        </ul>
-      </div>
-      <div class="feat-card fu d3">
-        <h4>Enterprise Knowledge</h4>
-        <p>Organizational knowledge shouldn't live only in people's heads. Make every document, every decision, and every lesson learned available to whoever needs it next.</p>
-        <ul>
-          <li>Unified knowledge ingestion from documents and systems</li>
-          <li>Mixed retrieval across structured and unstructured content</li>
-          <li>Version tracking — always the most current information</li>
-          <li>Query audit trail — who asked what, and when</li>
-          <li>Cross-language support for mixed environments</li>
-        </ul>
-      </div>
-      <div class="feat-card fu d4">
-        <h4>Data Insights</h4>
-        <p>Structured enterprise data shouldn't be accessible only to those who can write SQL. Enable every business user to talk directly to their data.</p>
-        <ul>
-          <li>Natural language to query — ask in plain language</li>
-          <li>Cross-source integration: ERP, CRM, MES, and more</li>
-          <li>Auto-generated visualizations on demand</li>
-          <li>Business language mapping — no field names needed</li>
-          <li>Role-based query permissions</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 <!-- ════ DEPLOYMENT OPTIONS ════ -->
 <section class="deploy-section">
@@ -729,5 +965,23 @@
 </main>
 <footer id="site-footer"></footer>
 <script src="../../../assets/js/site.js"></script>
+<script>
+// Tab switching
+(function(){
+  var pills = document.querySelectorAll('.tab-pill');
+  pills.forEach(function(pill){
+    pill.addEventListener('click', function(){
+      var target = pill.getAttribute('data-tab');
+      // Update pills
+      pills.forEach(function(p){ p.classList.remove('active'); p.setAttribute('aria-selected','false'); });
+      pill.classList.add('active'); pill.setAttribute('aria-selected','true');
+      // Update panels
+      document.querySelectorAll('.tab-panel').forEach(function(panel){ panel.classList.remove('active'); });
+      var targetPanel = document.getElementById('panel-'+target);
+      if(targetPanel){ targetPanel.classList.add('active'); }
+    });
+  });
+})();
+</script>
 </body>
 </html>
