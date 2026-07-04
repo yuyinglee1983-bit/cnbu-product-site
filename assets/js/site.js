@@ -1,7 +1,7 @@
 (function(){
 var R=document.body.dataset.root||'';
 var NAV=[
-  {label:'About Us',subs:[
+  {label:'About',subs:[
     {l:'About Senao Computing',h:'pages/about/index.html'},
     {l:'Why Senao Computing',h:'pages/about/company/index.html'},
     {l:'Global Presence',h:'pages/about/manufacturing/index.html'},
@@ -138,7 +138,7 @@ if(ftr){
     +'<p>High-Performance Servers, SmartNICs & Platform Solutions<br>Comprehensive Experts in Data Center Infrastructure</p>'
     +'</div>'
     +'<div class="ftr-cols">'
-    +'<div class="ftr-col"><h5>About Us</h5>'
+    +'<div class="ftr-col"><h5>About</h5>'
       +'<a href="'+R+'pages/about/index.html">About Senao Computing</a>'
       +'<a href="'+R+'pages/about/company/index.html">Why Senao Computing</a>'
       +'<a href="'+R+'pages/about/manufacturing/index.html">Global Presence</a>'
