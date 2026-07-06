@@ -122,6 +122,20 @@
   .pd-unboxing-inner{grid-template-columns:1fr;gap:28px}
   .pd-unboxing-text p{max-width:100%}
 }
+/* Business Value */
+.pd-bv{padding:72px 0;background:linear-gradient(180deg,#f4f7fb 0%,#fff 100%);border-bottom:1px solid var(--line)}
+.pd-bv-header{text-align:center;margin-bottom:48px}
+.pd-bv-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.pd-bv-title{font-size:clamp(26px,3vw,38px);font-weight:800;color:var(--navy);letter-spacing:-.025em;margin:0}
+.pd-bv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pd-bv-card{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:28px 24px 26px;position:relative;overflow:hidden;transition:all .25s cubic-bezier(.4,0,.2,1)}
+.pd-bv-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#005EB8,#00c2e0);transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.4,0,.2,1)}
+.pd-bv-card:hover{border-color:#005EB8;box-shadow:0 8px 32px rgba(0,94,184,.10);transform:translateY(-3px)}
+.pd-bv-card:hover::before{transform:scaleX(1)}
+.pd-bv-spec{font-size:17px;font-weight:800;color:var(--navy);letter-spacing:-.02em;margin:0 0 8px}
+.pd-bv-desc{font-size:13px;line-height:1.65;color:var(--muted);margin:0}
+@media(max-width:900px){.pd-bv-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.pd-bv-grid{grid-template-columns:1fr}}
 /* Responsive */
 @media(max-width:900px){.pd-hero-inner{grid-template-columns:1fr;min-height:auto}.pd-hero-text{padding:48px 0 28px}.pd-hero-img{padding:0 0 40px}.pd-spec-grid{grid-template-columns:repeat(2,1fr)}.pd-feat-grid{grid-template-columns:1fr}.pd-gallery-grid{grid-template-columns:1fr}}
 @media(max-width:560px){.pd-spec-grid{grid-template-columns:1fr}}
@@ -237,6 +251,42 @@
       <video controls preload="auto">
         <source src="SenaoServer_Unboxing.mp4" type="video/mp4">
       </video>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ── Built-In Business Value ── -->
+<section class="pd-bv">
+<div class="wrap">
+  <div class="pd-bv-header fu">
+    <span class="pd-bv-eyebrow">Why SR710</span>
+    <h2 class="pd-bv-title">Built-In Business Value</h2>
+  </div>
+  <div class="pd-bv-grid">
+    <div class="pd-bv-card fu">
+      <div class="pd-bv-spec">Dual Intel® Xeon® 6</div>
+      <p class="pd-bv-desc">Maximum core density for HPC, AI, and cloud workloads</p>
+    </div>
+    <div class="pd-bv-card fu d1">
+      <div class="pd-bv-spec">32× DDR5 RDIMM</div>
+      <p class="pd-bv-desc">High memory bandwidth for data-intensive applications</p>
+    </div>
+    <div class="pd-bv-card fu d2">
+      <div class="pd-bv-spec">OCP DC-MHS Architecture</div>
+      <p class="pd-bv-desc">Modular, future-proof design with faster component refresh</p>
+    </div>
+    <div class="pd-bv-card fu d3">
+      <div class="pd-bv-spec">8× PCIe Gen5 CXL2.0</div>
+      <p class="pd-bv-desc">Flexible GPU, SmartNIC, and accelerator expansion</p>
+    </div>
+    <div class="pd-bv-card fu d4">
+      <div class="pd-bv-spec">24× NVMe Hot-Swap</div>
+      <p class="pd-bv-desc">High-density, serviceable storage</p>
+    </div>
+    <div class="pd-bv-card fu d5">
+      <div class="pd-bv-spec">DC-SCM BMC + PFR2.0</div>
+      <p class="pd-bv-desc">Enterprise-grade security and remote manageability</p>
     </div>
   </div>
 </div>
