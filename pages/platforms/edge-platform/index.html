@@ -923,116 +923,164 @@
 
         <!-- Document Intelligence -->
         <div class="usecase-card">
-          <div class="uc-tag">Product Capabilities</div>
-          <h4>Document Intelligence</h4>
-          <p>Transform unstructured enterprise content — PDFs, Word files, scanned documents, presentations — into a queryable, citable, and comparable knowledge resource.</p>
-          <div class="uc-flow">
-            <div class="uc-col">
-              <div class="uc-col-label">Input Formats</div>
-              <ul>
-                <li>PDF / Word / Excel</li><li>Scanned Images</li><li>Presentations</li>
-                <li>Email &amp; Reports</li><li>HTML Documents</li>
-              </ul>
+          <div class="uc-card-head">
+            <h4 class="uc-card-title">Document Intelligence</h4>
+          </div>
+          <p class="uc-card-desc">Transform unstructured enterprise content — PDFs, Word files, scanned documents, presentations — into a queryable, citable, and comparable knowledge resource.</p>
+          <div class="uc-diagram">
+            <div class="uc-diagram-col" style="flex:1">
+              <div class="uc-diagram-label">Input Formats</div>
+              <div class="uc-src-box">
+                <ul>
+                  <li>PDF / Word / Excel</li><li>Scanned Images</li>
+                  <li>Presentations</li><li>Email &amp; Reports</li>
+                  <li>HTML Documents</li>
+                </ul>
+              </div>
             </div>
-            <div class="uc-col uc-col-center">
-              <div class="uc-col-label">Raxel Engine</div>
-              <div class="uc-boundary-item">Parse &amp; Chunk</div><div class="uc-boundary-sub">OCR · Structure · Segment</div>
-              <div class="uc-boundary-item">Semantic Index</div><div class="uc-boundary-sub">Embed · Rank · Search</div>
-              <div class="uc-boundary-item">Access Control</div><div class="uc-boundary-sub">Role · Dept · Audit</div>
-            </div>
-            <div class="uc-col">
-              <div class="uc-col-label">Capabilities</div>
-              <ul>
-                <li>Semantic search</li><li>Cross-doc compare</li><li>Citation on every answer</li>
-                <li>No hallucinated content</li><li>Role-based access</li>
-              </ul>
+            <div class="uc-arrow">→</div>
+            <div class="uc-boundary-col">
+              <div class="uc-diagram-label">Raxel Engine</div>
+              <div class="uc-boundary-box">
+                <div class="uc-engines">
+                  <div class="uc-engine-block">Parse &amp; Chunk<span class="uc-engine-sub">OCR · Structure · Segment</span></div>
+                  <div class="uc-engine-block">Semantic Index<span class="uc-engine-sub">Embed · Rank · Search</span></div>
+                  <div class="uc-engine-block">Access Control<span class="uc-engine-sub">Role · Dept · Audit</span></div>
+                </div>
+                <div class="uc-inner-arrow">→</div>
+                <div class="uc-response">
+                  <div class="uc-response-label">Capabilities</div>
+                  <ul>
+                    <li>Semantic search</li><li>Cross-doc compare</li>
+                    <li>Citation on every answer</li>
+                    <li>No hallucinated content</li>
+                    <li class="hi">Role-based access</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- IT Operations Intelligence -->
         <div class="usecase-card">
-          <div class="uc-tag">Product Capabilities</div>
-          <h4>IT Operations Intelligence</h4>
-          <p>Turn the flood of daily logs, alerts, and tickets from noise into actionable intelligence — protecting more with less manual effort.</p>
-          <div class="uc-flow">
-            <div class="uc-col">
-              <div class="uc-col-label">Data Sources</div>
-              <ul>
-                <li>System / App Logs</li><li>Security Alerts</li><li>Ticket Systems</li>
-                <li>Network Metrics</li><li>Audit Trails</li>
-              </ul>
+          <div class="uc-card-head">
+            <h4 class="uc-card-title">IT Operations Intelligence</h4>
+          </div>
+          <p class="uc-card-desc">Turn the flood of daily logs, alerts, and tickets from noise into actionable intelligence — protecting more with less manual effort.</p>
+          <div class="uc-diagram">
+            <div class="uc-diagram-col" style="flex:1">
+              <div class="uc-diagram-label">Data Sources</div>
+              <div class="uc-src-box">
+                <ul>
+                  <li>System / App Logs</li><li>Security Alerts</li>
+                  <li>Ticket Systems</li><li>Network Metrics</li>
+                  <li>Audit Trails</li>
+                </ul>
+              </div>
             </div>
-            <div class="uc-col uc-col-center">
-              <div class="uc-col-label">Raxel Engine</div>
-              <div class="uc-boundary-item">Log Aggregation</div><div class="uc-boundary-sub">Collect · Normalize · Index</div>
-              <div class="uc-boundary-item">Anomaly Detection</div><div class="uc-boundary-sub">Pattern · Score · Alert</div>
-              <div class="uc-boundary-item">NL Query</div><div class="uc-boundary-sub">Ask in plain language</div>
-            </div>
-            <div class="uc-col">
-              <div class="uc-col-label">Capabilities</div>
-              <ul>
-                <li>Semantic log analysis</li><li>Proactive alerts</li><li>Incident timeline</li>
-                <li>Forensic investigation</li><li>Auto compliance report</li>
-              </ul>
+            <div class="uc-arrow">→</div>
+            <div class="uc-boundary-col">
+              <div class="uc-diagram-label">Raxel Engine</div>
+              <div class="uc-boundary-box">
+                <div class="uc-engines">
+                  <div class="uc-engine-block">Log Aggregation<span class="uc-engine-sub">Collect · Normalize · Index</span></div>
+                  <div class="uc-engine-block">Anomaly Detection<span class="uc-engine-sub">Pattern · Score · Alert</span></div>
+                  <div class="uc-engine-block">NL Query<span class="uc-engine-sub">Ask in plain language</span></div>
+                </div>
+                <div class="uc-inner-arrow">→</div>
+                <div class="uc-response">
+                  <div class="uc-response-label">Capabilities</div>
+                  <ul>
+                    <li>Semantic log analysis</li><li>Proactive alerts</li>
+                    <li>Incident timeline</li>
+                    <li>Forensic investigation</li>
+                    <li class="hi">Auto compliance report</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Enterprise Knowledge -->
         <div class="usecase-card">
-          <div class="uc-tag">Product Capabilities</div>
-          <h4>Enterprise Knowledge</h4>
-          <p>Organizational knowledge shouldn't live only in people's heads. Make every document, every decision, and every lesson learned available to whoever needs it next.</p>
-          <div class="uc-flow">
-            <div class="uc-col">
-              <div class="uc-col-label">Knowledge Sources</div>
-              <ul>
-                <li>Documents &amp; Files</li><li>Databases &amp; ERP</li><li>Email &amp; Minutes</li>
-                <li>SOPs &amp; Policies</li><li>Structured Data</li>
-              </ul>
+          <div class="uc-card-head">
+            <h4 class="uc-card-title">Enterprise Knowledge</h4>
+          </div>
+          <p class="uc-card-desc">Organizational knowledge shouldn't live only in people's heads. Make every document, every decision, and every lesson learned available to whoever needs it next.</p>
+          <div class="uc-diagram">
+            <div class="uc-diagram-col" style="flex:1">
+              <div class="uc-diagram-label">Knowledge Sources</div>
+              <div class="uc-src-box">
+                <ul>
+                  <li>Documents &amp; Files</li><li>Databases &amp; ERP</li>
+                  <li>Email &amp; Minutes</li><li>SOPs &amp; Policies</li>
+                  <li>Structured Data</li>
+                </ul>
+              </div>
             </div>
-            <div class="uc-col uc-col-center">
-              <div class="uc-col-label">Raxel Engine</div>
-              <div class="uc-boundary-item">Unified Ingestion</div><div class="uc-boundary-sub">Connect · Unify · Version</div>
-              <div class="uc-boundary-item">Mixed Retrieval</div><div class="uc-boundary-sub">Structured + Unstructured</div>
-              <div class="uc-boundary-item">Audit Trail</div><div class="uc-boundary-sub">Who · What · When</div>
-            </div>
-            <div class="uc-col">
-              <div class="uc-col-label">Capabilities</div>
-              <ul>
-                <li>Always-current info</li><li>Cross-language support</li><li>Version tracking</li>
-                <li>Query audit trail</li><li>Dept-level access</li>
-              </ul>
+            <div class="uc-arrow">→</div>
+            <div class="uc-boundary-col">
+              <div class="uc-diagram-label">Raxel Engine</div>
+              <div class="uc-boundary-box">
+                <div class="uc-engines">
+                  <div class="uc-engine-block">Unified Ingestion<span class="uc-engine-sub">Connect · Unify · Version</span></div>
+                  <div class="uc-engine-block">Mixed Retrieval<span class="uc-engine-sub">Structured + Unstructured</span></div>
+                  <div class="uc-engine-block">Audit Trail<span class="uc-engine-sub">Who · What · When</span></div>
+                </div>
+                <div class="uc-inner-arrow">→</div>
+                <div class="uc-response">
+                  <div class="uc-response-label">Capabilities</div>
+                  <ul>
+                    <li>Always-current info</li><li>Cross-language support</li>
+                    <li>Version tracking</li>
+                    <li>Query audit trail</li>
+                    <li class="hi">Dept-level access</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Data Insights -->
         <div class="usecase-card">
-          <div class="uc-tag">Product Capabilities</div>
-          <h4>Data Insights</h4>
-          <p>Structured enterprise data shouldn't be accessible only to those who can write SQL. Enable every business user to talk directly to their data.</p>
-          <div class="uc-flow">
-            <div class="uc-col">
-              <div class="uc-col-label">Data Sources</div>
-              <ul>
-                <li>ERP Systems</li><li>CRM Platforms</li><li>MES / SCADA</li>
-                <li>Databases</li><li>BI Tools</li>
-              </ul>
+          <div class="uc-card-head">
+            <h4 class="uc-card-title">Data Insights</h4>
+          </div>
+          <p class="uc-card-desc">Structured enterprise data shouldn't be accessible only to those who can write SQL. Enable every business user to talk directly to their data.</p>
+          <div class="uc-diagram">
+            <div class="uc-diagram-col" style="flex:1">
+              <div class="uc-diagram-label">Data Sources</div>
+              <div class="uc-src-box">
+                <ul>
+                  <li>ERP Systems</li><li>CRM Platforms</li>
+                  <li>MES / SCADA</li><li>Databases</li>
+                  <li>BI Tools</li>
+                </ul>
+              </div>
             </div>
-            <div class="uc-col uc-col-center">
-              <div class="uc-col-label">Raxel Engine</div>
-              <div class="uc-boundary-item">NL to Query</div><div class="uc-boundary-sub">Parse · Execute · Visualize</div>
-              <div class="uc-boundary-item">Cross-Source Join</div><div class="uc-boundary-sub">ERP · CRM · MES</div>
-              <div class="uc-boundary-item">Permission Layer</div><div class="uc-boundary-sub">Role-based query access</div>
-            </div>
-            <div class="uc-col">
-              <div class="uc-col-label">Capabilities</div>
-              <ul>
-                <li>Plain language queries</li><li>Auto visualizations</li><li>Business language map</li>
-                <li>No SQL required</li><li>Role-based access</li>
-              </ul>
+            <div class="uc-arrow">→</div>
+            <div class="uc-boundary-col">
+              <div class="uc-diagram-label">Raxel Engine</div>
+              <div class="uc-boundary-box">
+                <div class="uc-engines">
+                  <div class="uc-engine-block">NL to Query<span class="uc-engine-sub">Parse · Execute · Visualize</span></div>
+                  <div class="uc-engine-block">Cross-Source Join<span class="uc-engine-sub">ERP · CRM · MES</span></div>
+                  <div class="uc-engine-block">Permission Layer<span class="uc-engine-sub">Role-based query access</span></div>
+                </div>
+                <div class="uc-inner-arrow">→</div>
+                <div class="uc-response">
+                  <div class="uc-response-label">Capabilities</div>
+                  <ul>
+                    <li>Plain language queries</li><li>Auto visualizations</li>
+                    <li>Business language map</li>
+                    <li>No SQL required</li>
+                    <li class="hi">Role-based access</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
