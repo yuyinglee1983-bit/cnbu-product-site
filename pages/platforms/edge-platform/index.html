@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -611,6 +611,61 @@
   color: var(--blue);
   margin-bottom: 10px;
 }
+/* ── Product Capabilities simple card ───────── */
+.cap-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.cap-card {
+  background: #fff;
+  border: 1.5px solid #dde4ef;
+  border-radius: 14px;
+  padding: 28px 28px 26px;
+  transition: box-shadow .25s ease, transform .25s ease;
+}
+.cap-card:hover {
+  box-shadow: 0 8px 32px rgba(0,94,184,.10);
+  transform: translateY(-3px);
+}
+.cap-card-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0b1e38;
+  letter-spacing: -.02em;
+  margin: 0 0 10px;
+  text-align: left;
+}
+.cap-card-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #2563a8;
+  margin: 0 0 18px;
+}
+.cap-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #eaeef5;
+  padding-top: 14px;
+}
+.cap-list li {
+  font-size: 13px;
+  color: #3a4f6e;
+  padding: 5px 0;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+}
+.cap-list li::before {
+  content: "›";
+  color: #005EB8;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.3;
+  flex-shrink: 0;
+}
 /* Feat card icon */
 .feat-icon-wrap {
   font-size: 28px;
@@ -919,173 +974,61 @@
     <!-- Panel: Product Capabilities -->
 
     <div class="tab-panel" id="panel-capabilities">
-      <div class="usecase-grid">
+      <div class="cap-grid">
 
         <!-- Document Intelligence -->
-        <div class="usecase-card">
-          <div class="uc-card-head">
-            <h4 class="uc-card-title">Document Intelligence</h4>
-          </div>
-          <p class="uc-card-desc">Transform unstructured enterprise content — PDFs, Word files, scanned documents, presentations — into a queryable, citable, and comparable knowledge resource.</p>
-          <div class="uc-diagram">
-            <div class="uc-diagram-col" style="flex:1">
-              <div class="uc-diagram-label">Input Formats</div>
-              <div class="uc-src-box">
-                <ul>
-                  <li>PDF / Word / Excel</li><li>Scanned Images</li>
-                  <li>Presentations</li><li>Email &amp; Reports</li>
-                  <li>HTML Documents</li>
-                </ul>
-              </div>
-            </div>
-            <div class="uc-arrow">→</div>
-            <div class="uc-boundary-col">
-              <div class="uc-diagram-label">Raxel Engine</div>
-              <div class="uc-boundary-box">
-                <div class="uc-engines">
-                  <div class="uc-engine-block">Parse &amp; Chunk<span class="uc-engine-sub">OCR · Structure · Segment</span></div>
-                  <div class="uc-engine-block">Semantic Index<span class="uc-engine-sub">Embed · Rank · Search</span></div>
-                  <div class="uc-engine-block">Access Control<span class="uc-engine-sub">Role · Dept · Audit</span></div>
-                </div>
-                <div class="uc-inner-arrow">→</div>
-                <div class="uc-response">
-                  <div class="uc-response-label">Capabilities</div>
-                  <ul>
-                    <li>Semantic search</li><li>Cross-doc compare</li>
-                    <li>Citation on every answer</li>
-                    <li>No hallucinated content</li>
-                    <li class="hi">Role-based access</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="cap-card">
+          <h4 class="cap-card-title">Document Intelligence</h4>
+          <p class="cap-card-desc">Transform unstructured enterprise content — PDFs, Word files, scanned documents, presentations — into a queryable, citable, and comparable knowledge resource.</p>
+          <ul class="cap-list">
+            <li>Multi-format parsing: PDF, Word, Excel, scanned images</li>
+            <li>Semantic search — find relevant content without exact keywords</li>
+            <li>Cross-document comparison</li>
+            <li>Source citation on every answer — no hallucinated content</li>
+            <li>Role-based access control by department</li>
+          </ul>
         </div>
 
-        <!-- IT Operations Intelligence -->
-        <div class="usecase-card">
-          <div class="uc-card-head">
-            <h4 class="uc-card-title">IT Operations Intelligence</h4>
-          </div>
-          <p class="uc-card-desc">Turn the flood of daily logs, alerts, and tickets from noise into actionable intelligence — protecting more with less manual effort.</p>
-          <div class="uc-diagram">
-            <div class="uc-diagram-col" style="flex:1">
-              <div class="uc-diagram-label">Data Sources</div>
-              <div class="uc-src-box">
-                <ul>
-                  <li>System / App Logs</li><li>Security Alerts</li>
-                  <li>Ticket Systems</li><li>Network Metrics</li>
-                  <li>Audit Trails</li>
-                </ul>
-              </div>
-            </div>
-            <div class="uc-arrow">→</div>
-            <div class="uc-boundary-col">
-              <div class="uc-diagram-label">Raxel Engine</div>
-              <div class="uc-boundary-box">
-                <div class="uc-engines">
-                  <div class="uc-engine-block">Log Aggregation<span class="uc-engine-sub">Collect · Normalize · Index</span></div>
-                  <div class="uc-engine-block">Anomaly Detection<span class="uc-engine-sub">Pattern · Score · Alert</span></div>
-                  <div class="uc-engine-block">NL Query<span class="uc-engine-sub">Ask in plain language</span></div>
-                </div>
-                <div class="uc-inner-arrow">→</div>
-                <div class="uc-response">
-                  <div class="uc-response-label">Capabilities</div>
-                  <ul>
-                    <li>Semantic log analysis</li><li>Proactive alerts</li>
-                    <li>Incident timeline</li>
-                    <li>Forensic investigation</li>
-                    <li class="hi">Auto compliance report</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+        <!-- IT Operations -->
+        <div class="cap-card">
+          <h4 class="cap-card-title">IT Operations</h4>
+          <p class="cap-card-desc">Turn the flood of daily logs, alerts, and tickets from noise into actionable intelligence — protecting more with less manual effort.</p>
+          <ul class="cap-list">
+            <li>Multi-source log aggregation and semantic analysis</li>
+            <li>Anomaly pattern recognition with proactive alerts</li>
+            <li>Natural language log queries</li>
+            <li>Incident timeline reconstruction for forensic investigation</li>
+            <li>Auto-generated compliance reports</li>
+          </ul>
         </div>
 
         <!-- Enterprise Knowledge -->
-        <div class="usecase-card">
-          <div class="uc-card-head">
-            <h4 class="uc-card-title">Enterprise Knowledge</h4>
-          </div>
-          <p class="uc-card-desc">Organizational knowledge shouldn't live only in people's heads. Make every document, every decision, and every lesson learned available to whoever needs it next.</p>
-          <div class="uc-diagram">
-            <div class="uc-diagram-col" style="flex:1">
-              <div class="uc-diagram-label">Knowledge Sources</div>
-              <div class="uc-src-box">
-                <ul>
-                  <li>Documents &amp; Files</li><li>Databases &amp; ERP</li>
-                  <li>Email &amp; Minutes</li><li>SOPs &amp; Policies</li>
-                  <li>Structured Data</li>
-                </ul>
-              </div>
-            </div>
-            <div class="uc-arrow">→</div>
-            <div class="uc-boundary-col">
-              <div class="uc-diagram-label">Raxel Engine</div>
-              <div class="uc-boundary-box">
-                <div class="uc-engines">
-                  <div class="uc-engine-block">Unified Ingestion<span class="uc-engine-sub">Connect · Unify · Version</span></div>
-                  <div class="uc-engine-block">Mixed Retrieval<span class="uc-engine-sub">Structured + Unstructured</span></div>
-                  <div class="uc-engine-block">Audit Trail<span class="uc-engine-sub">Who · What · When</span></div>
-                </div>
-                <div class="uc-inner-arrow">→</div>
-                <div class="uc-response">
-                  <div class="uc-response-label">Capabilities</div>
-                  <ul>
-                    <li>Always-current info</li><li>Cross-language support</li>
-                    <li>Version tracking</li>
-                    <li>Query audit trail</li>
-                    <li class="hi">Dept-level access</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="cap-card">
+          <h4 class="cap-card-title">Enterprise Knowledge</h4>
+          <p class="cap-card-desc">Organizational knowledge shouldn't live only in people's heads. Make every document, every decision, and every lesson learned available to whoever needs it next.</p>
+          <ul class="cap-list">
+            <li>Unified knowledge ingestion from documents and systems</li>
+            <li>Mixed retrieval across structured and unstructured content</li>
+            <li>Version tracking — always the most current information</li>
+            <li>Query audit trail — who asked what, and when</li>
+            <li>Cross-language support for mixed environments</li>
+          </ul>
         </div>
 
         <!-- Data Insights -->
-        <div class="usecase-card">
-          <div class="uc-card-head">
-            <h4 class="uc-card-title">Data Insights</h4>
-          </div>
-          <p class="uc-card-desc">Structured enterprise data shouldn't be accessible only to those who can write SQL. Enable every business user to talk directly to their data.</p>
-          <div class="uc-diagram">
-            <div class="uc-diagram-col" style="flex:1">
-              <div class="uc-diagram-label">Data Sources</div>
-              <div class="uc-src-box">
-                <ul>
-                  <li>ERP Systems</li><li>CRM Platforms</li>
-                  <li>MES / SCADA</li><li>Databases</li>
-                  <li>BI Tools</li>
-                </ul>
-              </div>
-            </div>
-            <div class="uc-arrow">→</div>
-            <div class="uc-boundary-col">
-              <div class="uc-diagram-label">Raxel Engine</div>
-              <div class="uc-boundary-box">
-                <div class="uc-engines">
-                  <div class="uc-engine-block">NL to Query<span class="uc-engine-sub">Parse · Execute · Visualize</span></div>
-                  <div class="uc-engine-block">Cross-Source Join<span class="uc-engine-sub">ERP · CRM · MES</span></div>
-                  <div class="uc-engine-block">Permission Layer<span class="uc-engine-sub">Role-based query access</span></div>
-                </div>
-                <div class="uc-inner-arrow">→</div>
-                <div class="uc-response">
-                  <div class="uc-response-label">Capabilities</div>
-                  <ul>
-                    <li>Plain language queries</li><li>Auto visualizations</li>
-                    <li>Business language map</li>
-                    <li>No SQL required</li>
-                    <li class="hi">Role-based access</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="cap-card">
+          <h4 class="cap-card-title">Data Insights</h4>
+          <p class="cap-card-desc">Structured enterprise data shouldn't be accessible only to those who can write SQL. Enable every business user to talk directly to their data.</p>
+          <ul class="cap-list">
+            <li>Natural language to query — ask in plain language</li>
+            <li>Cross-source integration: ERP, CRM, MES, and more</li>
+            <li>Auto-generated visualizations on demand</li>
+            <li>Business language mapping — no field names needed</li>
+            <li>Role-based query permissions</li>
+          </ul>
         </div>
 
-      </div><!-- /usecase-grid -->
+      </div><!-- /cap-grid -->
     </div><!-- /panel-capabilities -->
 
   </div>
