@@ -218,6 +218,32 @@ img{max-width:100%;display:block}
 .fade-up.visible{opacity:1;transform:none}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
 .d4{transition-delay:.4s}.d5{transition-delay:.5s}
+/* ── Solutions Accordion ──────────────────────── */
+.sol-landing{display:flex;align-items:center;gap:56px;padding:8px 0}
+.sol-landing-left{flex:0 0 280px}
+.sol-landing-left h2{font-size:clamp(22px,2.6vw,36px);font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:14px}
+.sol-landing-left p{font-size:15px;line-height:1.75;color:var(--muted);margin-bottom:28px}
+.sol-landing-left .eyebrow{display:block;margin-bottom:14px}
+.sol-btns{display:flex;gap:10px;flex-wrap:wrap}
+.sol-acc-wrap{flex:1;display:flex;gap:7px;height:420px;min-width:0}
+.sol-acc-panel{position:relative;flex:.18;overflow:hidden;border-radius:14px;cursor:pointer;transition:flex .6s cubic-bezier(.4,0,.2,1);background:var(--navy);min-width:52px}
+.sol-acc-panel.active{flex:4}
+.sol-acc-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.55;transition:transform .7s cubic-bezier(.4,0,.2,1),opacity .4s}
+.sol-acc-panel.active .sol-acc-bg{transform:scale(1.04);opacity:.72}
+.sol-acc-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,12,25,.95) 0%,rgba(5,12,25,.35) 55%,rgba(5,12,25,.05) 100%)}
+.sol-acc-panel::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#005EB8,#00c2e0);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.4,0,.2,1);z-index:4;border-radius:14px 14px 0 0}
+.sol-acc-panel.active::before{transform:scaleX(1)}
+.sol-acc-label{position:absolute;bottom:32px;left:50%;transform:translateX(-50%) rotate(-90deg);white-space:nowrap;font-size:13px;font-weight:700;color:rgba(255,255,255,.8);letter-spacing:.03em;z-index:3;transition:opacity .3s,transform .3s;pointer-events:none}
+.sol-acc-panel.active .sol-acc-label{opacity:0;transform:translateX(-50%) rotate(-90deg) translateY(12px)}
+.sol-acc-body{position:absolute;bottom:0;left:0;right:0;padding:28px 24px;z-index:3;opacity:0;transform:translateY(14px);transition:opacity .35s .18s,transform .35s .18s;pointer-events:none}
+.sol-acc-panel.active .sol-acc-body{opacity:1;transform:translateY(0);pointer-events:auto}
+.sol-acc-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#00c2e0;margin-bottom:9px}
+.sol-acc-body h3{font-size:22px;font-weight:800;color:#fff;line-height:1.28;margin-bottom:8px}
+.sol-acc-body p{font-size:13px;line-height:1.7;color:rgba(255,255,255,.62);margin-bottom:16px}
+.sol-acc-link{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:#00c2e0;text-decoration:none}
+.sol-acc-link span{display:inline-block;transition:transform .2s}
+.sol-acc-link:hover span{transform:translateX(4px)}
+.sol-acc-num{position:absolute;top:14px;right:12px;font-size:10px;font-weight:800;letter-spacing:.1em;color:rgba(255,255,255,.2);z-index:3}
 </style>
 </head>
 <body>
@@ -254,9 +280,51 @@ img{max-width:100%;display:block}
 </section>
 
 <!-- ════ SOLUTIONS ════ -->
-<section class="section" id="solutions" style="min-height:420px;">
+<section class="section" id="solutions" style="padding-top:80px;padding-bottom:80px;">
   <div class="wrap">
-    <!-- content coming soon -->
+    <div class="sol-landing fade-up">
+      <!-- LEFT: text -->
+      <div class="sol-landing-left">
+        <span class="eyebrow">Solutions</span>
+        <h2>Purpose-Built<br>for Every Edge</h2>
+        <p>From AI-powered knowledge platforms to hardware-offloaded networking — end-to-end solutions engineered for enterprise deployment.</p>
+        <div class="sol-btns">
+          <a class="btn btn-primary" href="pages/about/contact/index.html">Contact Us</a>
+        </div>
+      </div>
+      <!-- RIGHT: accordion -->
+      <div class="sol-acc-wrap">
+
+        <!-- Panel 1: RAXEL AI -->
+        <div class="sol-acc-panel active" data-sol="0">
+          <div class="sol-acc-bg" style="background-image:url('pages/platforms/edge-platform/raxel-black.png');background-color:#060e1e;background-size:contain;background-repeat:no-repeat;background-position:center 30%"></div>
+          <div class="sol-acc-overlay"></div>
+          <span class="sol-acc-num">01</span>
+          <span class="sol-acc-label">RAXEL AI</span>
+          <div class="sol-acc-body">
+            <span class="sol-acc-tag">Edge AI Platform</span>
+            <h3>RAXEL AI</h3>
+            <p>On-premises AI knowledge platform — query enterprise data without sending it to the cloud. Secure, cited, and instantly deployable.</p>
+            <a class="sol-acc-link" href="pages/platforms/edge-platform/index.html">Learn More <span>→</span></a>
+          </div>
+        </div>
+
+        <!-- Panel 2: SmartNIC -->
+        <div class="sol-acc-panel" data-sol="1">
+          <div class="sol-acc-bg" style="background-image:url('pages/products/smart-nics/sx906/SX906.1354.png');background-color:#060e1e;background-size:contain;background-repeat:no-repeat;background-position:center 30%"></div>
+          <div class="sol-acc-overlay"></div>
+          <span class="sol-acc-num">02</span>
+          <span class="sol-acc-label">SmartNIC</span>
+          <div class="sol-acc-body">
+            <span class="sol-acc-tag">Network Acceleration</span>
+            <h3>SmartNIC</h3>
+            <p>Offload networking, security, and storage tasks from CPU to hardware. SX904 and SX906 DPU solutions for data center and edge.</p>
+            <a class="sol-acc-link" href="pages/solutions/smart-nic/index.html">Learn More <span>→</span></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 </section>
 
@@ -444,6 +512,16 @@ const io=new IntersectionObserver((entries)=>{
   });
 },{threshold:0.12});
 document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
+</script>
+<script>
+// Solutions accordion — hover to expand
+const solPanels = document.querySelectorAll('.sol-acc-panel');
+solPanels.forEach(panel => {
+  panel.addEventListener('mouseenter', () => {
+    solPanels.forEach(p => p.classList.remove('active'));
+    panel.classList.add('active');
+  });
+});
 </script>
 </body>
 </html>
