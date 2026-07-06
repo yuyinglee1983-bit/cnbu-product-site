@@ -368,20 +368,34 @@
 
 /* ── RAXEL Hero Override ─────────────────── */
 .raxel-hero {
-  padding: 64px 0 60px;
-  background: linear-gradient(160deg, #f0f4fa 0%, #fff 55%, #e8f2ff 100%);
-  border-bottom: 1px solid var(--line);
+  padding: 80px 0 76px;
+  background: #060e1e;
+  border-bottom: none;
   position: relative;
   overflow: hidden;
 }
-.raxel-hero::before {
-  content: "";
+/* Video background layer */
+.raxel-hero-video-bg {
   position: absolute;
-  top: -120px; right: -120px;
-  width: 560px; height: 560px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,94,184,.06) 0%, transparent 70%);
-  pointer-events: none;
+  inset: 0;
+  z-index: 0;
+}
+.raxel-hero-video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Dark overlay for text readability */
+.raxel-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(6,14,30,.80) 0%, rgba(0,20,60,.50) 100%);
+  z-index: 1;
+}
+.raxel-hero .wrap {
+  position: relative;
+  z-index: 2;
 }
 .raxel-hero-inner {
   display: flex;
@@ -395,11 +409,11 @@
   font-weight: 800;
   line-height: 1.08;
   letter-spacing: -.03em;
-  color: var(--navy);
+  color: #fff;
   margin: 0;
 }
 .raxel-h1 .accent {
-  background: linear-gradient(90deg, #005EB8 0%, #00c2e0 100%);
+  background: linear-gradient(90deg, #4da6ff 0%, #00c2e0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -413,22 +427,27 @@
 .raxel-sub-main {
   font-size: 17px;
   font-weight: 500;
-  color: var(--ink);
+  color: rgba(255,255,255,.85);
   letter-spacing: -.01em;
 }
 .raxel-sub-accent {
   font-size: 16px;
-  color: var(--muted);
+  color: rgba(255,255,255,.6);
   font-style: italic;
 }
 /* keyword row */
 .raxel-keywords {
   font-size: 13px;
   font-weight: 600;
-  color: var(--muted);
+  color: rgba(255,255,255,.5);
   letter-spacing: .02em;
   margin-top: 4px;
 }
+/* Breadcrumb on dark bg */
+.raxel-hero .breadcrumb a { color: rgba(255,255,255,.7); }
+.raxel-hero .breadcrumb a:hover { color: #4da6ff; }
+.raxel-hero .breadcrumb .sep { color: rgba(255,255,255,.3); }
+.raxel-hero .breadcrumb > span:last-child { color: rgba(255,255,255,.9); }
 
 /* ── Raxel Video Section ──────────────────── */
 .raxel-video-section {
@@ -681,6 +700,13 @@
 
 <!-- ════ HERO ════ -->
 <section class="raxel-hero">
+<!-- Video background -->
+<div class="raxel-hero-video-bg">
+  <video autoplay muted loop playsinline preload="metadata">
+    <source src="../../../image/RAXELAI_HERO_c.mp4" type="video/mp4">
+  </video>
+</div>
+<div class="raxel-hero-overlay"></div>
 <div class="wrap fu">
   <nav class="breadcrumb">
     <a href="../../../index.html">Home</a><span class="sep">›</span>
