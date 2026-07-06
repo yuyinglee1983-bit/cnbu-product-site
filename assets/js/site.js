@@ -2,9 +2,9 @@
 var R=document.body.dataset.root||'';
 var NAV=[
   {label:'About',subs:[
-    {l:'About Senao Computing',h:'pages/about/index.html'},
-    {l:'Why Senao Computing',h:'pages/about/company/index.html'},
-    {l:'Global Presence',h:'pages/about/manufacturing/index.html'},
+    {l:'About Senao Computing',h:'pages/about/About%20Senao%20Computing/index.html'},
+    {l:'Why Senao Computing',h:'pages/about/Why%20Senao%20Computing/index.html'},
+    {l:'Global Presence',h:'pages/about/Global%20Presence/index.html'},
     {l:'Certification',h:'pages/about/certification/index.html'}
   ]},
   {label:'Solutions',subs:[
@@ -42,10 +42,10 @@ var NAV=[
     {l:'News',h:'pages/resources/news/index.html'},
     {l:'Events',h:'pages/resources/events/index.html'},
     {l:'Blog',h:'pages/resources/blog/index.html'},
-    {l:'Downloads',h:'pages/resources/datasheets/index.html'}
+    {l:'Downloads',h:'pages/resources/Downloads/index.html'}
   ]},
   {label:'Support',subs:[
-    {l:'Contact Us',h:'pages/about/contact/index.html'}
+    {l:'Contact Us',h:'pages/Support/ContactUs/index.html'}
   ]}
 ];
 
