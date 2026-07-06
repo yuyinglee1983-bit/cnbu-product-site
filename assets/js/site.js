@@ -135,7 +135,7 @@ if(ftr){
     +'<div class="ftr-top">'
     +'<div class="ftr-brand">'
     +'<img src="'+R+'image/logo/senao_networks_vertical_logo.png" alt="SENAO Networks" class="ftr-logo-gif">'
-    +'<p>High-Performance Servers, SmartNICs & Platform Solutions<br>Comprehensive Experts in Data Center Infrastructure</p>'
+    +'<p>High-Performance Servers,<br>SmartNICs &amp; Platform Solutions</p>'
     +'</div>'
     +'<div class="ftr-cols">'
     +'<div class="ftr-col"><h5>About</h5>'
