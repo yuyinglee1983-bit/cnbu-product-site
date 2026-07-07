@@ -1,39 +1,195 @@
-﻿<!doctype html>
-<html lang="zh-Hant">
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SND Series 400GbE Switch | CNBU Networks</title>
+<title>SND9510 400GbE Data Center Switch | CNBU Networks</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Noto+Sans+TC:wght@400;700;800&display=swap" rel="stylesheet">
-<style>
-.pd-feat-card{display:flex;gap:20px;align-items:flex-start;padding:28px;border:1.5px solid var(--line);border-radius:12px;background:#fff;transition:all .3s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden}
-.pd-feat-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#005EB8,#00c2e0);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.4,0,.2,1)}
-.pd-feat-card:hover{border-color:#005EB8;box-shadow:0 0 0 1px rgba(0,94,184,.15),0 20px 48px rgba(0,94,184,.12);transform:translateY(-5px)}
-.pd-feat-card:hover::before{transform:scaleX(1)}
-</style>
 <link rel="stylesheet" href="../../../../assets/css/styles.css">
+<style>
+/* ── Hero ── */
+.pd-hero{background:#fff;padding:0;overflow:hidden;position:relative;border-bottom:1px solid var(--line)}
+.pd-hero::before{content:"";position:absolute;top:-20%;right:-5%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,94,184,.06),transparent 65%);pointer-events:none}
+.pd-hero-inner{display:grid;grid-template-columns:1fr 1.1fr;min-height:460px;align-items:center;gap:0}
+.pd-hero-text{padding:64px 48px 64px 0;position:relative;z-index:2}
+.pd-breadcrumb{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:20px;font-size:12px;color:var(--muted)}
+.pd-breadcrumb a{color:var(--blue);transition:color .15s}
+.pd-breadcrumb a:hover{color:var(--cyan)}
+.pd-breadcrumb .sep{color:var(--line)}
+.pd-eyebrow{display:none}
+.pd-hero-text h1{font-size:clamp(28px,3.5vw,48px);font-weight:800;line-height:1.12;letter-spacing:-.03em;color:var(--navy);margin-bottom:10px}
+.pd-tagline{font-size:15px;font-weight:600;color:var(--blue);letter-spacing:-.01em;margin-bottom:16px}
+.pd-hero-text .pd-desc{font-size:14px;line-height:1.75;color:var(--muted);margin-bottom:28px;max-width:440px}
+.pd-tags{display:flex;flex-wrap:wrap;gap:8px}
+.pd-tag{padding:4px 12px;border:1px solid rgba(26,111,196,.2);border-radius:100px;font-size:11px;font-weight:600;color:var(--blue);background:rgba(26,111,196,.06);letter-spacing:.02em}
+.pd-hero-img{position:relative;display:flex;align-items:center;justify-content:center;padding:40px 0 40px 40px;height:100%}
+.pd-hero-img::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(26,111,196,.04) 0%,transparent 70%);pointer-events:none}
+.pd-img-frame{position:relative;width:100%;max-width:600px}
+.pd-img-frame img{width:100%;height:auto;max-height:380px;object-fit:contain;display:block;filter:drop-shadow(0 8px 20px rgba(11,30,56,.1))}
+/* ── Specs ── */
+.pd-spec{background:linear-gradient(180deg,#060e1e 0%,#0b1e38 100%);padding:64px 0}
+.pd-spec .section-title{color:#fff;margin-bottom:36px}
+.pd-spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.06);border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.pd-spec-item{padding:22px 26px;background:rgba(255,255,255,.03);transition:background .2s}
+.pd-spec-item:hover{background:rgba(0,94,184,.06)}
+.pd-spec-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(0,94,184,.9);margin-bottom:7px}
+.pd-spec-value{font-size:14px;font-weight:700;color:#fff;line-height:1.4}
+/* ── Features ── */
+.pd-features{background:#f0f3f8;padding:64px 0}
+.pd-features .section-title{color:var(--navy);margin-bottom:36px}
+.pd-feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.pd-feat-card{padding:26px;border:1.5px solid var(--line);border-radius:12px;background:#fff;transition:all .3s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden}
+.pd-feat-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#005EB8,#00c2e0);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.pd-feat-card:hover{border-color:#005EB8;box-shadow:0 16px 40px rgba(0,94,184,.1);transform:translateY(-4px)}
+.pd-feat-card:hover::before{transform:scaleX(1)}
+.pd-feat-card h4{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.pd-feat-card p{font-size:13px;line-height:1.7;color:var(--muted);margin:0}
+/* Business Value */
+.pd-bv{padding:72px 0;background:linear-gradient(180deg,#f4f7fb 0%,#fff 100%);border-bottom:1px solid var(--line)}
+.pd-bv-header{text-align:center;margin-bottom:48px}
+.pd-bv-title{font-size:clamp(26px,3vw,38px);font-weight:800;color:var(--navy);letter-spacing:-.025em;margin:0}
+.pd-bv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pd-bv-card{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:28px 24px 26px;position:relative;overflow:hidden;transition:all .25s cubic-bezier(.4,0,.2,1)}
+.pd-bv-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#005EB8,#00c2e0);transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.4,0,.2,1)}
+.pd-bv-card:hover{border-color:#005EB8;box-shadow:0 8px 32px rgba(0,94,184,.10);transform:translateY(-3px)}
+.pd-bv-card:hover::before{transform:scaleX(1)}
+.pd-bv-spec{font-size:17px;font-weight:800;color:var(--navy);letter-spacing:-.02em;margin:0 0 8px}
+.pd-bv-desc{font-size:13px;line-height:1.65;color:var(--muted);margin:0}
+/* Responsive */
+@media(max-width:900px){.pd-hero-inner{grid-template-columns:1fr;min-height:auto}.pd-hero-text{padding:48px 0 28px}.pd-hero-img{padding:0 0 40px}.pd-spec-grid{grid-template-columns:repeat(2,1fr)}.pd-feat-grid{grid-template-columns:1fr}.pd-bv-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.pd-spec-grid{grid-template-columns:1fr}.pd-bv-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body data-root="../../../../">
 <header id="site-header"></header>
 <main>
-<section class="page-hero">
-<div class="wrap fu">
-  <nav class="breadcrumb"><a href="../../../../index.html">Home</a><span class="sep">›</span><a href="../../../../pages/products/index.html">Products</a><span class="sep">›</span><a href="../../../../pages/products/data-center-switches/index.html">Data Center Switches</a><span class="sep">›</span><span>SND Series</span></nav>
-  <span class="eyebrow">400GbE Switch</span>
-  <h1>SND Series 400GbE Switch</h1>
-  <p class="page-desc">32-port 400GbE high-density switch. 12.8 Tbps switching capacity, under 600ns latency, VXLAN / EVPN / SRv6.</p>
+
+<!-- ── Hero ── -->
+<section class="pd-hero">
+<div class="wrap">
+  <div class="pd-hero-inner">
+    <div class="pd-hero-text fu">
+      <nav class="pd-breadcrumb">
+        <a href="../../../../index.html">Home</a><span class="sep">›</span>
+        <a href="../../../../pages/products/index.html">Products</a><span class="sep">›</span>
+        <a href="../../../../pages/products/data-center-switches/index.html">Data Center Switches</a><span class="sep">›</span>
+        <span>SND9510</span>
+      </nav>
+      <span class="pd-eyebrow">400GbE Switch</span>
+      <h1>SND9510<br>400GbE Data Center Switch</h1>
+      <p class="pd-tagline">Designed for Leaf-Spine Fabric &amp; Cloud-Scale Networks</p>
+      <p class="pd-desc">32-port 400GbE high-density switch delivering 12.8 Tbps switching capacity with sub-600 ns latency. Supports VXLAN, EVPN, and SRv6 for scalable, software-defined data center architectures.</p>
+      <div class="pd-tags">
+        <span class="pd-tag">32× QSFP-DD 400GbE</span>
+        <span class="pd-tag">12.8 Tbps</span>
+        <span class="pd-tag">VXLAN / EVPN / SRv6</span>
+        <span class="pd-tag">&lt; 600 ns Latency</span>
+        <span class="pd-tag">64-way ECMP</span>
+      </div>
+    </div>
+    <div class="pd-hero-img">
+      <div class="pd-img-frame fu">
+        <img src="../SND9510-2.png" alt="SND9510 400GbE Data Center Switch"/>
+      </div>
+    </div>
+  </div>
 </div>
 </section>
-<section class="spec-section"><div class="wrap"><h2 class="section-title fu">Specifications</h2><div class="spec-grid fu"><div class="spec-item"><div class="spec-label">Ports</div><div class="spec-value">32x QSFP-DD 400GbE</div></div><div class="spec-item"><div class="spec-label">Switching Capacity</div><div class="spec-value">12.8 Tbps</div></div><div class="spec-item"><div class="spec-label">Forwarding Performance</div><div class="spec-value">9.5 Bpps</div></div><div class="spec-item"><div class="spec-label">Packet Buffer</div><div class="spec-value">128 MB</div></div><div class="spec-item"><div class="spec-label">Latency</div><div class="spec-value">&lt; 600 ns</div></div><div class="spec-item"><div class="spec-label">Power</div><div class="spec-value">&lt; 350W</div></div><div class="spec-item"><div class="spec-label">ECMP</div><div class="spec-value">64-way ECMP</div></div><div class="spec-item"><div class="spec-label">MAC Table</div><div class="spec-value">32K entries</div></div><div class="spec-item"><div class="spec-label">IPv6 Routes</div><div class="spec-value">64K entries</div></div></div></div></section>
-<section class="cta-band">
-<div class="wrap"><div class="cta-inner fu">
-  <div class="cta-text"><h2>Need Technical Assistance?</h2><p>Our technical consultants will help you design the best solution for your deployment.</p></div>
-  <div class="cta-actions">
-    <a href="../../../../pages/resources/Downloads/index.html" class="btn btn-ghost">Download Datasheet</a>
-    <a href="../../../../pages/Support/ContactUs/index.html" class="btn btn-primary">Contact Us</a>
+
+<!-- ── Specifications ── -->
+<section class="pd-spec">
+<div class="wrap">
+  <h2 class="section-title fu">Specifications</h2>
+  <div class="pd-spec-grid fu">
+    <div class="pd-spec-item"><div class="pd-spec-label">Ports</div><div class="pd-spec-value">32× QSFP-DD 400GbE</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Switching Capacity</div><div class="pd-spec-value">12.8 Tbps</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Forwarding Performance</div><div class="pd-spec-value">9.5 Bpps</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Packet Buffer</div><div class="pd-spec-value">128 MB</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Latency</div><div class="pd-spec-value">&lt; 600 ns</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">Power</div><div class="pd-spec-value">&lt; 350W</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">ECMP</div><div class="pd-spec-value">64-way ECMP</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">MAC Table</div><div class="pd-spec-value">32K entries</div></div>
+    <div class="pd-spec-item"><div class="pd-spec-label">IPv6 Routes</div><div class="pd-spec-value">64K entries</div></div>
   </div>
-</div></div>
+</div>
 </section>
+
+<!-- ── Key Features ── -->
+<section class="pd-features">
+<div class="wrap">
+  <h2 class="section-title fu">Key Features</h2>
+  <div class="pd-feat-grid">
+    <div class="pd-feat-card fu">
+      <h4>Ultra-High Density 400GbE</h4>
+      <p>32-port QSFP-DD 400GbE in a 1U form factor delivers the highest port density per rack unit, enabling massive bandwidth for hyperscale and enterprise data center deployments without sacrificing footprint.</p>
+    </div>
+    <div class="pd-feat-card fu d1">
+      <h4>Industry-Leading Low Latency</h4>
+      <p>Sub-600 ns cut-through switching enables real-time financial trading, HPC cluster interconnects, and AI training workloads that demand deterministic, microsecond-level response times across the fabric.</p>
+    </div>
+    <div class="pd-feat-card fu d2">
+      <h4>VXLAN / EVPN / SRv6 Support</h4>
+      <p>Native support for modern overlay and underlay protocols — VXLAN for multi-tenancy, EVPN for scalable L2/L3 VPN control plane, and SRv6 for programmable traffic engineering across cloud-native networks.</p>
+    </div>
+    <div class="pd-feat-card fu d3">
+      <h4>Leaf-Spine Fabric Ready</h4>
+      <p>Purpose-built for CLOS-based Leaf-Spine architectures with 64-way ECMP load balancing, enabling linear scalability and predictable east-west traffic performance across thousands of servers.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ── Built-In Business Value ── -->
+<section class="pd-bv">
+<div class="wrap">
+  <div class="pd-bv-header fu">
+    <h2 class="pd-bv-title">Built-In Business Value</h2>
+  </div>
+  <div class="pd-bv-grid">
+    <div class="pd-bv-card fu">
+      <div class="pd-bv-spec">12.8 Tbps</div>
+      <p class="pd-bv-desc">Non-blocking switching capacity for full-mesh 400GbE fabric</p>
+    </div>
+    <div class="pd-bv-card fu d1">
+      <div class="pd-bv-spec">&lt; 600 ns</div>
+      <p class="pd-bv-desc">Cut-through latency for HPC and financial trading workloads</p>
+    </div>
+    <div class="pd-bv-card fu d2">
+      <div class="pd-bv-spec">VXLAN / EVPN</div>
+      <p class="pd-bv-desc">Software-defined multi-tenant overlay for cloud environments</p>
+    </div>
+    <div class="pd-bv-card fu d3">
+      <div class="pd-bv-spec">64-way ECMP</div>
+      <p class="pd-bv-desc">Equal-cost multipath for predictable east-west load balancing</p>
+    </div>
+    <div class="pd-bv-card fu d4">
+      <div class="pd-bv-spec">SRv6 Ready</div>
+      <p class="pd-bv-desc">Programmable traffic engineering for next-gen WAN integration</p>
+    </div>
+    <div class="pd-bv-card fu d5">
+      <div class="pd-bv-spec">&lt; 350W</div>
+      <p class="pd-bv-desc">Power-efficient design for dense rack deployments</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-band">
+<div class="wrap">
+  <div class="cta-inner fu">
+    <div class="cta-text">
+      <h2>Need More Technical Information?</h2>
+      <p>Our technical consultants will assist you in designing the optimal switching fabric for your deployment.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="../../../../pages/resources/Downloads/index.html" class="btn btn-ghost">Download Datasheet</a>
+      <a href="../../../../pages/Support/ContactUs/index.html" class="btn btn-primary">Contact Us</a>
+    </div>
+  </div>
+</div>
+</section>
+
 </main>
 <footer id="site-footer"></footer>
 <script src="../../../../assets/js/site.js"></script>
