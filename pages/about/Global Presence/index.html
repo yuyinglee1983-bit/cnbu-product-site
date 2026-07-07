@@ -7,14 +7,71 @@
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Noto+Sans+TC:wght@400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../../assets/css/styles.css">
 <style>
+/* ── Global Presence Hero ─────────────────────────── */
+.gp-hero {
+  position: relative;
+  overflow: hidden;
+  background: #060e1e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 669px;
+}
+.gp-hero-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.gp-hero-video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.gp-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(6,14,30,.80) 0%, rgba(0,20,60,.50) 100%);
+  z-index: 1;
+}
+.gp-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 180px 0 171px;
+}
+.gp-hero-content .breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+.gp-hero-content .breadcrumb a       { color: rgba(255,255,255,.6); transition: color .15s; }
+.gp-hero-content .breadcrumb a:hover { color: var(--cyan); }
+.gp-hero-content .breadcrumb .sep    { color: rgba(255,255,255,.25); }
+.gp-hero-content .breadcrumb span:last-child { color: rgba(255,255,255,.85); }
+.gp-hero-content h1 {
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.025em;
+  color: #fff;
+  margin: 8px 0 16px;
+}
+.gp-hero-content .gp-desc {
+  font-size: 17px;
+  line-height: 1.9;
+  color: rgba(255,255,255,.75);
+  max-width: 800px;
+}
+/* ── Intro Text ─────────────────────────────────── */
 .gp-intro {
   padding: 64px 0 56px;
   background: var(--soft);
   border-bottom: 1px solid var(--line);
 }
-.gp-text {
-  max-width: 860px;
-}
+.gp-text { max-width: 860px; }
 .gp-text p {
   font-size: 16px;
   line-height: 1.9;
@@ -22,6 +79,7 @@
   margin-bottom: 20px;
 }
 .gp-text p:last-child { margin-bottom: 0; }
+/* ── Map ─────────────────────────────────────────── */
 .gp-map-section {
   padding: 56px 0;
   background: #fff;
@@ -41,13 +99,22 @@
 <main>
 
 <!-- ════ HERO ════ -->
-<section class="page-hero">
-<div class="wrap fu">
-  <nav class="breadcrumb"><a href="../../../index.html">Home</a><span class="sep">›</span><a href="../../../pages/about/About Senao Computing/index.html">About</a><span class="sep">›</span><span>Global Presence</span></nav>
-  <span class="eyebrow">About</span>
-  <h1>Global Presence</h1>
-  <p class="page-desc">A Taiwan-headquartered technology company with global subsidiaries and R&amp;D operations spanning Asia, the Americas, and beyond.</p>
-</div>
+<section class="gp-hero">
+  <div class="gp-hero-video-bg">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="Earth_07_c.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="gp-hero-overlay"></div>
+  <div class="wrap gp-hero-content fu">
+    <nav class="breadcrumb">
+      <a href="../../../index.html">Home</a><span class="sep">›</span>
+      <a href="../../../pages/about/About Senao Computing/index.html">About</a><span class="sep">›</span>
+      <span>Global Presence</span>
+    </nav>
+    <h1>Global Presence</h1>
+    <p class="gp-desc">A Taiwan-headquartered technology company with global subsidiaries and R&amp;D operations spanning Asia, the Americas, and beyond.</p>
+  </div>
 </section>
 
 <!-- ════ INTRO TEXT ════ -->
