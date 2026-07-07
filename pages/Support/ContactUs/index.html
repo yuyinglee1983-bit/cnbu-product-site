@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -6,6 +6,56 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Noto+Sans+TC:wght@400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../../assets/css/styles.css">
+
+<style>
+/* ── Location Cards Hover ──────────────── */
+.loc-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 32px;
+  padding: 28px 32px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1.5px solid #edf0f5;
+  transition: transform .32s cubic-bezier(.4,0,.2,1),
+              box-shadow .32s cubic-bezier(.4,0,.2,1),
+              border-color .32s ease;
+  cursor: default;
+}
+.loc-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0,50,120,.12), 0 4px 12px rgba(0,50,120,.07);
+  border-color: rgba(0,94,184,.25);
+}
+@media(max-width:860px){
+  .loc-card { grid-template-columns: 1fr; }
+}
+
+/* ── Location info list ── */
+.loc-info { list-style:none; padding:0; margin:0; }
+.loc-info li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 6px 0;
+  font-size: 14px;
+  color: #444;
+  border-bottom: 1px solid #f0f2f5;
+}
+.loc-info li:last-child { border-bottom: none; }
+.loc-info .lbl {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #999;
+  min-width: 34px;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+</style>
 </head>
 <body data-root="../../../">
 <header id="site-header"></header>
@@ -18,6 +68,129 @@
   <p class="page-desc">Welcome your technical inquiries, quotation requests, or partnership proposals. Our consultants will respond within one business day.</p>
 </div>
 </section>
+<!-- ════ Senao Networks Global Presence & Subsidiaries ════ -->
+<section style="background:#fff; padding:60px 0;">
+<div style="max-width:1200px; margin:0 auto; padding:0 40px;">
+
+  <h2 style="font-size:26px; font-weight:700; color:#1a1a1a; text-align:left; display:table; border-bottom:3px solid #f5a623; padding-bottom:10px; margin-bottom:48px;">
+    Senao Networks Global Presence & Subsidiaries
+  </h2>
+
+  <!-- ── 1. Taiwan (Headquarters)── -->
+  <div class="loc-card">
+    <div>
+      <p style="color:#005bac; font-weight:700; font-size:15px; margin-bottom:6px;">Taiwan (Headquarters)</p>
+      <h3 style="font-size:22px; font-weight:800; color:#1a1a1a; margin-bottom:20px;">Senao Networks Inc.</h3>
+      <ul class="loc-info">
+        <li><span class="lbl">Address</span><span>No. 500, Fuxing 3rd Rd., Guishan Dist.,<br>Taoyuan City 333001, Taiwan</span></li>
+        <li><span class="lbl">Phone</span><span>+886-3-3289289</span></li>
+        <li><span class="lbl">Fax</span><span>+886-3-396-2222</span></li>
+      </ul>
+    </div>
+    <div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.8!2d121.3!3d25.06!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z6b6N5bGx5Y2A5b6M5YWo5LiJ6Lev500!5e0!3m2!1szh-TW!2stw!4v1"
+        width="100%" height="320" style="border:0; border-radius:4px; display:block;"
+        allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- ── 2. Taiwan (Nangang R&D Center)── -->
+  <div class="loc-card">
+    <div>
+      <p style="color:#005bac; font-weight:700; font-size:15px; margin-bottom:6px;">Taiwan (Nangang R&D Center)</p>
+      <h3 style="font-size:22px; font-weight:800; color:#1a1a1a; margin-bottom:20px;">Senao Networks Inc.</h3>
+      <ul class="loc-info">
+        <li><span class="lbl">Address</span><span>10F, Building B, No. 209, Sec. 1, Nangang Rd.,<br>Taipei City 115018, Taiwan</span></li>
+        <li><span class="lbl">Phone</span><span>+886-2-2786-2986</span></li>
+      </ul>
+    </div>
+    <div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.5!2d121.6!3d25.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zQua5kiwgTm8uIDIwOSDljZfmuqbot69kuIHmqZ8!5e0!3m2!1szh-TW!2stw!4v1"
+        width="100%" height="320" style="border:0; border-radius:4px; display:block;"
+        allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- ── 3. USA (Sales & Technical Support)── -->
+  <div class="loc-card">
+    <div>
+      <p style="color:#005bac; font-weight:700; font-size:15px; margin-bottom:6px;">USA (Sales & Technical Support)</p>
+      <h3 style="font-size:22px; font-weight:800; color:#1a1a1a; margin-bottom:20px;">Senao Networks USA Inc.</h3>
+      <ul class="loc-info">
+        <li><span class="lbl">Address</span><span>860 N McCarthy Blvd Ste 200,<br>Milpitas, CA 95035, USA</span></li>
+      </ul>
+    </div>
+    <div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.0!2d-121.9!3d37.43!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s860+N+McCarthy+Blvd+%23200!5e0!3m2!1sen!2sus!4v1"
+        width="100%" height="320" style="border:0; border-radius:4px; display:block;"
+        allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- ── 4. Japan (Sales & Technical Support)── -->
+  <div class="loc-card">
+    <div>
+      <p style="color:#005bac; font-weight:700; font-size:15px; margin-bottom:6px;">Japan (Sales & Technical Support)</p>
+      <h3 style="font-size:22px; font-weight:800; color:#1a1a1a; margin-bottom:20px;">Senao Networks Japan Inc.</h3>
+      <ul class="loc-info">
+        <li><span class="lbl">Address</span><span>10F, EXPERT TAMACHI,<br>3-6-14 Shibaura, Minato-ku,<br>Tokyo 108-0023, Japan</span></li>
+      </ul>
+    </div>
+    <div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.8!2d139.74!3d35.64!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s10F%2C+EXPERT+TAMACHI!5e0!3m2!1sen!2sjp!4v1"
+        width="100%" height="320" style="border:0; border-radius:4px; display:block;"
+        allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- ── 5. 印度（銷售、研發與製造）── -->
+  <div class="loc-card">
+    <div>
+      <p style="color:#005bac; font-weight:700; font-size:15px; margin-bottom:6px;">India (Sales, R&D & Operations Center)</p>
+      <h3 style="font-size:22px; font-weight:800; color:#1a1a1a; margin-bottom:20px;">Senao Networks Private Limited</h3>
+      <ul class="loc-info">
+        <li><span class="lbl">Address</span><span>Unit #901, 9th Floor, Gowra Palladium, Hi-Tech City,<br>Hyderabad, Telangana 500081, India</span></li>
+      </ul>
+    </div>
+    <div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.3!2d78.37!3d17.44!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s%23901+Gowra+Palladium!5e0!3m2!1sen!2sin!4v1"
+        width="100%" height="320" style="border:0; border-radius:4px; display:block;"
+        allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- ── 6. 台灣（神準集團關係企業）── -->
+  <div class="loc-card">
+    <div>
+      <p style="color:#005bac; font-weight:700; font-size:15px; margin-bottom:6px;">Taiwan (Senao Group)</p>
+      <h3 style="font-size:22px; font-weight:800; color:#1a1a1a; margin-bottom:20px;">Emplus Technologies Inc.</h3>
+      <ul class="loc-info">
+        <li><span class="lbl">Address</span><span>10F, Building B, No. 209, Sec. 1, Nangang Rd.,<br>Taipei City 115018, Taiwan</span></li>
+        <li><span class="lbl">Website</span><span><a href="https://www.emplustech.com/" style="color:#005bac;">www.emplustech.com</a></span></li>
+      </ul>
+    </div>
+    <div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.5!2d121.6!3d25.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z115!5e0!3m2!1szh-TW!2stw!4v1"
+        width="100%" height="320" style="border:0; border-radius:4px; display:block;"
+        allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+</div>
+</section>
+
 <section class="section"><div class="wrap"><div class="card-grid col2 fu"><div><h3 class="section-title" style="font-size:22px;margin-bottom:24px">Send Message</h3><form style="display:grid;gap:16px"><div><label style="display:block;font-size:13px;font-weight:700;color:var(--muted);margin-bottom:6px">Name *</label><input type="text" placeholder="Your Name" style="width:100%;padding:12px 16px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:inherit"></div><div><label style="display:block;font-size:13px;font-weight:700;color:var(--muted);margin-bottom:6px">Email *</label><input type="email" placeholder="your@email.com" style="width:100%;padding:12px 16px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:inherit"></div><div><label style="display:block;font-size:13px;font-weight:700;color:var(--muted);margin-bottom:6px">Inquiry Type</label><select style="width:100%;padding:12px 16px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:inherit"><option>Product Technical Inquiry</option><option>Request a Quote</option><option>Partnership Proposal</option><option>Customer Support</option></select></div><div><label style="display:block;font-size:13px;font-weight:700;color:var(--muted);margin-bottom:6px">Message Content</label><textarea rows="5" placeholder="Please describe your needs..." style="width:100%;padding:12px 16px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:inherit;resize:vertical"></textarea></div><button type="submit" class="btn btn-primary" style="justify-self:start">Submit Inquiry</button></form></div><div style="display:grid;gap:14px;align-content:start"><div class="ci-item"><div class="ci-icon">📧</div><div><h4>Email</h4><p>sales@cnbu-networks.com<br>support@cnbu-networks.com</p></div></div><div class="ci-item"><div class="ci-icon">📞</div><div><h4>Phone</h4><p>+886-2-XXXX-XXXX<br>Monday to Friday 09:00–18:00 (UTC+8)</p></div></div><div class="ci-item"><div class="ci-icon">📍</div><div><h4>Address</h4><p>No. XXX, XXX Rd., Neihu Dist., Taipei City, Taiwan</p></div></div><div class="ci-item"><div class="ci-icon">🕐</div><div><h4>Business Hours</h4><p>Weekdays 09:00–18:00 CST<br>Technical Support 24/7/365</p></div></div></div></div></div></section>
 <section class="cta-band">
 <div class="wrap"><div class="cta-inner fu">
